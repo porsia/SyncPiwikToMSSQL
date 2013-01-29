@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Holyca" Class="HolycaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.100.98;Initial Catalog=Holyca;User ID=sa" SettingsObjectName="ConsoleApplication2.Properties.Settings" SettingsPropertyName="HolycaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Vi_Web_Pdt_AllList" Member="Vi_Web_Pdt_AllLists">
+    <Type Name="Vi_Web_Pdt_AllList">
+      <Column Name="intIsGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchProductName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="vchMainPicURL" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="intProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numMarketPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="numVipPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="numCost" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="numCleanCost" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="intIsNew" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intIsProm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intBrandID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vchProductPrinted" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="vchBrandName" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="intWebType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vchCateName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="intWebChildType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWebThirdType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchCateChildName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="intFirstCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intSecondCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intThreeCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intStartAge" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="intEndAge" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="intChannelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intHerdID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="intScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numHerdPrice" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="intAreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intStockQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intCommentVolume" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intSalesVolume" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchShortName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vi_Web_Pdt_List" Member="Vi_Web_Pdt_Lists">
+    <Type Name="Vi_Web_Pdt_List">
+      <Column Name="vchProductName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="vchMainPicURL" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="intProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numMarketPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="numVipPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="numCost" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="numCleanCost" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="intIsNew" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intIsProm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intBrandID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vchProductPrinted" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="vchBrandName" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="intWebType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vchCateName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="intWebChildType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWebThirdType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchCateChildName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="intFirstCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intSecondCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intThreeCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intStartAge" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="intEndAge" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="intChannelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intHerdID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="intScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numHerdPrice" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="intAreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intStockQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intCommentVolume" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intSalesVolume" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchShortName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vi_Web_Pdt_Detail" Member="Vi_Web_Pdt_Details">
+    <Type Name="Vi_Web_Pdt_Detail">
+      <Column Name="vchProductName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="vchMainPicURL" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="intProductID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intIsNew" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intIsProm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intBrandID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWebType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWebChildType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWebThirdType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intFirstCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intSecondCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intThreeCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intStartAge" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="intEndAge" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="vchProColr" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="vchSpec" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="vchProductPrinted" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="intAttribute" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numMarketPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="numVipPrice" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="numCost" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="numCleanCost" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="intSaleState" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="vchBrandName" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="vchCateName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="vchCateChildName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="intScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numHerdPrice" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="intChannelID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intHerdID" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="intWeight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="txtWebShowInfo" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="intAreaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intStockQty" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchShortName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="vchproductcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PromotionMemo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="intCommentVolume" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intSalesVolume" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pdt_Base_Info" Member="Pdt_Base_Infos">
+    <Type Name="Pdt_Base_Info">
+      <Column Name="intProductID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="vchPorductNO" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="vchProductPrinted" Type="System.String" DbType="VarChar(32) NOT NULL" CanBeNull="false" />
+      <Column Name="vchProductFactoryNo" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="vchProductName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="vchShortName" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="intBrandID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vchUnit" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="vchSpec" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="intState" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="intFirstCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intSecondCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intThreeCategory" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWebType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWebChildType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intIsExpress" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="intScoreMulriple" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="vchBarCode" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="vchKeyWords" Type="System.String" DbType="NVarChar(128)" CanBeNull="true" />
+      <Column Name="intAttribute" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intWeight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchMainPicURL" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="vchPageURL" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="intScore" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchProductStunt" Type="System.String" DbType="NVarChar(3000)" CanBeNull="true" />
+      <Column Name="intMajorProductID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intIsGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intStartAge" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="intEndAge" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="vchProColr" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="intIsProm" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intIsNew" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="intWebThirdType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="vchproductcode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="vchTips" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PromotionMemo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="vchFxDescription" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="numcost" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

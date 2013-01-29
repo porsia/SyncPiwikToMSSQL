@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="bbHome" Class="BbhomeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.0.0.9;Initial Catalog=bbHome;Persist Security Info=True;User ID=sa" SettingsObjectName="ConsoleApplication2.Properties.Settings" SettingsPropertyName="bbHomeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.base_t_member" Member="base_t_members">
+    <Type Name="base_t_member">
+      <Column Name="membNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userCode" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="regTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createBy" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="updateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="updateBy" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="cardNO" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="noteFlag" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="userGroupId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="policymaker" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ReferrerMembNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="province" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="city" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="district" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="scores" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="valid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mobileTel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="userLevel" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="areaNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="regType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="clusterId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="regFrom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="passward" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nickName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="sex" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="question" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="answer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="qq" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="msn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="beValidate" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="orderTimes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="intUserType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

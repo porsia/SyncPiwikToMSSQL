@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="offLineBBHome" Class="offlineBbhomeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.100.242\myzjdw2008;Initial Catalog=offLineBBHome;User ID=sa" SettingsObjectName="ConsoleApplication2.Properties.Settings" SettingsPropertyName="offLineBBHomeConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.100.242\myzjdw2008;Initial Catalog=offLineBBHome;User ID=sa" SettingsObjectName="SyncPiwikToMSSQL.Properties.Settings" SettingsPropertyName="offLineBBHomeConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Ga_guidUserID" Member="Ga_guidUserIDs">
     <Type Name="Ga_guidUserID">
       <Column Name="uid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -20,12 +20,13 @@
     <Type Name="Piwik_log">
       <Column Name="userid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="guid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="url" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
       <Column Name="lastVisitTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="action" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="action" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="pagetitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="spenttime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="refferurl" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

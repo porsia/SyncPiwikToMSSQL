@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication2
+namespace SyncPiwikToMSSQL
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -36,7 +36,7 @@ namespace ConsoleApplication2
     #endregion
 		
 		public HolycaDataContext() : 
-				base(global::ConsoleApplication2.Properties.Settings.Default.HolycaConnectionString, mappingSource)
+				base(global::SyncPiwikToMSSQL.Properties.Settings.Default.HolycaConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

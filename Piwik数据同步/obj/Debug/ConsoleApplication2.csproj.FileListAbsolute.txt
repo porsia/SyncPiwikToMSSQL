@@ -4,3 +4,9 @@ E:\PanelF\vss\信息工程组\网站\开发\网站系统\opentaobao\eTaoSource\C
 E:\PanelF\vss\信息工程组\网站\开发\网站系统\opentaobao\eTaoSource\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
 E:\PanelF\vss\信息工程组\网站\开发\网站系统\opentaobao\eTaoSource\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb
 E:\PanelF\vss\信息工程组\网站\开发\网站系统\opentaobao\eTaoSource\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Debug\ConsoleApplication2.exe.config
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\ConsoleApplication2.exe
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\ConsoleApplication2.pdb
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Debug\ConsoleApplication2.exe
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Debug\ConsoleApplication2.pdb
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\ResolveAssemblyReference.cache

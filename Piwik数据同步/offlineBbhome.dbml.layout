@@ -14,10 +14,10 @@
         <elementListCompartment Id="587fb5a4-fdef-4af3-b635-601d025b05ef" absoluteBounds="0.765, 3.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="9ecea740-726c-4f98-81c8-171b654f2b52" absoluteBounds="6.25, 3, 2, 2.3356245930989585">
+    <classShape Id="7a1b28b7-1ae4-48f9-9b6e-2c081a9a3a8b" absoluteBounds="5.75, 5.125, 2, 2.5266442871093751">
       <DataClassMoniker Name="/offlineBbhomeDataContext/Piwik_log" />
       <nestedChildShapes>
-        <elementListCompartment Id="7c13653d-eba5-4c1f-b22a-8c91d79a8d3e" absoluteBounds="6.265, 3.46, 1.9700000000000002, 1.7756245930989585" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e5484bd9-abd1-4b81-8c4f-b9210686d64f" absoluteBounds="5.765, 5.585, 1.9700000000000002, 1.966644287109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

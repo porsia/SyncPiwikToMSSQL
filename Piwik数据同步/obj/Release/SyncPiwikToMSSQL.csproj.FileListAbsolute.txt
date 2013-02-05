@@ -1,0 +1,6 @@
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Release\ResolveAssemblyReference.cache
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Release\SyncPiwikToMSSQL.exe.config
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Release\SyncPiwikToMSSQL.exe
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Release\SyncPiwikToMSSQL.pdb
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Release\SyncPiwikToMSSQL.exe
+E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Release\SyncPiwikToMSSQL.pdb

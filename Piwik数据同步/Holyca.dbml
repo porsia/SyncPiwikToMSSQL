@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="Holyca" Class="HolycaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.100.98;Initial Catalog=Holyca;User ID=sa" SettingsObjectName="ConsoleApplication2.Properties.Settings" SettingsPropertyName="HolycaConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.100.98;Initial Catalog=Holyca;User ID=sa" SettingsObjectName="SyncPiwikToMSSQL.Properties.Settings" SettingsPropertyName="HolycaConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Vi_Web_Pdt_AllList" Member="Vi_Web_Pdt_AllLists">
     <Type Name="Vi_Web_Pdt_AllList">
       <Column Name="intIsGroup" Type="System.Int32" DbType="Int" CanBeNull="true" />

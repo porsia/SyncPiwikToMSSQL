@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="bbHome" Class="BbhomeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=10.0.0.9;Initial Catalog=bbHome;Persist Security Info=True;User ID=sa" SettingsObjectName="ConsoleApplication2.Properties.Settings" SettingsPropertyName="bbHomeConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=10.0.0.9;Initial Catalog=bbHome;Persist Security Info=True;User ID=sa" SettingsObjectName="SyncPiwikToMSSQL.Properties.Settings" SettingsPropertyName="bbHomeConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.base_t_member" Member="base_t_members">
     <Type Name="base_t_member">
       <Column Name="membNo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />

@@ -12,7 +12,7 @@ using System.Net;
 using Boodoll.PageBL;
 using Newtonsoft.Json;
 
-namespace ConsoleApplication2
+namespace SyncPiwikToMSSQL
 {
  
 
@@ -22,10 +22,11 @@ namespace ConsoleApplication2
        // public static  Dictionary<int, string> allProductName = getAllProductIDName();
         public static string dfrom = System.Configuration.ConfigurationSettings.AppSettings["updateform"];
         public static string token = System.Configuration.ConfigurationSettings.AppSettings["token"];
+       
         static void Main(string[] args)
         {
-      
 
+            string errr = "";
             Console.WriteLine("开始分析数据:");
 
 
@@ -56,7 +57,7 @@ namespace ConsoleApplication2
                              #region 循环读取数据
 
                              // string url = "http://click.muyingzhijia.com/index.php?module=API&filter_limit=100&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date=" + dtStr + "&expanded=1&token_auth=453170c79e8f0ad5dcd1f0b2ce1ecf23";
-                             string url = "http://click.muyingzhijia.com/index.php?module=API&filter_limit=50&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date=" + dt + "&expanded=1&token_auth=" + token;
+                             string url = "http://click.muyingzhijia.com/index.php?module=API&filter_limit=100&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date=" + dt + "&expanded=1&token_auth=" + token;
                              ;
 
                              if (maxVisitID > 0)
@@ -83,7 +84,7 @@ namespace ConsoleApplication2
                                  if (Convert.ToDateTime(lastActionDateTime) < Convert.ToDateTime(dt))
                                  {
                                      exitFlag = true;
-                                     break;
+                                     continue;
 
                                  }
                                  //if(userList.Count>5)
@@ -109,6 +110,7 @@ namespace ConsoleApplication2
                                  {
                                      string userid = "";
                                      string guid = "";
+                                     string referurl = "";
 
                                      JavaScriptObject customVariables = null;
                                      try
@@ -116,10 +118,10 @@ namespace ConsoleApplication2
                                          customVariables = (JavaScriptObject)qcount["customVariables"];
                                          userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
                                          guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
-                                         if (guid == "msyfrf55bsvfd1uloppznp4520130127113133121")
-                                         {
-                                             string test = "test";
-                                         }
+
+                                         if (qcount.Keys.Contains("referrerUrl"))
+                                        referurl=Converter.ParseString(qcount["referrerUrl"],"");
+                                         // [43] = {[referrerUrl, http://open.union.360.cn/go?bid=2000311&cid=3&qihoo_id=36110&url=http%3A%2F%2Fwww.muyingzhijia.com%2FPromotion%2Factivities.aspx%3Faction%3DDiapers1015&sign=9e3beae85e&aname=mall_list&asign=ef49dae593&fname=mall_list&fsign=40e9a54cce]}
 
                                      }
                                      catch (Exception ex)
@@ -137,11 +139,12 @@ namespace ConsoleApplication2
                                      {
                                          JavaScriptObject itemobject = (JavaScriptObject)item;
 
-
+                                         string tmpUrl = "";
                                          if (itemobject.Keys.Contains("url") && itemobject["url"] != null)
                                          {
-                                             string tmpUrl = itemobject["url"].ToString();
+                                             tmpUrl = itemobject["url"].ToString();
 
+                                         }
                                              UserVisitInfo vinfo = new UserVisitInfo();
                                              if (vinfo != null)
                                              {
@@ -150,17 +153,22 @@ namespace ConsoleApplication2
                                                  if (itemobject.Keys.Contains("timeSpent"))
                                                      vinfo.Spent = Converter.ParseString(itemobject["timeSpent"], "");
 
-                                                 if (itemobject.Keys.Contains("url"))
-                                                     vinfo.Url = GetProductID(Converter.ParseString(itemobject["url"], ""));
+                                                 vinfo.Url = tmpUrl;
                                                  vinfo.LastVisitTime = lastActionDateTime;
 
                                                  if (itemobject.Keys.Contains("pageTitle"))
-                                                     vinfo.PageTitle = Converter.ParseString(itemobject["pageTitle"], "");// ConvertUnicodeStringToChinese(Converter.ParseString(itemobject["pageTitle"], ""));
+                                                     vinfo.PageTitle = Converter.ParseString(itemobject["pageTitle"], "");
+                                                 else
+                                                     vinfo.PageTitle = "";
+                                                     // ConvertUnicodeStringToChinese(Converter.ParseString(itemobject["pageTitle"], ""));
                                                  if (itemobject.Keys.Contains("type"))
                                                      vinfo.Action = Converter.ParseString(itemobject["type"], "");
+                                                 else
+                                                     vinfo.Action = "";
 
+                                                 vinfo.Referurl = referurl;
                                                  userList.Add(vinfo);
-
+                                                
                                                  //List<UserVisitInfo> vt = new List<UserVisitInfo>();
                                                  //vt.Add(vinfo);
                                                  //DataFarm.insert_piwiklog(vt);
@@ -168,12 +176,12 @@ namespace ConsoleApplication2
                                              }
 
 
-                                         }
+                                       
                                      });
                                  }
 
 
-                                 Console.WriteLine(DateTime.Now + "," + dt + "," + i + "," + mi+ "," + "finish.");
+                                 Console.WriteLine(lastActionDateTime + "," + dt + "," + i + "," + mi+ "," + "finish.");
 
                              }
 
@@ -185,6 +193,7 @@ namespace ConsoleApplication2
                          }
                           catch (Exception ex)
                          {
+                             errr += ex.Message;
                              Console.WriteLine(ex.Message);
                          }
                     
@@ -192,23 +201,27 @@ namespace ConsoleApplication2
                      userList = userList.Distinct().ToList();
                      if (userList.Count > 0)
                      {
-                         if (DataFarm.insert_piwiklog(userList))
+                         string msg = "";
+                         if (DataFarm.insert_piwiklog(userList,out msg))
                          {
                              DataFarm.UpdateGaBaseData(pageType, DateTime.Parse(dt), DateTime.Parse(dt));
                              Console.WriteLine(DateTime.Now + "," + pageType + "," + dt + "," + "finish.");
                          }
+
+                         if (!string.IsNullOrEmpty(msg))
+                             errr += msg;
                      }
                  
                         
                     
                     // CreateReport(userList);
-                     writeLog(writeFile, userList);
+                     writeLog(writeFile, userList,errr);
                  
                  }
              }
 
             Console.WriteLine("数据生成完毕");
-            Console.ReadLine();
+            
           
         }
         public static string ConvertUnicodeStringToChinese(string unicodeString)
@@ -387,7 +400,7 @@ namespace ConsoleApplication2
 
 
 
-        public static void writeLog(string writeFile,List<UserVisitInfo> u)
+        public static void writeLog(string writeFile,List<UserVisitInfo> u,string msg)
         {
           
       
@@ -396,6 +409,7 @@ namespace ConsoleApplication2
                 FileStream fs = new FileStream(writeFile, FileMode.OpenOrCreate, FileAccess.Write);
                 StreamWriter wr = new StreamWriter(fs);
 
+                wr.WriteLine(msg);
                 foreach (UserVisitInfo a in u)
                 {
                     wr.WriteLine(a.Userid + "," + a.Mobile + "," + a.Url + "," + a.Type + "," + a.LastVisitTime);//开始写入值
@@ -565,6 +579,7 @@ namespace ConsoleApplication2
         {
             
             string productCode = "";
+            
             HolycaDataContext ctx = new HolycaDataContext();
             if (ctx.Pdt_Base_Infos.Any(p => p.intProductID == productid))
             {

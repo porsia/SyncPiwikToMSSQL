@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ConsoleApplication2
+namespace SyncPiwikToMSSQL
 {
     public class UserVisitInfo
     {
@@ -16,6 +16,21 @@ namespace ConsoleApplication2
         string pageTitle;
         string action;
         string spent;
+        string referurl;
+
+        string actionType;
+
+        public string ActionType
+        {
+            get { return actionType; }
+            set { actionType = value; }
+        }
+
+        public string Referurl
+        {
+            get { return referurl; }
+            set { referurl = value; }
+        }
 
         public string Spent
         {

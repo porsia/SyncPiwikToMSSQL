@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication2
+namespace SyncPiwikToMSSQL
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -39,7 +39,7 @@ namespace ConsoleApplication2
     #endregion
 		
 		public offlineBbhomeDataContext() : 
-				base(global::ConsoleApplication2.Properties.Settings.Default.offLineBBHomeConnectionString, mappingSource)
+				base(global::SyncPiwikToMSSQL.Properties.Settings.Default.offLineBBHomeConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -318,6 +318,8 @@ namespace ConsoleApplication2
 		
 		private System.Nullable<int> _spenttime;
 		
+		private string _refferurl;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -338,6 +340,8 @@ namespace ConsoleApplication2
     partial void OnpagetitleChanged();
     partial void OnspenttimeChanging(System.Nullable<int> value);
     partial void OnspenttimeChanged();
+    partial void OnrefferurlChanging(string value);
+    partial void OnrefferurlChanged();
     #endregion
 		
 		public Piwik_log()
@@ -385,7 +389,7 @@ namespace ConsoleApplication2
 			}
 		}
 		
-		[Column(Storage="_url", DbType="VarChar(500)")]
+		[Column(Storage="_url", DbType="VarChar(2000)")]
 		public string url
 		{
 			get
@@ -445,7 +449,7 @@ namespace ConsoleApplication2
 			}
 		}
 		
-		[Column(Storage="_action", DbType="VarChar(20)")]
+		[Column(Storage="_action", DbType="VarChar(50)")]
 		public string action
 		{
 			get
@@ -501,6 +505,26 @@ namespace ConsoleApplication2
 					this._spenttime = value;
 					this.SendPropertyChanged("spenttime");
 					this.OnspenttimeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_refferurl", DbType="VarChar(2000)")]
+		public string refferurl
+		{
+			get
+			{
+				return this._refferurl;
+			}
+			set
+			{
+				if ((this._refferurl != value))
+				{
+					this.OnrefferurlChanging(value);
+					this.SendPropertyChanging();
+					this._refferurl = value;
+					this.SendPropertyChanged("refferurl");
+					this.OnrefferurlChanged();
 				}
 			}
 		}

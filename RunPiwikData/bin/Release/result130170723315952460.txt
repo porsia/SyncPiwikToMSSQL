@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://aishang8090.vip157.92hezu.cn/' where refferurl='http://aishang8090.vip157.92hezu.cn/' ;

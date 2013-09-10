@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://glb.uc.cn/msearch2/webs/columbus/search?&qd=fs&keyword=现在用什么婴儿沐浴露好用' where refferurl='http://glb.uc.cn/msearch2/webs/columbus/search?&qd=fs&keyword=现在用什么婴儿沐浴露好用' ;

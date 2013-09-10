@@ -1,0 +1,8 @@
+E:\github\SyncPiwikToMSSQL\SyncDataBll\obj\Release\ResolveAssemblyReference.cache
+E:\github\SyncPiwikToMSSQL\SyncDataBll\bin\Release\SyncDataBll.dll.config
+E:\github\SyncPiwikToMSSQL\SyncDataBll\bin\Release\SyncDataBll.dll
+E:\github\SyncPiwikToMSSQL\SyncDataBll\bin\Release\SyncDataBll.pdb
+E:\github\SyncPiwikToMSSQL\SyncDataBll\bin\Release\SyncUtil.dll
+E:\github\SyncPiwikToMSSQL\SyncDataBll\bin\Release\SyncUtil.pdb
+E:\github\SyncPiwikToMSSQL\SyncDataBll\obj\Release\SyncDataBll.dll
+E:\github\SyncPiwikToMSSQL\SyncDataBll\obj\Release\SyncDataBll.pdb

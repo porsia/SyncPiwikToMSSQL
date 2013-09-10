@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://clickvalue.sinaapp.com/1/shvsnoon1.php?ref=http://www.muyingzhijia.com/Shopping/subcategory.aspx?cateID=24' where refferurl='http://clickvalue.sinaapp.com/1/shvsnoon1.php?ref=http://www.muyingzhijia.com/Shopping/subcategory.aspx?cateID=24' ;

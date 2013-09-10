@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://192.168.1.4/remind/proxy_cookie.htm?sinfor_cookie=0;ipdlz1984=2516691136;tm=36000;url=www.muyingzhijia.com/' where refferurl='http://192.168.1.4/remind/proxy_cookie.htm?sinfor_cookie=0;ipdlz1984=2516691136;tm=36000;url=www.muyingzhijia.com/' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://222.66.199.161/adpt/dpi?Param=YBSxR2nhrRVpYPkOkQvb9iSY4a9n2JR7UlRo2YjYuiabhNJbofO2cPFjx46G4xiX' where refferurl='http://222.66.199.161/adpt/dpi?Param=YBSxR2nhrRVpYPkOkQvb9iSY4a9n2JR7UlRo2YjYuiabhNJbofO2cPFjx46G4xiX' ;

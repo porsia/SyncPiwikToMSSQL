@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="offLineBBHome" Class="OffBBhomeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.100.242\myzjdw2008;Initial Catalog=offLineBBHome;Persist Security Info=True;User ID=sa" SettingsObjectName="RunPiwikData.Properties.Settings" SettingsPropertyName="offLineBBHomeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Piwik_log" Member="Piwik_logs">
+    <Type Name="Piwik_log">
+      <Column Name="userid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="guid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="lastVisitTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="action" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="pagetitle" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="spenttime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="refferurl" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="keyword" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="event_action" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="visitIp" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="locationsina" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Piwik_log201306" Member="Piwik_log201306s">
+    <Type Name="Piwik_log201306">
+      <Column Name="userid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="guid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="lastVisitTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="action" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="pagetitle" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="spenttime" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="refferurl" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="keyword" Type="System.String" DbType="VarChar(2000)" CanBeNull="true" />
+      <Column Name="event_action" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="visitIp" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="location" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="locationsina" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="timestamp" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.piwik_log_reffer" Member="piwik_log_reffers">
+    <Type Name="piwik_log_reffer">
+      <Column Name="refferurl" Type="System.String" DbType="VarChar(5000) NOT NULL" CanBeNull="false" />
+      <Column Name="source" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="medium" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="refergbk" Type="System.String" DbType="VarChar(5000)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

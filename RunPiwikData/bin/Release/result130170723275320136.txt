@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://admin.temaiku.com/?m=Activity&a=editTitle&d1=2013-03-19' where refferurl='http://admin.temaiku.com/?m=Activity&a=editTitle&d1=2013-03-19' ;

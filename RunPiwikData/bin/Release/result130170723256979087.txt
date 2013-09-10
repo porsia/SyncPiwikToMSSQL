@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://222.73.98.3/NomadixWebServer/welcome/terms/5b190efd-5c84-4fce-80ce-c9e4e393e9b6' where refferurl='http://222.73.98.3/NomadixWebServer/welcome/terms/5b190efd-5c84-4fce-80ce-c9e4e393e9b6' ;

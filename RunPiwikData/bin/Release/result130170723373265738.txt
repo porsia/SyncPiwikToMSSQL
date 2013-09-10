@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.cnmo.com/forum.php?mod=viewthread&tid=11002996&mobile=yes' where refferurl='http://bbs.cnmo.com/forum.php?mod=viewthread&tid=11002996&mobile=yes' ;

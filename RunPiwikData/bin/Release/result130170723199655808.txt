@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://36ohk6dgmcd1n-c.c.yom.mail.yahoo.net/om/api/1.0/openmail.app.invoke/36ohk6dgmcd1n/11/1.0.35/cn_yahoocn/zh-Hans-CN/view.html/0' where refferurl='http://36ohk6dgmcd1n-c.c.yom.mail.yahoo.net/om/api/1.0/openmail.app.invoke/36ohk6dgmcd1n/11/1.0.35/cn_yahoocn/zh-Hans-CN/view.html/0' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://220.181.6.19/s?ie=utf-8&bs=淘宝网&f=8&rsv_bp=1&rsv_spt=3&wd=母婴之家&rsv_sug3=6&rsv_sug=0&rsv_sug4=279&rsv_sug1=4&inputT=7000' where refferurl='http://220.181.6.19/s?ie=utf-8&bs=淘宝网&f=8&rsv_bp=1&rsv_spt=3&wd=母婴之家&rsv_sug3=6&rsv_sug=0&rsv_sug4=279&rsv_sug1=4&inputT=7000' ;

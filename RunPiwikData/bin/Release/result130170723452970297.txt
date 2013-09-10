@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.seedit.com/forum.php?mod=viewthread&tid=36817434&reltid=36961221&pre_pos=5&ext=' where refferurl='http://bbs.seedit.com/forum.php?mod=viewthread&tid=36817434&reltid=36961221&pre_pos=5&ext=' ;

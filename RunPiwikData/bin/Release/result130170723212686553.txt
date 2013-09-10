@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.108.72.166:5029/reviewcrawler/js/previewtemplate' where refferurl='http://10.108.72.166:5029/reviewcrawler/js/previewtemplate' ;

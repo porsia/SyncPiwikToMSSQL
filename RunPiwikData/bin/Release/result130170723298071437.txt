@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cb.qq.com/shop/qiangba.html?attach=100.1103.00.102.20&ADUIN=419485679&ADSESSION=1363229047&ADTAG=CLIENT.QQ.4693_.0' where refferurl='http://cb.qq.com/shop/qiangba.html?attach=100.1103.00.102.20&ADUIN=419485679&ADSESSION=1363229047&ADTAG=CLIENT.QQ.4693_.0' ;

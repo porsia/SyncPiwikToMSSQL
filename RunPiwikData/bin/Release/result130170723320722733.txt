@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://ask.yaolan.com/question/11083111381267ff6ca2.html' where refferurl='http://ask.yaolan.com/question/11083111381267ff6ca2.html' ;

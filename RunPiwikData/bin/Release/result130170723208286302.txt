@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://127.0.0.1/index.asp' where refferurl='http://127.0.0.1/index.asp' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://deng.ym6.com/' where refferurl='http://deng.ym6.com/' ;

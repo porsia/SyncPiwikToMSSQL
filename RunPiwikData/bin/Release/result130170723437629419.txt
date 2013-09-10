@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://e.weibo.com/2566268397/app_2250137014?sudaref=www.sina.com.cn' where refferurl='http://e.weibo.com/2566268397/app_2250137014?sudaref=www.sina.com.cn' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://192.168.100.238/general/mytable/intel_view/' where refferurl='http://192.168.100.238/general/mytable/intel_view/' ;

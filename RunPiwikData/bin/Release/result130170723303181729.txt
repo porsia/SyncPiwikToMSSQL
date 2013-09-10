@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://corp.webmail.21cn.com/webmail/readMail.do?messageid=100.1.a3g4g.871k.1360033241.liusj@haisum.com@9&size=23871&labelId=1&preview=preview' where refferurl='http://corp.webmail.21cn.com/webmail/readMail.do?messageid=100.1.a3g4g.871k.1360033241.liusj@haisum.com@9&size=23871&labelId=1&preview=preview' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cafe.naver.com/ArticleRead.nhn?clubid=23444932&page=1&menuid=20&boardtype=L&articleid=1033&referrerAllArticles=false' where refferurl='http://cafe.naver.com/ArticleRead.nhn?clubid=23444932&page=1&menuid=20&boardtype=L&articleid=1033&referrerAllArticles=false' ;

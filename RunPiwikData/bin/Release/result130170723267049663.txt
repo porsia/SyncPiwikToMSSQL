@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://61.135.158.90/webmail/readmail/context.action?folderName=INBOX&uid=92&location=0&coremail=' where refferurl='http://61.135.158.90/webmail/readmail/context.action?folderName=INBOX&uid=92&location=0&coremail=' ;

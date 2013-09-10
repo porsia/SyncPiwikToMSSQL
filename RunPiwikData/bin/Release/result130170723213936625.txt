@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.20.200.120/WorldClient.dll?Session=BMWAKGD&View=Message&Number=11758&Page=1' where refferurl='http://10.20.200.120/WorldClient.dll?Session=BMWAKGD&View=Message&Number=11758&Page=1' ;

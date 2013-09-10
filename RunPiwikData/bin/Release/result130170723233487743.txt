@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://crm.muyingzhijia.com/hosted?Z4gvKJo63JEzTB6xWzQ_DjhVTxoQbN-5Ylt1QDmAiLh4DF0eJSMq8FNmK6tVk71xT7RwZw==' where refferurl='http://crm.muyingzhijia.com/hosted?Z4gvKJo63JEzTB6xWzQ_DjhVTxoQbN-5Ylt1QDmAiLh4DF0eJSMq8FNmK6tVk71xT7RwZw==' ;

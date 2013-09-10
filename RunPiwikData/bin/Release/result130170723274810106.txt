@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://9.5.3.8/rcorner.pl?url1=www.muyingzhijia.com/&url2=a.wbsite.cn/gx/index.htm' where refferurl='http://9.5.3.8/rcorner.pl?url1=www.muyingzhijia.com/&url2=a.wbsite.cn/gx/index.htm' ;

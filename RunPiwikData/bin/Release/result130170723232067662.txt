@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cd.58.com/yingyou/?key=quinny&cmcskey=quinny&final=1&jump=1&specialtype=gls&sourcetype=4' where refferurl='http://cd.58.com/yingyou/?key=quinny&cmcskey=quinny&final=1&jump=1&specialtype=gls&sourcetype=4' ;

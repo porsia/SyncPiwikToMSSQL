@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://detail.tmall.com/item.htm?id=15966904023&ali_trackid=2:mm_28347190_2425761_9494155:1363752884_4k3_1896393193&spm=a230z.1.5634029.11.BlyH6D' where refferurl='http://detail.tmall.com/item.htm?id=15966904023&ali_trackid=2:mm_28347190_2425761_9494155:1363752884_4k3_1896393193&spm=a230z.1.5634029.11.BlyH6D' ;

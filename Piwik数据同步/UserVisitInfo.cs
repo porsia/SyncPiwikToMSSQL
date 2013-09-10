@@ -19,6 +19,36 @@ namespace SyncPiwikToMSSQL
         string referurl;
 
         string actionType;
+        string event_action;
+
+        string location;
+        string visitIp;
+        string locationsina;
+
+        public string Locationsina
+        {
+            get { return locationsina; }
+            set { locationsina = value; }
+        }
+
+        public string VisitIp
+        {
+            get { return visitIp; }
+            set { visitIp = value; }
+        }
+
+        public string Location
+        {
+            get { return location; }
+            set { location = value; }
+        }
+
+ 
+        public string Event_action
+        {
+            get { return event_action; }
+            set { event_action = value; }
+        }
 
         public string ActionType
         {

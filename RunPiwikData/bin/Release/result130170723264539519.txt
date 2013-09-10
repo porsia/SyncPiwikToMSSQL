@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cn.mg20.mail.yahoo.com/neo/launch?ncrumb=GU0vqz6jGV7&.rand=1292076444&nmig=yes&source=alibaba&cnNoRedirect=1' where refferurl='http://cn.mg20.mail.yahoo.com/neo/launch?ncrumb=GU0vqz6jGV7&.rand=1292076444&nmig=yes&source=alibaba&cnNoRedirect=1' ;

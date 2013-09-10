@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://202.101.6.180/gw/user/index.dll?mod=_view&sid=35h8b2b0tq7cddilnlsgavjca2&QLOG_IDR=1364459072.466' where refferurl='http://202.101.6.180/gw/user/index.dll?mod=_view&sid=35h8b2b0tq7cddilnlsgavjca2&QLOG_IDR=1364459072.466' ;

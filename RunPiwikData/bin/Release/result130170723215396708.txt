@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://agent.sogou.com/accountCtrl.php?actionMethod=viewAccountInfo&accountId=3044644&http_request_head_menu_param=1&suf_p4p_user_id=3044644' where refferurl='http://agent.sogou.com/accountCtrl.php?actionMethod=viewAccountInfo&accountId=3044644&http_request_head_menu_param=1&suf_p4p_user_id=3044644' ;

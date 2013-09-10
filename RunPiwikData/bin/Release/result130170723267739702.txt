@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://8080.net/posts/3/21507' where refferurl='http://8080.net/posts/3/21507' ;

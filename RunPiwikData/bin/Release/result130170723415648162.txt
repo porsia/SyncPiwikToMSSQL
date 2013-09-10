@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://app.weibo.com/my?topnav=1&wvr=5&uid=1761494360' where refferurl='http://app.weibo.com/my?topnav=1&wvr=5&uid=1761494360' ;

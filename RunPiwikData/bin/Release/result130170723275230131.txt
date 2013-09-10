@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://admin.e.360.cn/admin/user/detail?uid=273806997' where refferurl='http://admin.e.360.cn/admin/user/detail?uid=273806997' ;

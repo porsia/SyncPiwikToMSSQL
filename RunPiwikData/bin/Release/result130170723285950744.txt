@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://connect.etao.com/emailnotify/manage.php' where refferurl='http://connect.etao.com/emailnotify/manage.php' ;

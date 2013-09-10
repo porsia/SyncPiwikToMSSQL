@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://957gou.4321fa.com/index.php?mod=jump&act=mall&mid=8' where refferurl='http://957gou.4321fa.com/index.php?mod=jump&act=mall&mid=8' ;

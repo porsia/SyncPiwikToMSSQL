@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.246.7.12:9999/log_analyse/CommentLogData/20130205/host/www.muyingzhijia.com/bad.html' where refferurl='http://10.246.7.12:9999/log_analyse/CommentLogData/20130205/host/www.muyingzhijia.com/bad.html' ;

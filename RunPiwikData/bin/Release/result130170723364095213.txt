@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://ad.yigouchina.com/categorized_suppliers/apparatus_for_infant/' where refferurl='http://ad.yigouchina.com/categorized_suppliers/apparatus_for_infant/' ;

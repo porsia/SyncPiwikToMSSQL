@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://118.244.188.114:8000/54/muyingzhijia.com.html' where refferurl='http://118.244.188.114:8000/54/muyingzhijia.com.html' ;

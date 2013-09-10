@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://game.ali213.net/thread-4048048-1-1.html' where refferurl='http://game.ali213.net/thread-4048048-1-1.html' ;

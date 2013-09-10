@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cdn.zampdsp.com/static/scripts/yiche_google_300x250_ac_4.htm' where refferurl='http://cdn.zampdsp.com/static/scripts/yiche_google_300x250_ac_4.htm' ;

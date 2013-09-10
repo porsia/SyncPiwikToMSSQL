@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://192.168.3.10/hotel/client/authorize_hotel.php?ipaddr=&mac=60-D8-19-C1-C2-86&mode=4&userurl=http://www.muyingzhijia.com/index.aspx?utm_source=baidu' where refferurl='http://192.168.3.10/hotel/client/authorize_hotel.php?ipaddr=&mac=60-D8-19-C1-C2-86&mode=4&userurl=http://www.muyingzhijia.com/index.aspx?utm_source=baidu' ;

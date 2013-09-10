@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://app40.z.qq.com/app_list.jsp?B_UID=355228863&sid=ASM65uct5hFFUcZlEoE8BJfq&g_ut=1' where refferurl='http://app40.z.qq.com/app_list.jsp?B_UID=355228863&sid=ASM65uct5hFFUcZlEoE8BJfq&g_ut=1' ;

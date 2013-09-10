@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.duowan.com/forum.php?mod=viewthread&tid=29954188&page=1&randtag=1735397167&mobile=yes' where refferurl='http://bbs.duowan.com/forum.php?mod=viewthread&tid=29954188&page=1&randtag=1735397167&mobile=yes' ;

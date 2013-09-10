@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://192.168.96.248:3721/?_task=mail&_mbox=INBOX&_refresh=1' where refferurl='http://192.168.96.248:3721/?_task=mail&_mbox=INBOX&_refresh=1' ;

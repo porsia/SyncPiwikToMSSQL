@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://123.sogou.com/?t=1&s=1&m=B7EDA5E465C367B7B6341527601143D1&R=2144&V=4.0.2.5906&apid=&atv=1&ish=00&H=1&home=dynmark' where refferurl='http://123.sogou.com/?t=1&s=1&m=B7EDA5E465C367B7B6341527601143D1&R=2144&V=4.0.2.5906&apid=&atv=1&ish=00&H=1&home=dynmark' ;

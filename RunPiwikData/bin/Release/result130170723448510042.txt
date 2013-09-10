@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://china.alibaba.com/company/detail/contact/carolinewxz.html' where refferurl='http://china.alibaba.com/company/detail/contact/carolinewxz.html' ;

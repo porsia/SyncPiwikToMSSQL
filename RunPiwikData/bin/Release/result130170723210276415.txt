@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://202.91.246.200:8888/shops?menu_code=shop' where refferurl='http://202.91.246.200:8888/shops?menu_code=shop' ;

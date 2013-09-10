@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://925164736.qumaiwang.com/index.cgi?dis=nav' where refferurl='http://925164736.qumaiwang.com/index.cgi?dis=nav' ;

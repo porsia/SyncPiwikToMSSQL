@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://2007.smarter.com.cn/fieldMapping.php?mid=3275&chid=0' where refferurl='http://2007.smarter.com.cn/fieldMapping.php?mid=3275&chid=0' ;

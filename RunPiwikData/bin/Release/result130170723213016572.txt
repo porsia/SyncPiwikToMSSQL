@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.7.250.46/webAuth/index.htm?www.muyingzhijia.com/index.aspx' where refferurl='http://10.7.250.46/webAuth/index.htm?www.muyingzhijia.com/index.aspx' ;

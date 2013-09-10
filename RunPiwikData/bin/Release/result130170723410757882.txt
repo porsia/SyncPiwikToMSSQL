@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://fun.51fanli.com/goshop/go?id=834&go=http://www.muyingzhijia.com/shopping/productdetail.aspx?pdtID=71802&ctlid=433&tc=4001301' where refferurl='http://fun.51fanli.com/goshop/go?id=834&go=http://www.muyingzhijia.com/shopping/productdetail.aspx?pdtID=71802&ctlid=433&tc=4001301' ;

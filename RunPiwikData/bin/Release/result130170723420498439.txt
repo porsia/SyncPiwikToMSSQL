@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://blog.home.news.cn/iframe_qzy.htm' where refferurl='http://blog.home.news.cn/iframe_qzy.htm' ;

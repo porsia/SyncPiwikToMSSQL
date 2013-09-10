@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://click.mediav.com/c?type=2&db=mediav&pub=29_4096_1017874&cus=164_1724_1071454_10171827_10171827000&url=http://www.muyingzhijia.com/mama/' where refferurl='http://click.mediav.com/c?type=2&db=mediav&pub=29_4096_1017874&cus=164_1724_1071454_10171827_10171827000&url=http://www.muyingzhijia.com/mama/' ;

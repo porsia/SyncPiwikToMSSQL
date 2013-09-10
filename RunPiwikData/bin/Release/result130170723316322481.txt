@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://app.focosee.com/home/index!player.action?player.client.id=muyingzhijia&player.product.id=83823&player.productLink.id=72478' where refferurl='http://app.focosee.com/home/index!player.action?player.client.id=muyingzhijia&player.product.id=83823&player.productLink.id=72478' ;

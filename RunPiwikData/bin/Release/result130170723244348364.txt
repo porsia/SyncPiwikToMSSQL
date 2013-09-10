@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://club.tgfcer.com/wap/index.php?action=thread&tid=6313177&vt=1&tp=100&pp=100&sc=795&vf=1&sm=1&iam=ts-notop-web-lockpic-sync&css=default' where refferurl='http://club.tgfcer.com/wap/index.php?action=thread&tid=6313177&vt=1&tp=100&pp=100&sc=795&vf=1&sm=1&iam=ts-notop-web-lockpic-sync&css=default' ;

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="offlineBbhome">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.875" name="offlineBbhome">
   <DataContextMoniker Name="/offlineBbhomeDataContext" />
   <nestedChildShapes>
     <classShape Id="3a387f8d-6f64-4e4e-833e-9a5076b92fe7" absoluteBounds="3.5, 2.375, 2, 1.1895064290364583">
@@ -14,10 +14,22 @@
         <elementListCompartment Id="587fb5a4-fdef-4af3-b635-601d025b05ef" absoluteBounds="0.765, 3.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7a1b28b7-1ae4-48f9-9b6e-2c081a9a3a8b" absoluteBounds="5.75, 5.125, 2, 2.5266442871093751">
+    <classShape Id="0ec6a671-d4bd-4e4f-ae07-ad537fd61af8" absoluteBounds="6.625, 4.625, 2, 1.7625655110677081">
+      <DataClassMoniker Name="/offlineBbhomeDataContext/Piwik_CustomerAction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0263a179-964e-45f8-91b9-64e41df3f3ad" absoluteBounds="6.64, 5.085, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36aa3121-9334-4b5c-8a50-2c917c1c5a77" absoluteBounds="4.875, 7.125, 2, 3.4817427571614581">
       <DataClassMoniker Name="/offlineBbhomeDataContext/Piwik_log" />
       <nestedChildShapes>
-        <elementListCompartment Id="e5484bd9-abd1-4b81-8c4f-b9210686d64f" absoluteBounds="5.765, 5.585, 1.9700000000000002, 1.966644287109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="afb178ce-8254-4ac0-bbbd-64e186d1a862" absoluteBounds="4.89, 7.585, 1.9700000000000002, 2.921742757161458" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6a415e68-456b-4158-a49c-e350bfcb2a5e" absoluteBounds="3.375, 4.75, 2, 1.7625655110677081">
+      <DataClassMoniker Name="/offlineBbhomeDataContext/piwik_log_reffer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ab00d2b-b7b5-424c-a75c-e7ce51864f03" absoluteBounds="3.3899999999999997, 5.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

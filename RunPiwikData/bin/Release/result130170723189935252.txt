@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://111.1.47.53/?x-original-URL%3Dhttp%3A%2F%2Fwww.muyingzhijia.com%2FShopping%2Fsubcategory.aspx%3FcateID%3D27%26small%3D1' where refferurl='http://111.1.47.53/?x-original-URL%3Dhttp%3A%2F%2Fwww.muyingzhijia.com%2FShopping%2Fsubcategory.aspx%3FcateID%3D27%26small%3D1' ;

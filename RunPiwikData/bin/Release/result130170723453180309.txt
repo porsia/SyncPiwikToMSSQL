@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.xmfish.com/simple/index.php?t8026141.html' where refferurl='http://bbs.xmfish.com/simple/index.php?t8026141.html' ;

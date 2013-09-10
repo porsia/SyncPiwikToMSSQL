@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://79door.com/' where refferurl='http://79door.com/' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://act.cb.qq.com/201305/mail/edm_20130508_cuxiao/index.html?qmuin=763060067&mailid=390000000213680663630615391700' where refferurl='http://act.cb.qq.com/201305/mail/edm_20130508_cuxiao/index.html?qmuin=763060067&mailid=390000000213680663630615391700' ;

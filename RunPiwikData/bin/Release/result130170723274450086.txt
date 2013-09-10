@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://by161w.bay161.mail.live.com/default.aspx?rru=inbox&wlexpid=C740C46BDD0E46C09C0387CA279F5E4D&wlrefapp=2' where refferurl='http://by161w.bay161.mail.live.com/default.aspx?rru=inbox&wlexpid=C740C46BDD0E46C09C0387CA279F5E4D&wlrefapp=2' ;

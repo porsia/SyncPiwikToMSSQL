@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://lndnserror2.wo.com.cn:8080/issueunziped/ln130120/index2.jsp?UserUrl=www.jksjasmalsjdoiajsdjsajdsi.com' where refferurl='http://lndnserror2.wo.com.cn:8080/issueunziped/ln130120/index2.jsp?UserUrl=www.jksjasmalsjdoiajsdjsajdsi.com' ;

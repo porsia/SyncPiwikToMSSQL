@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.xinjs.cn/read.php?tid=1304745' where refferurl='http://bbs.xinjs.cn/read.php?tid=1304745' ;

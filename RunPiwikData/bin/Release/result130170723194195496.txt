@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://221.194.45.6/url.htm?url=http://www.muyingzhijia.com/shopping/productdetail.aspx?pdtID=9853' where refferurl='http://221.194.45.6/url.htm?url=http://www.muyingzhijia.com/shopping/productdetail.aspx?pdtID=9853' ;

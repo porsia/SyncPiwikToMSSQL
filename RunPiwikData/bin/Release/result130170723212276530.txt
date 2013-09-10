@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://192.168.52.251:8080/urlcollection/urlsearch/edit.do?idsqno=2459956' where refferurl='http://192.168.52.251:8080/urlcollection/urlsearch/edit.do?idsqno=2459956' ;

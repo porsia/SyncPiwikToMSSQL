@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://glb.uc.cn/msearch2/webs/columbus/search?&qd=fs&keyword=纽瑞滋鱼肝油怎么样.com' where refferurl='http://glb.uc.cn/msearch2/webs/columbus/search?&qd=fs&keyword=纽瑞滋鱼肝油怎么样.com' ;

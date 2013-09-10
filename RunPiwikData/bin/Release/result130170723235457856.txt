@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://221.122.127.20/c?s=b43ed832&w=412739&c=4501&i=5802&l=0&e=c&t=http://www.muyingzhijia.com/Promotion/activities.aspx?action=Diapers1015' where refferurl='http://221.122.127.20/c?s=b43ed832&w=412739&c=4501&i=5802&l=0&e=c&t=http://www.muyingzhijia.com/Promotion/activities.aspx?action=Diapers1015' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cool.gouwuke.com/search-%E8%8A%B1%E7%8E%8B+L.html?e=&source=INDEX&host=' where refferurl='http://cool.gouwuke.com/search-%E8%8A%B1%E7%8E%8B+L.html?e=&source=INDEX&host=' ;

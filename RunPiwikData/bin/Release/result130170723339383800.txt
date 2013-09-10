@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://companyadc.51job.com/companyads/2013/sh/haoli0121_8851wh/index.htm' where refferurl='http://companyadc.51job.com/companyads/2013/sh/haoli0121_8851wh/index.htm' ;

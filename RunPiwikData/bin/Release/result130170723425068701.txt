@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://g.yiqifa.com/gc?w=598795&u=378119&e=_54d8b8a5a424&c=4501&v=38389&i=5802&t=http://www.muyingzhijia.com/shopping/ProductDetail.aspx?PdtId=66786' where refferurl='http://g.yiqifa.com/gc?w=598795&u=378119&e=_54d8b8a5a424&c=4501&v=38389&i=5802&t=http://www.muyingzhijia.com/shopping/ProductDetail.aspx?PdtId=66786' ;

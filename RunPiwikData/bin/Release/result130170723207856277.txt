@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.188.1.2/redirect/?www.muyingzhijia.com/CustomerCenter/CustomerCenter_Order.aspx' where refferurl='http://10.188.1.2/redirect/?www.muyingzhijia.com/CustomerCenter/CustomerCenter_Order.aspx' ;

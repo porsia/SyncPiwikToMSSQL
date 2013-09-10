@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cn.ezilon.com/dir/8x105.html' where refferurl='http://cn.ezilon.com/dir/8x105.html' ;

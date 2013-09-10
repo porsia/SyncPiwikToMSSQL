@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://admin.huodong.360.cn:8361/?do=bfloor_preview&hid=3802&bid=65' where refferurl='http://admin.huodong.360.cn:8361/?do=bfloor_preview&hid=3802&bid=65' ;

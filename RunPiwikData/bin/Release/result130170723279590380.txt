@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cn.mc924.mail.yahoo.com/mc/showMessage?sMid=4&&filterBy=&.rand=313864557&midIndex=4&mid=2_0_0_1_300221_AKr60csAALwyUWKCUAbUe1v3DQQ&fromId=' where refferurl='http://cn.mc924.mail.yahoo.com/mc/showMessage?sMid=4&&filterBy=&.rand=313864557&midIndex=4&mid=2_0_0_1_300221_AKr60csAALwyUWKCUAbUe1v3DQQ&fromId=' ;

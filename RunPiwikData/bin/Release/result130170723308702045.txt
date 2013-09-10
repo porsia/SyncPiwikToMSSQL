@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://ads.beta.acesse.com/surf/surf_top.php' where refferurl='http://ads.beta.acesse.com/surf/surf_top.php' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://42.121.132.204/wifi/secondarypage/shopping.do?wifiTypeId=11&clientType=wap&apPortId=PORTID' where refferurl='http://42.121.132.204/wifi/secondarypage/shopping.do?wifiTypeId=11&clientType=wap&apPortId=PORTID' ;

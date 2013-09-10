@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://889088.jimdo.com/' where refferurl='http://889088.jimdo.com/' ;

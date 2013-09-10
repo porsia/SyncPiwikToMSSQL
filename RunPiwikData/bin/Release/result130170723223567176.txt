@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cft-spoa.oss.com/spoaWeb/Self/Show.aspx?mode=check&id=348546' where refferurl='http://cft-spoa.oss.com/spoaWeb/Self/Show.aspx?mode=check&id=348546' ;

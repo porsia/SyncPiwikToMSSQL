@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://alb.baidu.com/web/index.html?' where refferurl='http://alb.baidu.com/web/index.html?' ;

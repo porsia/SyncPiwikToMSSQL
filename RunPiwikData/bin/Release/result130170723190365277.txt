@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://175.102.6.200:6080/php/urlblock.php?vsys=1&cat=80&title=shopping&rulename=panpost-int-to-ext-20&sip=10.192.82.41&url=http://www.muyingzhijia.com/' where refferurl='http://175.102.6.200:6080/php/urlblock.php?vsys=1&cat=80&title=shopping&rulename=panpost-int-to-ext-20&sip=10.192.82.41&url=http://www.muyingzhijia.com/' ;

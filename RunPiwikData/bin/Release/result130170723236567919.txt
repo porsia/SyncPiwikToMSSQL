@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://co125w.col125.mail.live.com/default.aspx?rru=getmsg?msg=A8A47F8B-3CBC-11E2-8605-00237DE4A66C' where refferurl='http://co125w.col125.mail.live.com/default.aspx?rru=getmsg?msg=A8A47F8B-3CBC-11E2-8605-00237DE4A66C' ;

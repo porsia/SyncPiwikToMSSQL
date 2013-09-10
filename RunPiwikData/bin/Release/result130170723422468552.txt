@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://china.makepolo.com/mpp_69/71mm7rgolc4.html' where refferurl='http://china.makepolo.com/mpp_69/71mm7rgolc4.html' ;

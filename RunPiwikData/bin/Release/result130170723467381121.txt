@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://jsyz.vnet.cn/tysj/float/popo186.asp' where refferurl='http://jsyz.vnet.cn/tysj/float/popo186.asp' ;

@@ -26,19 +26,8 @@ namespace SyncPiwikToMSSQL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.100.98;Initial Catalog=Holyca;User ID=sa;Password=!@#qweasdzx" +
-            "c")]
-        public string HolycaConnectionString {
-            get {
-                return ((string)(this["HolycaConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.100.242\\myzjdw2008;Initial Catalog=offLineBBHome;User ID=sa;P" +
-            "assword=123456")]
+            "assword=123456;Connection Timeout=120;")]
         public string offLineBBHomeConnectionString {
             get {
                 return ((string)(this["offLineBBHomeConnectionString"]));
@@ -49,10 +38,21 @@ namespace SyncPiwikToMSSQL.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=10.0.0.9;Initial Catalog=bbHome;Persist Security Info=True;User ID=sa" +
-            ";Password=!@#qweasdzxc")]
+            ";Password=!@#qweasdzxc;Connection Timeout=120;")]
         public string bbHomeConnectionString {
             get {
                 return ((string)(this["bbHomeConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.100.98;Initial Catalog=Holyca;User ID=sa;Password=!@#qweasdzx" +
+            "c;Connection Timeout=120;")]
+        public string HolycaConnectionString {
+            get {
+                return ((string)(this["HolycaConnectionString"]));
             }
         }
     }

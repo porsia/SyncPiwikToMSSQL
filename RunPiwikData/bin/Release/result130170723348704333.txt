@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cn.bing.com/search?q=贝亲简捷式蒸汽消毒器+RA08&qs=n&form=QBLH&pq=贝亲简捷式蒸汽消毒器+ra08&sc=0-0&sp=-1&sk=' where refferurl='http://cn.bing.com/search?q=贝亲简捷式蒸汽消毒器+RA08&qs=n&form=QBLH&pq=贝亲简捷式蒸汽消毒器+ra08&sc=0-0&sp=-1&sk=' ;

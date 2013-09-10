@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.dospy.com/viewthread.php?tid=14370250&bbsid=299' where refferurl='http://bbs.dospy.com/viewthread.php?tid=14370250&bbsid=299' ;

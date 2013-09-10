@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://360taobao.qumaiwang.com/index.cgi?dis=nav' where refferurl='http://360taobao.qumaiwang.com/index.cgi?dis=nav' ;

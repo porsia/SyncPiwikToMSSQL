@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://220.115.240.18/1-25256/040cd4a9-f3fb-4bc3-863d-1f8a92e0de85_118.29.242.92/0.6183812282979488/http://www.muyingzhijia.com/' where refferurl='http://220.115.240.18/1-25256/040cd4a9-f3fb-4bc3-863d-1f8a92e0de85_118.29.242.92/0.6183812282979488/http://www.muyingzhijia.com/' ;

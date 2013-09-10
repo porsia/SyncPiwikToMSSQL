@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.1.17.200/webAuth/index.htm?www.muyingzhijia.com/Shopping/LandingPage.aspx?sbjId=470&utm_source=baidu&utm_medium=brd&utm_campaign=sbjId470' where refferurl='http://10.1.17.200/webAuth/index.htm?www.muyingzhijia.com/Shopping/LandingPage.aspx?sbjId=470&utm_source=baidu&utm_medium=brd&utm_campaign=sbjId470' ;

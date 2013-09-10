@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.16.15.221:8360/360_oss/templateCheck.php' where refferurl='http://10.16.15.221:8360/360_oss/templateCheck.php' ;

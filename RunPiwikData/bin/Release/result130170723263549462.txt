@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://222.73.18.32/about-us/introduction' where refferurl='http://222.73.18.32/about-us/introduction' ;

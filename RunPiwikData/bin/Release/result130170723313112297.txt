@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://detail.etao.com/7718615639531688562.htm?spm=1002.8.0.289.BwUfq6&rebatepartner=181&price=12.00&save=0.26' where refferurl='http://detail.etao.com/7718615639531688562.htm?spm=1002.8.0.289.BwUfq6&rebatepartner=181&price=12.00&save=0.26' ;

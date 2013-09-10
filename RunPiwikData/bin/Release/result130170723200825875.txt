@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://3g.mmbang.com/bang/508/920955' where refferurl='http://3g.mmbang.com/bang/508/920955' ;

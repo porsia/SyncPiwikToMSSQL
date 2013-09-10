@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbb16.dg0.cn/channel.asp?id=9' where refferurl='http://bbb16.dg0.cn/channel.asp?id=9' ;

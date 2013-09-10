@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://58.222.218.110:12345/farseerweb/config/startStantdardConfig.do' where refferurl='http://58.222.218.110:12345/farseerweb/config/startStantdardConfig.do' ;

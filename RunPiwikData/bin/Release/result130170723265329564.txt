@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://58.221.72.179:5752/bjproduct/infoManager/editBaoliao.do?id=198379&status=0' where refferurl='http://58.221.72.179:5752/bjproduct/infoManager/editBaoliao.do?id=198379&status=0' ;

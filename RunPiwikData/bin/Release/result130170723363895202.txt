@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://a.corp.youdao.com/audit2/sponsor/detail.s?sId=255352' where refferurl='http://a.corp.youdao.com/audit2/sponsor/detail.s?sId=255352' ;

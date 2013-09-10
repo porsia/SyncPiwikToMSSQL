@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cn.bing.com/search?q=muyingzhijia&qs=n&form=QBRE&pq=muyingzhijia&sc=8-12&sp=-1&sk=' where refferurl='http://cn.bing.com/search?q=muyingzhijia&qs=n&form=QBRE&pq=muyingzhijia&sc=8-12&sp=-1&sk=' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cn.lgworld.com/mobile/common/error/androidPhone.jsp?modelCd=P970-CN' where refferurl='http://cn.lgworld.com/mobile/common/error/androidPhone.jsp?modelCd=P970-CN' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://adv.unionabcd.com/adv/178.jsp?uid=HDV-1089_5860-3C25E1-40F0BB&ip=192.168.6.103&mac=00-0C-29-23-52-A4&js=0&surl=www.muyingzhijia.com' where refferurl='http://adv.unionabcd.com/adv/178.jsp?uid=HDV-1089_5860-3C25E1-40F0BB&ip=192.168.6.103&mac=00-0C-29-23-52-A4&js=0&surl=www.muyingzhijia.com' ;

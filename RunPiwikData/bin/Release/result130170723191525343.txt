@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://blog.sina.com.cn/s/blog_54de6f5a0100oof6.html' where refferurl='http://blog.sina.com.cn/s/blog_54de6f5a0100oof6.html' ;

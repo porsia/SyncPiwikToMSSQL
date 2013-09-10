@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://connect.etao.com/emailnotify/index.php?tb_lm_id=ryt_ext&nid=8478013798755386589' where refferurl='http://connect.etao.com/emailnotify/index.php?tb_lm_id=ryt_ext&nid=8478013798755386589' ;

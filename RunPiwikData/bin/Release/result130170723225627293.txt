@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://192.168.0.50/webAuth/index.htm?www.muyingzhijia.com/Shopping/SearchResult.aspx?condition=%E7%BE%8E%E7%B4%A0' where refferurl='http://192.168.0.50/webAuth/index.htm?www.muyingzhijia.com/Shopping/SearchResult.aspx?condition=%E7%BE%8E%E7%B4%A0' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://album30.z.qq.com/album/recent_photo_list.jsp?sid=AXN7yg9JwWua5YZRngoept1F&B_UID=253497169&pageNo=3' where refferurl='http://album30.z.qq.com/album/recent_photo_list.jsp?sid=AXN7yg9JwWua5YZRngoept1F&B_UID=253497169&pageNo=3' ;

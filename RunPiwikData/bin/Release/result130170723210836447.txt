@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.198.1.1:880/rdmsxx.htm?hi=-503200246&j=95827839&h=www.muyingzhijia.com' where refferurl='http://10.198.1.1:880/rdmsxx.htm?hi=-503200246&j=95827839&h=www.muyingzhijia.com' ;

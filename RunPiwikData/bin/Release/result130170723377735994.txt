@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://demo06.mobcon.outside07/' where refferurl='http://demo06.mobcon.outside07/' ;

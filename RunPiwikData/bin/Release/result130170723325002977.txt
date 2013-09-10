@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.shhbm.com/thread-232664-1-1.html' where refferurl='http://bbs.shhbm.com/thread-232664-1-1.html' ;

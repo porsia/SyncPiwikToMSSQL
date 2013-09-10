@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://control.blog.sina.com.cn/blog_rebuild/blog/controllers/setpage.php?uid=1722369471&status=pageset' where refferurl='http://control.blog.sina.com.cn/blog_rebuild/blog/controllers/setpage.php?uid=1722369471&status=pageset' ;

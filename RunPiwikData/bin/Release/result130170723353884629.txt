@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://baidu-tv.com/w/1.jpg' where refferurl='http://baidu-tv.com/w/1.jpg' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://1.1.1.3/asp_portal.php?url=www.muyingzhijia.com&randno=228199164' where refferurl='http://1.1.1.3/asp_portal.php?url=www.muyingzhijia.com&randno=228199164' ;

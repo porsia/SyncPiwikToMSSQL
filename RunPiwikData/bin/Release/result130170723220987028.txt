@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://220.115.251.169/cgi-bin/userpostF?g=20130304204354_001_eth2_Fee&n=090010025184&u=www.muyingzhijia.com//' where refferurl='http://220.115.251.169/cgi-bin/userpostF?g=20130304204354_001_eth2_Fee&n=090010025184&u=www.muyingzhijia.com//' ;

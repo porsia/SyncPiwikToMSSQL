@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.1.20.16/wm/mail/read.html?sessionid=04523478777fda0a11bad7aa7ff2b8d65&uid=2612&msgid=7&mbox=user.huangwei1' where refferurl='http://10.1.20.16/wm/mail/read.html?sessionid=04523478777fda0a11bad7aa7ff2b8d65&uid=2612&msgid=7&mbox=user.huangwei1' ;

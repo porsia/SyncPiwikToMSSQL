@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://c.duomai.com/index.php?m=siter_act&a=view&ads_id=114' where refferurl='http://c.duomai.com/index.php?m=siter_act&a=view&ads_id=114' ;

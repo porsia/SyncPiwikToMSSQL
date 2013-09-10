@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://betamarketing.muyingzhijia.com/Shopping/FlashSalesDetails.aspx?fid=11&utm_source=myzj&utm_medium=email&utm_term=flash&utm_campaign=cm130531' where refferurl='http://betamarketing.muyingzhijia.com/Shopping/FlashSalesDetails.aspx?fid=11&utm_source=myzj&utm_medium=email&utm_term=flash&utm_campaign=cm130531' ;

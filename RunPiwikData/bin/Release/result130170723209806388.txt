@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.130.147.241/cgi-bin/mail_mgr/cgi-bin/show_mail.cgi?mail_id=368&date=2013-05-27' where refferurl='http://10.130.147.241/cgi-bin/mail_mgr/cgi-bin/show_mail.cgi?mail_id=368&date=2013-05-27' ;

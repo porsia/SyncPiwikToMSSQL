@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://baike.baidu.com/view/2950721.htm?fromTaglist' where refferurl='http://baike.baidu.com/view/2950721.htm?fromTaglist' ;

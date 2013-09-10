@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://adm123.w96.idccenter.net/?p=94' where refferurl='http://adm123.w96.idccenter.net/?p=94' ;

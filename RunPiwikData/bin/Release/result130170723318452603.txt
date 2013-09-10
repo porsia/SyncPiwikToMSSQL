@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://appmail.mail.10086.cn/main.htm?func=global:execTemp&sid=MTM3MDY1MTUzODAwMTk0MjI3OTc5NAAA000003&rnd=632&cguid=0831500483299&mtime=458' where refferurl='http://appmail.mail.10086.cn/main.htm?func=global:execTemp&sid=MTM3MDY1MTUzODAwMTk0MjI3OTc5NAAA000003&rnd=632&cguid=0831500483299&mtime=458' ;

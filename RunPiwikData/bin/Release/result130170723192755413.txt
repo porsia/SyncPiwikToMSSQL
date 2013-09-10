@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://buy.tmall.com/order/order_result.htm' where refferurl='http://buy.tmall.com/order/order_result.htm' ;

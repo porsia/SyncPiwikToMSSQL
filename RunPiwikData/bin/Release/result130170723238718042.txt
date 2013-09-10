@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.cstong.net/read-htm-tid-687937-1.html' where refferurl='http://bbs.cstong.net/read-htm-tid-687937-1.html' ;

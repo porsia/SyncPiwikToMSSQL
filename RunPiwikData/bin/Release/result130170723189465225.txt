@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.0.0.58:8086/flashbuy/adminflashbuybrands.aspx' where refferurl='http://10.0.0.58:8086/flashbuy/adminflashbuybrands.aspx' ;

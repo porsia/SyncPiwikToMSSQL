@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://buy.e2tao.com/redirect.htm?target=http://www.muyingzhijia.com' where refferurl='http://buy.e2tao.com/redirect.htm?target=http://www.muyingzhijia.com' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://220.115.240.20/PASV/1EB5179F5BC241AD86036EAD90B3E0A5/' where refferurl='http://220.115.240.20/PASV/1EB5179F5BC241AD86036EAD90B3E0A5/' ;

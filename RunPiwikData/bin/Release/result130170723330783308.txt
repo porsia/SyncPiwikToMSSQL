@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://ah.189.cn/netup/dns/push.action?areatag=3403' where refferurl='http://ah.189.cn/netup/dns/push.action?areatag=3403' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://buy.2345.com/buy_core/server/stage/index.php?ctl=activity/activityContent&act=editInfo&whichActivity=31&activityTotal=50&id=9600&check=2' where refferurl='http://buy.2345.com/buy_core/server/stage/index.php?ctl=activity/activityContent&act=editInfo&whichActivity=31&activityTotal=50&id=9600&check=2' ;

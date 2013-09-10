@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://114.cnjiaju.com/?mod=directory&cid=305' where refferurl='http://114.cnjiaju.com/?mod=directory&cid=305' ;

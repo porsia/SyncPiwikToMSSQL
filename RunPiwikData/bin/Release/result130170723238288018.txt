@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://baike.soso.com/v29754235.htm' where refferurl='http://baike.soso.com/v29754235.htm' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://download.get.live.cn/components/safe/weibo3/sina.html?email=astro_008@126.com' where refferurl='http://download.get.live.cn/components/safe/weibo3/sina.html?email=astro_008@126.com' ;

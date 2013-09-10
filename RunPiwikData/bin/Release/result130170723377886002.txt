@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://detail.tmall.com/item.htm?spm=a1z10.1.w4555235003.2.flOTXf&id=10772595290&' where refferurl='http://detail.tmall.com/item.htm?spm=a1z10.1.w4555235003.2.flOTXf&id=10772595290&' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://appmail.mail.10086.cn/RmWeb/proxy.htm?sid=MTM2MTE3MjM3NzAwMTMyNDI2OTE5MgAA000007' where refferurl='http://appmail.mail.10086.cn/RmWeb/proxy.htm?sid=MTM2MTE3MjM3NzAwMTMyNDI2OTE5MgAA000007' ;

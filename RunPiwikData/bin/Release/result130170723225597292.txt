@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://192.168.0.230/main/indiv_form.php?indiv_id=390383' where refferurl='http://192.168.0.230/main/indiv_form.php?indiv_id=390383' ;

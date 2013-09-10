@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://best.duomai.com/best.php?m=ads_list&a=index&status=1' where refferurl='http://best.duomai.com/best.php?m=ads_list&a=index&status=1' ;

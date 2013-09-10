@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://1.1.1.1/login.html' where refferurl='http://1.1.1.1/login.html' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://click.seemao.com/index.php?r=cash/shop&view=&type=4&cv=1.9.1031.8210' where refferurl='http://click.seemao.com/index.php?r=cash/shop&view=&type=4&cv=1.9.1031.8210' ;

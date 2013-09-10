@@ -3,6 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncPiwikToMSSQL", "SyncPiwikToMSSQL.csproj", "{3F9D6F94-3F75-4325-AC2F-72AC01C1248C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncUpdateColumn", "..\SyncUpdateColumn\SyncUpdateColumn.csproj", "{3EF0E065-3B15-42FF-A082-A5FF7EE2CE7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncUtil", "..\SyncUtil\SyncUtil.csproj", "{D402A62E-61DA-4DBD-A6ED-1DA9EFECC5DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncDataBll", "..\SyncDataBll\SyncDataBll.csproj", "{12169187-0D0F-4045-B99E-D8D0C805CC8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunPiwikData", "..\RunPiwikData\RunPiwikData.csproj", "{2E55D610-FEF0-4608-9E5C-1FF2BE43907F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +21,22 @@ Global
 		{3F9D6F94-3F75-4325-AC2F-72AC01C1248C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F9D6F94-3F75-4325-AC2F-72AC01C1248C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F9D6F94-3F75-4325-AC2F-72AC01C1248C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EF0E065-3B15-42FF-A082-A5FF7EE2CE7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EF0E065-3B15-42FF-A082-A5FF7EE2CE7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EF0E065-3B15-42FF-A082-A5FF7EE2CE7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EF0E065-3B15-42FF-A082-A5FF7EE2CE7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D402A62E-61DA-4DBD-A6ED-1DA9EFECC5DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D402A62E-61DA-4DBD-A6ED-1DA9EFECC5DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D402A62E-61DA-4DBD-A6ED-1DA9EFECC5DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D402A62E-61DA-4DBD-A6ED-1DA9EFECC5DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12169187-0D0F-4045-B99E-D8D0C805CC8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12169187-0D0F-4045-B99E-D8D0C805CC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12169187-0D0F-4045-B99E-D8D0C805CC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12169187-0D0F-4045-B99E-D8D0C805CC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E55D610-FEF0-4608-9E5C-1FF2BE43907F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E55D610-FEF0-4608-9E5C-1FF2BE43907F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E55D610-FEF0-4608-9E5C-1FF2BE43907F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E55D610-FEF0-4608-9E5C-1FF2BE43907F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

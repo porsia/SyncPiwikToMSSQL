@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://a.m.tmall.com/r10889316965.htm?sid=0d423a0b9ae69b8e314a3b731a5b339a&ttid=b0uc08&areaId=310100' where refferurl='http://a.m.tmall.com/r10889316965.htm?sid=0d423a0b9ae69b8e314a3b731a5b339a&ttid=b0uc08&areaId=310100' ;

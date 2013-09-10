@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cft-spoa.oss.com/spoaWeb/Self/ShortcutPay/Check.aspx?mode=check_fk&id=118530' where refferurl='http://cft-spoa.oss.com/spoaWeb/Self/ShortcutPay/Check.aspx?mode=check_fk&id=118530' ;

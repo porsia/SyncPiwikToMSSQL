@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://b2c.b2b-b2c-c2c.com/Trade-Url-2-38-MuYingErTong.html' where refferurl='http://b2c.b2b-b2c-c2c.com/Trade-Url-2-38-MuYingErTong.html' ;

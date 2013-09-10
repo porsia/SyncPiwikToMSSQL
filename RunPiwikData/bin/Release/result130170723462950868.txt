@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://crm.simba.taobao.com/tucrm2/b2c/external/list' where refferurl='http://crm.simba.taobao.com/tucrm2/b2c/external/list' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cb.qq.com/shop/mall/mall_list.html?iSubTypeId=65' where refferurl='http://cb.qq.com/shop/mall/mall_list.html?iSubTypeId=65' ;

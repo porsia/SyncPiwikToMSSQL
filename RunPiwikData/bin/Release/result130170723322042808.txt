@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bbs.oeeee.com/thread-16119316-1-1.html?bsh_bid=238380657&bsh_vuid=0' where refferurl='http://bbs.oeeee.com/thread-16119316-1-1.html?bsh_bid=238380657&bsh_vuid=0' ;

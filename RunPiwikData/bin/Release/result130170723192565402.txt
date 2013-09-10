@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://blog.livedoor.jp/mu8sayowithourababy/archives/cat_50819.html?p=2' where refferurl='http://blog.livedoor.jp/mu8sayowithourababy/archives/cat_50819.html?p=2' ;

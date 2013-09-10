@@ -33,9 +33,15 @@ namespace SyncPiwikToMSSQL
     partial void InsertGA_Log(GA_Log instance);
     partial void UpdateGA_Log(GA_Log instance);
     partial void DeleteGA_Log(GA_Log instance);
+    partial void InsertPiwik_CustomerAction(Piwik_CustomerAction instance);
+    partial void UpdatePiwik_CustomerAction(Piwik_CustomerAction instance);
+    partial void DeletePiwik_CustomerAction(Piwik_CustomerAction instance);
     partial void InsertPiwik_log(Piwik_log instance);
     partial void UpdatePiwik_log(Piwik_log instance);
     partial void DeletePiwik_log(Piwik_log instance);
+    partial void Insertpiwik_log_reffer(piwik_log_reffer instance);
+    partial void Updatepiwik_log_reffer(piwik_log_reffer instance);
+    partial void Deletepiwik_log_reffer(piwik_log_reffer instance);
     #endregion
 		
 		public offlineBbhomeDataContext() : 
@@ -84,11 +90,27 @@ namespace SyncPiwikToMSSQL
 			}
 		}
 		
+		public System.Data.Linq.Table<Piwik_CustomerAction> Piwik_CustomerActions
+		{
+			get
+			{
+				return this.GetTable<Piwik_CustomerAction>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Piwik_log> Piwik_logs
 		{
 			get
 			{
 				return this.GetTable<Piwik_log>();
+			}
+		}
+		
+		public System.Data.Linq.Table<piwik_log_reffer> piwik_log_reffers
+		{
+			get
+			{
+				return this.GetTable<piwik_log_reffer>();
 			}
 		}
 	}
@@ -296,6 +318,164 @@ namespace SyncPiwikToMSSQL
 		}
 	}
 	
+	[Table(Name="dbo.Piwik_CustomerAction")]
+	public partial class Piwik_CustomerAction : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _label;
+		
+		private int _nb_actions;
+		
+		private int _idsubdatatable;
+		
+		private System.DateTime _dt;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnlabelChanging(string value);
+    partial void OnlabelChanged();
+    partial void Onnb_actionsChanging(int value);
+    partial void Onnb_actionsChanged();
+    partial void OnidsubdatatableChanging(int value);
+    partial void OnidsubdatatableChanged();
+    partial void OndtChanging(System.DateTime value);
+    partial void OndtChanged();
+    #endregion
+		
+		public Piwik_CustomerAction()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_label", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string label
+		{
+			get
+			{
+				return this._label;
+			}
+			set
+			{
+				if ((this._label != value))
+				{
+					this.OnlabelChanging(value);
+					this.SendPropertyChanging();
+					this._label = value;
+					this.SendPropertyChanged("label");
+					this.OnlabelChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_nb_actions", DbType="Int NOT NULL")]
+		public int nb_actions
+		{
+			get
+			{
+				return this._nb_actions;
+			}
+			set
+			{
+				if ((this._nb_actions != value))
+				{
+					this.Onnb_actionsChanging(value);
+					this.SendPropertyChanging();
+					this._nb_actions = value;
+					this.SendPropertyChanged("nb_actions");
+					this.Onnb_actionsChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_idsubdatatable", DbType="Int NOT NULL")]
+		public int idsubdatatable
+		{
+			get
+			{
+				return this._idsubdatatable;
+			}
+			set
+			{
+				if ((this._idsubdatatable != value))
+				{
+					this.OnidsubdatatableChanging(value);
+					this.SendPropertyChanging();
+					this._idsubdatatable = value;
+					this.SendPropertyChanged("idsubdatatable");
+					this.OnidsubdatatableChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_dt", DbType="DateTime NOT NULL")]
+		public System.DateTime dt
+		{
+			get
+			{
+				return this._dt;
+			}
+			set
+			{
+				if ((this._dt != value))
+				{
+					this.OndtChanging(value);
+					this.SendPropertyChanging();
+					this._dt = value;
+					this.SendPropertyChanged("dt");
+					this.OndtChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[Table(Name="dbo.Piwik_log")]
 	public partial class Piwik_log : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -320,6 +500,16 @@ namespace SyncPiwikToMSSQL
 		
 		private string _refferurl;
 		
+		private string _keyword;
+		
+		private string _event_action;
+		
+		private string _visitIp;
+		
+		private string _location;
+		
+		private string _locationsina;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -342,6 +532,16 @@ namespace SyncPiwikToMSSQL
     partial void OnspenttimeChanged();
     partial void OnrefferurlChanging(string value);
     partial void OnrefferurlChanged();
+    partial void OnkeywordChanging(string value);
+    partial void OnkeywordChanged();
+    partial void Onevent_actionChanging(string value);
+    partial void Onevent_actionChanged();
+    partial void OnvisitIpChanging(string value);
+    partial void OnvisitIpChanged();
+    partial void OnlocationChanging(string value);
+    partial void OnlocationChanged();
+    partial void OnlocationsinaChanging(string value);
+    partial void OnlocationsinaChanged();
     #endregion
 		
 		public Piwik_log()
@@ -525,6 +725,264 @@ namespace SyncPiwikToMSSQL
 					this._refferurl = value;
 					this.SendPropertyChanged("refferurl");
 					this.OnrefferurlChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_keyword", DbType="VarChar(2000)")]
+		public string keyword
+		{
+			get
+			{
+				return this._keyword;
+			}
+			set
+			{
+				if ((this._keyword != value))
+				{
+					this.OnkeywordChanging(value);
+					this.SendPropertyChanging();
+					this._keyword = value;
+					this.SendPropertyChanged("keyword");
+					this.OnkeywordChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_event_action", DbType="VarChar(1000)")]
+		public string event_action
+		{
+			get
+			{
+				return this._event_action;
+			}
+			set
+			{
+				if ((this._event_action != value))
+				{
+					this.Onevent_actionChanging(value);
+					this.SendPropertyChanging();
+					this._event_action = value;
+					this.SendPropertyChanged("event_action");
+					this.Onevent_actionChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_visitIp", DbType="Char(30)")]
+		public string visitIp
+		{
+			get
+			{
+				return this._visitIp;
+			}
+			set
+			{
+				if ((this._visitIp != value))
+				{
+					this.OnvisitIpChanging(value);
+					this.SendPropertyChanging();
+					this._visitIp = value;
+					this.SendPropertyChanged("visitIp");
+					this.OnvisitIpChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_location", DbType="VarChar(100)")]
+		public string location
+		{
+			get
+			{
+				return this._location;
+			}
+			set
+			{
+				if ((this._location != value))
+				{
+					this.OnlocationChanging(value);
+					this.SendPropertyChanging();
+					this._location = value;
+					this.SendPropertyChanged("location");
+					this.OnlocationChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_locationsina", DbType="VarChar(100)")]
+		public string locationsina
+		{
+			get
+			{
+				return this._locationsina;
+			}
+			set
+			{
+				if ((this._locationsina != value))
+				{
+					this.OnlocationsinaChanging(value);
+					this.SendPropertyChanging();
+					this._locationsina = value;
+					this.SendPropertyChanged("locationsina");
+					this.OnlocationsinaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.piwik_log_reffer")]
+	public partial class piwik_log_reffer : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _refferurl;
+		
+		private string _source;
+		
+		private string _medium;
+		
+		private int _Id;
+		
+		private string _refergbk;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnrefferurlChanging(string value);
+    partial void OnrefferurlChanged();
+    partial void OnsourceChanging(string value);
+    partial void OnsourceChanged();
+    partial void OnmediumChanging(string value);
+    partial void OnmediumChanged();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnrefergbkChanging(string value);
+    partial void OnrefergbkChanged();
+    #endregion
+		
+		public piwik_log_reffer()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_refferurl", DbType="VarChar(5000) NOT NULL", CanBeNull=false)]
+		public string refferurl
+		{
+			get
+			{
+				return this._refferurl;
+			}
+			set
+			{
+				if ((this._refferurl != value))
+				{
+					this.OnrefferurlChanging(value);
+					this.SendPropertyChanging();
+					this._refferurl = value;
+					this.SendPropertyChanged("refferurl");
+					this.OnrefferurlChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_source", DbType="VarChar(5000)")]
+		public string source
+		{
+			get
+			{
+				return this._source;
+			}
+			set
+			{
+				if ((this._source != value))
+				{
+					this.OnsourceChanging(value);
+					this.SendPropertyChanging();
+					this._source = value;
+					this.SendPropertyChanged("source");
+					this.OnsourceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_medium", DbType="VarChar(5000)")]
+		public string medium
+		{
+			get
+			{
+				return this._medium;
+			}
+			set
+			{
+				if ((this._medium != value))
+				{
+					this.OnmediumChanging(value);
+					this.SendPropertyChanging();
+					this._medium = value;
+					this.SendPropertyChanged("medium");
+					this.OnmediumChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_refergbk", DbType="VarChar(5000)")]
+		public string refergbk
+		{
+			get
+			{
+				return this._refergbk;
+			}
+			set
+			{
+				if ((this._refergbk != value))
+				{
+					this.OnrefergbkChanging(value);
+					this.SendPropertyChanging();
+					this._refergbk = value;
+					this.SendPropertyChanged("refergbk");
+					this.OnrefergbkChanged();
 				}
 			}
 		}

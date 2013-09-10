@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://222.43.97.214/nip/announcementPropell.do?a=b&n=L13225409185@HZ&str=222.43.96.84&host=www.muyingzhijia.com' where refferurl='http://222.43.97.214/nip/announcementPropell.do?a=b&n=L13225409185@HZ&str=222.43.96.84&host=www.muyingzhijia.com' ;

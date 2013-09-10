@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://a.corp.youdao.com/audit2/adgroup/viewAdGroup.s' where refferurl='http://a.corp.youdao.com/audit2/adgroup/viewAdGroup.s' ;

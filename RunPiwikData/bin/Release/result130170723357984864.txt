@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://c.duomai.com/track.php?sid=16850001&aid=114&euid=25225&t=http://www.muyingzhijia.com/index.aspx' where refferurl='http://c.duomai.com/track.php?sid=16850001&aid=114&euid=25225&t=http://www.muyingzhijia.com/index.aspx' ;

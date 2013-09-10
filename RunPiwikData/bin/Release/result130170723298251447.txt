@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cc.ganji.com/wu/b1/s/_%E8%8A%B1%E7%8E%8B%E5%B0%BF%E7%BA%B8%E8%A3%A4/' where refferurl='http://cc.ganji.com/wu/b1/s/_%E8%8A%B1%E7%8E%8B%E5%B0%BF%E7%BA%B8%E8%A3%A4/' ;

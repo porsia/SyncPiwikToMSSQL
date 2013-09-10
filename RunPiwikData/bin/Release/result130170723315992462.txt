@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://ameblo.jp/shanghaikids/entry-11287366741.html' where refferurl='http://ameblo.jp/shanghaikids/entry-11287366741.html' ;

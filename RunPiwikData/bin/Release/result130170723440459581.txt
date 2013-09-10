@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bj.58.com/yingyou/jh_%E8%B4%B9%E9%9B%AA%E8%B9%A6%E8%B7%B3%E4%B9%90%E5%9B%AD/' where refferurl='http://bj.58.com/yingyou/jh_%E8%B4%B9%E9%9B%AA%E8%B9%A6%E8%B7%B3%E4%B9%90%E5%9B%AD/' ;

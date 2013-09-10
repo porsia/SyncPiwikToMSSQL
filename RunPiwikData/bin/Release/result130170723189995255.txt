@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://116.228.223.212:7001/tlcgw/merCardPay.do' where refferurl='http://116.228.223.212:7001/tlcgw/merCardPay.do' ;

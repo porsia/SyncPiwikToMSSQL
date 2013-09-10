@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cb.qq.com/get_jifen_all.html?iSubTypeId=9&attach=400.1010.00.117.00' where refferurl='http://cb.qq.com/get_jifen_all.html?iSubTypeId=9&attach=400.1010.00.117.00' ;

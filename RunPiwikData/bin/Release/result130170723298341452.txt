@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://changzhou.ganji.com/wu/b1/s/_%E5%A9%B4%E5%84%BF%E8%A1%A3%E6%9C%8D/' where refferurl='http://changzhou.ganji.com/wu/b1/s/_%E5%A9%B4%E5%84%BF%E8%A1%A3%E6%9C%8D/' ;

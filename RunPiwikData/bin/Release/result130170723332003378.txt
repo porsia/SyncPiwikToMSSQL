@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://ati.smzdm.com/bl/hotinfor-list.php?act=assigned&bltype=1&sid=55' where refferurl='http://ati.smzdm.com/bl/hotinfor-list.php?act=assigned&bltype=1&sid=55' ;

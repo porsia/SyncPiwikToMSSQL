@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cn.bing.com/search?q=婴儿用品网站&form=QBRE&pc=APPM&pq=婴儿用品w&sc=12-5&sp=1&sk=' where refferurl='http://cn.bing.com/search?q=婴儿用品网站&form=QBRE&pc=APPM&pq=婴儿用品w&sc=12-5&sp=1&sk=' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://baike.hao123.cn/index.php?doc-view-8595' where refferurl='http://baike.hao123.cn/index.php?doc-view-8595' ;

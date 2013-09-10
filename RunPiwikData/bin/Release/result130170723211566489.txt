@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://0535.cn-114.cn/list.asp?classid=77' where refferurl='http://0535.cn-114.cn/list.asp?classid=77' ;

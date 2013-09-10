@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://click.linktech.cn/?l=99999&tu=http://www.muyingzhijia.com/?attach=100.1040.00.204.01&u_id=27917333&m=myzj&a=A100136514' where refferurl='http://click.linktech.cn/?l=99999&tu=http://www.muyingzhijia.com/?attach=100.1040.00.204.01&u_id=27917333&m=myzj&a=A100136514' ;

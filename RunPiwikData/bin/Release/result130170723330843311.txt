@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://ailier83.geihui.net/' where refferurl='http://ailier83.geihui.net/' ;

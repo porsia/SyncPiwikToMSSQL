@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://112.90.146.54/dataspider/prices/index.php?rid=5101&sid=51&stid=0&lgh=5' where refferurl='http://112.90.146.54/dataspider/prices/index.php?rid=5101&sid=51&stid=0&lgh=5' ;

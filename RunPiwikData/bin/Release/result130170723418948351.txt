@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://bj.ganji.com/site/s/_宝宝服装' where refferurl='http://bj.ganji.com/site/s/_宝宝服装' ;

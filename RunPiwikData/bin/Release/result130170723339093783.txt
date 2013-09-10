@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cnc.qzs.qq.com/qzone/v6/setting/permit/link.html' where refferurl='http://cnc.qzs.qq.com/qzone/v6/setting/permit/link.html' ;

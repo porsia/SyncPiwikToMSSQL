@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://111.208.67.205/ads/html/69/index.html' where refferurl='http://111.208.67.205/ads/html/69/index.html' ;

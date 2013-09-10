@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://channel.yihaodian.com/muying/1/' where refferurl='http://channel.yihaodian.com/muying/1/' ;

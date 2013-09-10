@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://aop.cm.com/cgi-bin/weixin/weixin_common_audit_cgi?BizType=weixin&SubBizType=weixin_txtimglong_audit_NNN' where refferurl='http://aop.cm.com/cgi-bin/weixin/weixin_common_audit_cgi?BizType=weixin&SubBizType=weixin_txtimglong_audit_NNN' ;

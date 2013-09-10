@@ -1,0 +1,10 @@
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\bin\Debug\SyncUpdateColumn.exe.config
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\bin\Debug\SyncUpdateColumn.exe
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\bin\Debug\SyncUpdateColumn.pdb
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\bin\Debug\SyncDataBll.dll
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\bin\Debug\SyncUtil.dll
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\bin\Debug\SyncUtil.pdb
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\bin\Debug\SyncDataBll.pdb
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\obj\Debug\ResolveAssemblyReference.cache
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\obj\Debug\SyncUpdateColumn.exe
+E:\github\SyncPiwikToMSSQL\SyncUpdateColumn\obj\Debug\SyncUpdateColumn.pdb

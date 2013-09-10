@@ -1,0 +1,5 @@
+E:\github\SyncPiwikToMSSQL\SyncUtil\bin\Debug\SyncUtil.dll
+E:\github\SyncPiwikToMSSQL\SyncUtil\bin\Debug\SyncUtil.pdb
+E:\github\SyncPiwikToMSSQL\SyncUtil\obj\Debug\ResolveAssemblyReference.cache
+E:\github\SyncPiwikToMSSQL\SyncUtil\obj\Debug\SyncUtil.dll
+E:\github\SyncPiwikToMSSQL\SyncUtil\obj\Debug\SyncUtil.pdb

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://221.122.127.102:90/checknewprod.aspx?tmid=861731&targetDate=2013-04-23' where refferurl='http://221.122.127.102:90/checknewprod.aspx?tmid=861731&targetDate=2013-04-23' ;

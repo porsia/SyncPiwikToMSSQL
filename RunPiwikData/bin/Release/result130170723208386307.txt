@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://192.168.50.41:7070/ndbrowser/login.aspx?m=F0DEF1F4ADD4&g=&u=www.muyingzhijia.com&t=2' where refferurl='http://192.168.50.41:7070/ndbrowser/login.aspx?m=F0DEF1F4ADD4&g=&u=www.muyingzhijia.com&t=2' ;

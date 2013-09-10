@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://2011wg.swglm.org/' where refferurl='http://2011wg.swglm.org/' ;

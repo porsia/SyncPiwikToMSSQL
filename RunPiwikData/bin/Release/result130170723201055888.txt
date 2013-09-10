@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://61.132.255.198/ts/20130115/dsh.php' where refferurl='http://61.132.255.198/ts/20130115/dsh.php' ;

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://admin.linktech.cn/merchant/link_list_wait.htm?merchant_id=myzj&type1=ALL&status=R&width=&height=&mode=mupdate' where refferurl='http://admin.linktech.cn/merchant/link_list_wait.htm?merchant_id=myzj&type1=ALL&status=R&width=&height=&mode=mupdate' ;

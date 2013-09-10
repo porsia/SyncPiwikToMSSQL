@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://202.85.213.25:10086/admin/promotion/tpromotion/?create_time__year=2013&o=11&p=2&create_time__day=6&create_time__month=6&ot=asc' where refferurl='http://202.85.213.25:10086/admin/promotion/tpromotion/?create_time__year=2013&o=11&p=2&create_time__day=6&create_time__month=6&ot=asc' ;

@@ -6,8 +6,7 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Web;
 using System.Net;
-
-
+using System.Diagnostics;
 
 using Boodoll.PageBL;
 using Newtonsoft.Json;
@@ -15,32 +14,94 @@ using Newtonsoft.Json;
 namespace SyncPiwikToMSSQL
 {
  
-
+   
     class Program
     {
-
+ 
        // public static  Dictionary<int, string> allProductName = getAllProductIDName();
         public static string dfrom = System.Configuration.ConfigurationSettings.AppSettings["updateform"];
         public static string token = System.Configuration.ConfigurationSettings.AppSettings["token"];
-       
-        static void Main(string[] args)
+        public static int intent = 30;
+
+        static string updateLocation(string visitIp,string location)
+        {
+            string newLocation = location;
+            try
+            {
+
+                string userInfo = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml("http://int.dpool.sina.com.cn/iplookup/iplookup.php?ip=" + visitIp, System.Text.Encoding.GetEncoding("GB2312"));
+
+                string[] ipLocation = userInfo.Split('\t');
+
+                if (ipLocation.Length >= 5)
+                { 
+                    newLocation=ipLocation[5] + ", " + ipLocation[4] + ", " + ipLocation[3];
+                }
+                else if(ipLocation.Length >= 4)
+                {
+                      newLocation=  ipLocation[4] + ", " + ipLocation[3];
+                }
+                else if(ipLocation.Length >= 3)
+                {
+                      newLocation=   ipLocation[3];
+                }
+                
+
+                //if (!string.IsNullOrEmpty(ipLocation[5]) && !string.IsNullOrEmpty(ipLocation[4]) && !string.IsNullOrEmpty(ipLocation[3]))
+            
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
+                return location;
+            }
+            return newLocation;
+        }
+
+        static void test()
         {
 
+           
+            string dt = DateTime.Now.AddDays(-6).ToString("yyyy-MM-dd");
+
+            for (int d = 0; d < 20; d++)
+            {
+                var stopWatch = new Stopwatch();
+                stopWatch.Start();
+                int filter_limit = intent * (d + 1);
+                int filter_offset = intent * d;
+
+                string url = string.Format("http://10.0.0.131:920/index.php?module=API&filter_limit={0}&filter_offset={1}&segment=visitLocalHour==10&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token);
+
+
+
+
+                string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, Encoding.GetEncoding("GB2312"));
+                stopWatch.Stop();
+
+
+                Console.WriteLine(stopWatch.Elapsed.TotalMilliseconds);
+                Console.Read();
+            }
+        }
+        static void Main(string[] args)
+        {
+         
             string errr = "";
             Console.WriteLine("开始分析数据:");
 
-
-             int pageType = 31;
+            
              for (int d = int.Parse(dfrom); d < 0; d++)
              {
-                 string writeFile = string.Format("{0}\\result{1}.txt", System.Threading.Thread.GetDomain().BaseDirectory, DateTime.Now.ToFileTimeUtc().ToString());
+                 string writeFile1 = string.Format("{0}\\result{1}.txt", System.Threading.Thread.GetDomain().BaseDirectory, DateTime.Now.ToFileTimeUtc().ToString());
            
                  List<UserVisitInfo> userList = new List<UserVisitInfo>();
          
                  string dt = DateTime.Now.AddDays(d).ToString("yyyy-MM-dd");
 
-
-                 if (!DataFarm.ExistGaData(pageType, DateTime.Parse(dt), DateTime.Parse(dt)))
+                 int pageType1 = 31;
+                 if (!DataFarm.ExistGaData(pageType1,DateTime.Parse(dt),DateTime.Parse(dt)))
                  {
                      //数据读取完毕退出
                      bool exitFlag = false;
@@ -48,103 +109,119 @@ namespace SyncPiwikToMSSQL
 
                      try
                      {
-
-                         for (int mi = 0; mi < int.MaxValue; mi++)
+                         for (int hour = 0; hour < 24;hour++ )
                          {
-                             if (exitFlag)
-                                 break;
-
-                             #region 循环读取数据
-
-                             // string url = "http://click.muyingzhijia.com/index.php?module=API&filter_limit=100&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date=" + dtStr + "&expanded=1&token_auth=453170c79e8f0ad5dcd1f0b2ce1ecf23";
-                             string url = "http://click.muyingzhijia.com/index.php?module=API&filter_limit=100&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date=" + dt + "&expanded=1&token_auth=" + token;
-                             ;
-
-                             if (maxVisitID > 0)
-                                 url = url + "&maxIdVisit=" + maxVisitID;
-
-                             string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, Encoding.GetEncoding("GB2312"));
-
-                             Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
-
-                             int count = jsonObject.Count();
- 
-
-                             for (int i = 0; i < count; i++)
+                             exitFlag = false;
+                             #region 循环拉取
+                             for (int mi = 0; mi < int.MaxValue; mi++)
                              {
+                              
+                                 if (exitFlag)
+                                     break;
 
-                                 JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
+                                 #region 循环读取数据
 
+                                 // string url = "http://click.muyingzhijia.com/index.php?module=API&filter_limit=100&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date=" + dtStr + "&expanded=1&token_auth=453170c79e8f0ad5dcd1f0b2ce1ecf23";
+                                 int filter_limit = intent * (mi + 1);
+                                 int filter_offset = intent * mi;
 
-                                 // qcount["actionDetails"];
-                                 JavaScriptArray actionDetails = (JavaScriptArray)qcount["actionDetails"];
+                                 string url = string.Format("http://10.0.0.131:920/index.php?module=API&segment=visitLocalHour=={4}&filter_limit={0}&filter_offset={1}&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token,hour);
 
+                                 // string url = string.Format("http://10.0.0.131:922/index.php?module=API&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token);
 
-                                 string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePretty"].ToString();
-                                 if (Convert.ToDateTime(lastActionDateTime) < Convert.ToDateTime(dt))
+                                 //if (maxVisitID > 0)
+                                 //    url = url + "&maxIdVisit=" + maxVisitID;
+
+                                 string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, Encoding.GetEncoding("GB2312"));
+                                 xml = xml.Replace("\\u", "\\\\u");
+
+                                 if (xml == null || xml.Length < 10)
                                  {
                                      exitFlag = true;
                                      continue;
 
                                  }
-                                 //if(userList.Count>5)
-                                 //{
-                                 //    exitFlag = true;
-                                 //    break;
+                                 Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
 
-                                 //}
-
-                                 //if (Convert.ToDateTime(lastActionDateTime) < DateTime.Now.AddHours(-1))
-                                 //{
-                                 //    exitFlag = true;
-                                 //    break;
-
-                                 //}
-
-                                 if (i == 0)
-                                     maxVisitID = Convert.ToInt64(qcount["idVisit"]);
-                                 else
-                                     maxVisitID = Convert.ToInt64(qcount["idVisit"]) > maxVisitID ? maxVisitID : Convert.ToInt64(qcount["idVisit"]);
-
-                                 if (actionDetails.Count > 0)
+                                 int count = 0;
+                                 if (jsonObject != null && xml.Length > 5)
                                  {
-                                     string userid = "";
-                                     string guid = "";
-                                     string referurl = "";
+                                     count = jsonObject.Count();
+                                 }
+                                 else
+                                 {
+                                     continue;
+                                 }
 
-                                     JavaScriptObject customVariables = null;
-                                     try
+
+                                 for (int i = 0; i < count; i++)
+                                 {
+
+                                     JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
+
+                                     JavaScriptArray actionDetails = (JavaScriptArray)qcount["actionDetails"];
+
+
+                                     string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePretty"].ToString();
+                                     string visitIp = qcount["visitIp"].ToString();
+                                     string location = ConvertUnicodeStringToChinese(qcount["location"].ToString());
+
+
+                                     string locationsina = updateLocation(visitIp, location);
+
+
+                                     if (Convert.ToDateTime(lastActionDateTime) < Convert.ToDateTime(dt))
                                      {
-                                         customVariables = (JavaScriptObject)qcount["customVariables"];
-                                         userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
-                                         guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
-
-                                         if (qcount.Keys.Contains("referrerUrl"))
-                                        referurl=Converter.ParseString(qcount["referrerUrl"],"");
-                                         // [43] = {[referrerUrl, http://open.union.360.cn/go?bid=2000311&cid=3&qihoo_id=36110&url=http%3A%2F%2Fwww.muyingzhijia.com%2FPromotion%2Factivities.aspx%3Faction%3DDiapers1015&sign=9e3beae85e&aname=mall_list&asign=ef49dae593&fname=mall_list&fsign=40e9a54cce]}
-
-                                     }
-                                     catch (Exception ex)
-                                     {
+                                         exitFlag = true;
                                          continue;
+
                                      }
 
+                                     if (i == 0)
+                                         maxVisitID = Convert.ToInt64(qcount["idVisit"]);
+                                     else
+                                         maxVisitID = Convert.ToInt64(qcount["idVisit"]) > maxVisitID ? maxVisitID : Convert.ToInt64(qcount["idVisit"]);
 
-
-
-                                     //message = getUserInfo(guid, userid);
-
-
-                                     actionDetails.ForEach(item =>
+                                     if (actionDetails.Count > 0)
                                      {
-                                         JavaScriptObject itemobject = (JavaScriptObject)item;
+                                         string userid = "";
+                                         string guid = "";
+                                         string referurl = "";
 
-                                         string tmpUrl = "";
-                                         if (itemobject.Keys.Contains("url") && itemobject["url"] != null)
+                                         JavaScriptObject customVariables = null;
+                                         try
                                          {
-                                             tmpUrl = itemobject["url"].ToString();
+                                             customVariables = (JavaScriptObject)qcount["customVariables"];
+                                             userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
+                                             guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
 
+                                             if (qcount.Keys.Contains("referrerUrl"))
+                                             {
+                                                 referurl = Converter.ParseString(qcount["referrerUrl"], "");
+
+                                                 if (referurl.Length > 0)
+                                                 {
+                                                     if (referurl.Length > 2000)
+                                                         referurl = referurl.Substring(0, 2000);
+                                                 }
+                                             }
                                          }
+                                         catch (Exception ex)
+                                         {
+                                             continue;
+                                         }
+
+                                         actionDetails.ForEach(item =>
+                                         {
+                                             JavaScriptObject itemobject = (JavaScriptObject)item;
+
+
+                                             string tmpUrl = "";
+                                             if (itemobject.Keys.Contains("url") && itemobject["url"] != null)
+                                             {
+                                                 tmpUrl = itemobject["url"].ToString();
+
+                                             }
                                              UserVisitInfo vinfo = new UserVisitInfo();
                                              if (vinfo != null)
                                              {
@@ -157,66 +234,154 @@ namespace SyncPiwikToMSSQL
                                                  vinfo.LastVisitTime = lastActionDateTime;
 
                                                  if (itemobject.Keys.Contains("pageTitle"))
-                                                     vinfo.PageTitle = Converter.ParseString(itemobject["pageTitle"], "");
+                                                     vinfo.PageTitle = UnicodeToString(Converter.ParseString(itemobject["pageTitle"], ""));
                                                  else
                                                      vinfo.PageTitle = "";
-                                                     // ConvertUnicodeStringToChinese(Converter.ParseString(itemobject["pageTitle"], ""));
+
                                                  if (itemobject.Keys.Contains("type"))
                                                      vinfo.Action = Converter.ParseString(itemobject["type"], "");
                                                  else
                                                      vinfo.Action = "";
 
+                                                 vinfo.VisitIp = visitIp;
+                                                 vinfo.Location = location;
+                                                 vinfo.Locationsina = locationsina;
+
+
+
+                                                 if (itemobject.Keys.Contains("customVariables"))
+                                                 {
+                                                     JavaScriptObject customerDetail = (JavaScriptObject)itemobject["customVariables"];
+
+                                                     //  var q = customerDetail.Values.First();
+                                                     string q1 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(1).Value.ToString();
+                                                     string q2 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(0).Value.ToString();
+
+                                                     vinfo.Event_action = UnicodeToString(q2);
+
+                                                     if (vinfo.Event_action.Length >= 1000)
+                                                     {
+                                                         vinfo.Event_action = vinfo.Event_action.Substring(0, 1000);
+                                                     }
+                                                 }
+
+
+
                                                  vinfo.Referurl = referurl;
+
                                                  userList.Add(vinfo);
-                                                
-                                                 //List<UserVisitInfo> vt = new List<UserVisitInfo>();
-                                                 //vt.Add(vinfo);
-                                                 //DataFarm.insert_piwiklog(vt);
 
                                              }
-
-
-                                       
-                                     });
+                                         });
+                                     }
                                  }
 
-
-                                 Console.WriteLine(lastActionDateTime + "," + dt + "," + i + "," + mi+ "," + "finish.");
-
+                                 Console.WriteLine(dt + ",Hour:" +hour+","+ mi + "," + "finish.");
+                                 #endregion
                              }
 
 
+                             #endregion 结束循环
 
+                         }
 
-                             #endregion
-                         }
-                         }
-                          catch (Exception ex)
-                         {
+                     }
+                     catch (Exception ex)
+                     {
                              errr += ex.Message;
-                             Console.WriteLine(ex.Message);
-                         }
-                    
-                    
+                             Console.WriteLine(ex.ToString());
+                     }
+
                      userList = userList.Distinct().ToList();
                      if (userList.Count > 0)
                      {
                          string msg = "";
+                         Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "update piwik_log DB.");
                          if (DataFarm.insert_piwiklog(userList,out msg))
                          {
-                             DataFarm.UpdateGaBaseData(pageType, DateTime.Parse(dt), DateTime.Parse(dt));
-                             Console.WriteLine(DateTime.Now + "," + pageType + "," + dt + "," + "finish.");
+                             Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "update piwik_log_reffer DB.");
+                             DataFarm.UpdateGaBaseData(pageType1, DateTime.Parse(dt), DateTime.Parse(dt));
+
+                             //var reffers = userList.Where(u => u.Referurl != null).Select(u => u.Referurl).ToList();
+
+                             //if (!DataFarm.insert_piwik_log_reffer(reffers))
+                             //{
+                             //    errr += ("insert_piwik_log_reffer fail " + DateTime.Parse(dt));
+                             //}
+
+                             Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "finish.");
                          }
 
                          if (!string.IsNullOrEmpty(msg))
                              errr += msg;
                      }
                  
-                        
-                    
-                    // CreateReport(userList);
-                     writeLog(writeFile, userList,errr);
+                     writeLog(writeFile1, userList,errr);
                  
+                 }
+
+                 int pageType2 = 32;
+
+
+                 if (!DataFarm.ExistGaData(pageType2, DateTime.Parse(dt), DateTime.Parse(dt)))
+                 {
+                     List<Piwik_CustomerAction> customerActionList = new List<Piwik_CustomerAction>();
+                     string url = "http://10.0.0.131:920/index.php?module=API&method=CustomVariables.getCustomVariables&format=JSON&idSite=1&period=day&date=" + dt + "&expanded=1&filter_limit=500&token_auth=453170c79e8f0ad5dcd1f0b2ce1ecf23";
+
+                     string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, System.Text.Encoding.UTF8);
+
+                     try
+                     {
+                         xml = xml.Replace("\\u", "\\\\u");
+                         Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
+
+
+                         int count = jsonObject.Count;
+                         for (int i = 0; i < count; i++)
+                         {
+                             JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
+
+
+                             // qcount["actionDetails"];
+
+                             int nb_actions = 0;
+                             if (qcount.Keys.Contains("nb_uniq_visitors"))
+                             {
+                                 nb_actions = Converter.ParseInt(qcount["nb_uniq_visitors"], 0);
+                             }
+                             else
+                             {
+                                 nb_actions = Converter.ParseInt(qcount["nb_actions"], 0);
+
+                             }
+
+                             customerActionList.Add(
+                                  new Piwik_CustomerAction()
+                                  {
+
+                                      dt = DateTime.Parse(dt),
+                                      idsubdatatable = Converter.ParseInt(qcount["idsubdatatable"], 1),
+                                      label = UnicodeToString(qcount["label"].ToString()),
+                                      nb_actions = nb_actions
+                                  }
+                               );
+
+
+                         }
+
+                         string msg = "";
+                         if (DataFarm.insert_piwikCsAction(customerActionList, out msg))
+                         {
+                             DataFarm.UpdateGaBaseData(pageType2, DateTime.Parse(dt), DateTime.Parse(dt));
+                             Console.WriteLine(DateTime.Now + "," + pageType2 + "," + dt + "," + "finish.");
+                         }
+
+
+                     }
+                     catch (Exception ex)
+                     {
+                         string exx = ex.Message;
+                     }
                  }
              }
 
@@ -224,18 +389,20 @@ namespace SyncPiwikToMSSQL
             
           
         }
-        public static string ConvertUnicodeStringToChinese(string unicodeString)
+        public static string ConvertUnicodeStringToChinese(string unicodeString) 
         {
             if (string.IsNullOrEmpty(unicodeString))
                 return string.Empty;
 
             string outStr = unicodeString;
 
-            Regex re = new Regex("[0123456789abcdef]{4}", RegexOptions.IgnoreCase);
-            MatchCollection mc = re.Matches(unicodeString);
+          //  Regex re = new Regex("[0123456789abcdef]{4}", RegexOptions.IgnoreCase);
+
+            MatchCollection mc = Regex.Matches(unicodeString, "(\\\\u([\\w]{4}))");
+       
             foreach (Match ma in mc)
             {
-                outStr = outStr.Replace(ma.Value, ConverUnicodeStringToChar(ma.Value).ToString());
+                outStr = outStr.Replace(ma.Value, UnicodeToString(ma.Value).ToString());
             }
             return outStr;
         }
@@ -246,6 +413,39 @@ namespace SyncPiwikToMSSQL
             char outStr = Char.MinValue;
             outStr = (char)int.Parse(str, System.Globalization.NumberStyles.HexNumber);
             return outStr;
+        }
+        public static string UnicodeToString(string text)
+        {
+             MatchCollection mc = Regex.Matches(text, "([\\w]+)|(\\\\u([\\w]{4}))");
+
+            //MatchCollection mc = Regex.Matches(text, "(\\\\u([\\w]{4}))");
+            if (mc != null && mc.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (Match m2 in mc)
+                {
+                    string v = m2.Value;
+                    if (v.StartsWith("\\u"))
+                    {
+                        string word = v.Substring(2);
+                        byte[] codes = new byte[2];
+                        int code = Convert.ToInt32(word.Substring(0, 2), 16);
+                        int code2 = Convert.ToInt32(word.Substring(2), 16);
+                        codes[0] = (byte)code2;
+                        codes[1] = (byte)code;
+                        sb.Append(Encoding.Unicode.GetString(codes));
+                    }
+                    else
+                    {
+                        sb.Append(v);
+                    }
+                }
+                return sb.ToString();
+            }
+            else
+            {
+                return text;
+            }
         }
 
         public static string unicode2str(string str)
@@ -349,6 +549,23 @@ namespace SyncPiwikToMSSQL
             return null;
              
            
+        }
+
+        public static bool checkUserInfo(UserVisitInfo v)
+        {
+            bool flag = true;
+            try
+            {
+
+                if (v.Guid.Length > 50 || v.Url.Length > 2000 || v.Action.Length > 50 || v.PageTitle.Length > 500 || (v.Referurl!=null&&v.Referurl.Length > 2000) || (v.Event_action!=null&&v.Event_action.Length > 1000) || v.VisitIp.Length > 30 || v.Location.Length > 100)
+                    flag = false;
+
+                return flag;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
 
 

@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://container.api.taobao.com/container/authManager?spm=0.0.0.0.IDAdY4&curPage=10' where refferurl='http://container.api.taobao.com/container/authManager?spm=0.0.0.0.IDAdY4&curPage=10' ;

@@ -1,0 +1,10 @@
+E:\github\SyncPiwikToMSSQL\RunPiwikData\bin\Release\RunPiwikData.exe
+E:\github\SyncPiwikToMSSQL\RunPiwikData\bin\Release\RunPiwikData.pdb
+E:\github\SyncPiwikToMSSQL\RunPiwikData\bin\Release\Boodoll.PageBL.dll
+E:\github\SyncPiwikToMSSQL\RunPiwikData\bin\Release\Newtonsoft.Json.dll
+E:\github\SyncPiwikToMSSQL\RunPiwikData\bin\Release\Boodoll.SQLDataProvider.dll
+E:\github\SyncPiwikToMSSQL\RunPiwikData\bin\Release\Boodoll.WCFProvider.dll
+E:\github\SyncPiwikToMSSQL\RunPiwikData\obj\Release\ResolveAssemblyReference.cache
+E:\github\SyncPiwikToMSSQL\RunPiwikData\obj\Release\RunPiwikData.exe
+E:\github\SyncPiwikToMSSQL\RunPiwikData\obj\Release\RunPiwikData.pdb
+E:\github\SyncPiwikToMSSQL\RunPiwikData\bin\Release\RunPiwikData.exe.config

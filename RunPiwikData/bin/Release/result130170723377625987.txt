@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://demo.zhiphp.com/cate-11.html' where refferurl='http://demo.zhiphp.com/cate-11.html' ;

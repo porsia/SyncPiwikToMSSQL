@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://3gie.cn/site/entity/show-more-page.do?modId=14069' where refferurl='http://3gie.cn/site/entity/show-more-page.do?modId=14069' ;

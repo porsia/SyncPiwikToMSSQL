@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://10.32.50.202/tmw/32ffc5aH19ad8_0/mailmain?type=msgcontent&sessionid=32ffc5aH19ad8_0' where refferurl='http://10.32.50.202/tmw/32ffc5aH19ad8_0/mailmain?type=msgcontent&sessionid=32ffc5aH19ad8_0' ;

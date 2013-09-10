@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cn.bing.com/search?setmkt=zh-CN&q=母婴之家' where refferurl='http://cn.bing.com/search?setmkt=zh-CN&q=母婴之家' ;

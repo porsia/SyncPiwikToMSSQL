@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://corp.ezcap.cn/200016748.html' where refferurl='http://corp.ezcap.cn/200016748.html' ;

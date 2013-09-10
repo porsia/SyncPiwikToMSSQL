@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://click.muyingzhijia.com/index.php?module=MultiSites&action=index&idSite=1&period=day&date=yesterday' where refferurl='http://click.muyingzhijia.com/index.php?module=MultiSites&action=index&idSite=1&period=day&date=yesterday' ;

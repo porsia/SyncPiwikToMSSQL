@@ -1,0 +1,1 @@
+update piwik_log_reffer set refergbk='http://cb.qq.com/shop/act.html?attach=100.1230.06.000.00' where refferurl='http://cb.qq.com/shop/act.html?attach=100.1230.06.000.00' ;

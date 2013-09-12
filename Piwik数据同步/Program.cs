@@ -59,429 +59,298 @@ namespace SyncPiwikToMSSQL
             return newLocation;
         }
 
-        static void test()
-        {
 
-            List<string> uids = new List<string>();
-            string dt = DateTime.Now.AddDays(-6).ToString("yyyy-MM-dd");
-            var stopWatch = new Stopwatch();
-            stopWatch.Start();
-            for (int d = 0; d < 24; d++)
-            {
-              
-
-                for (int run = 0; run < int.MaxValue; run++)
-                 {
-                     int filter_limit = intent * (run + 1);
-                     int filter_offset = intent * run;
-
-                     string url = string.Format("http://10.0.0.131:920/index.php?module=API&filter_sort_column=idvisit&filter_sort_order=desc&filter_limit={0}&filter_offset={1}&segment=visitLocalHour=={4}&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token, d);
-
-
-
-
-                string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, Encoding.GetEncoding("GB2312"));
-                stopWatch.Stop();
-
- 
-                Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
-
-                int count = 0;
-                if (jsonObject != null && xml.Length > 5)
-                {
-                    count = jsonObject.Count();
-                }
-                else
-                {
-                    count = 0;
-                    break;
-                }
-                 
-
-
-                for (int i = 0; i < count; i++)
-                {
-
-                    JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
-
-                    JavaScriptArray actionDetails = (JavaScriptArray)qcount["actionDetails"];
-
-
-                    string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePretty"].ToString();
-                    string visitIp = qcount["visitIp"].ToString();
-                    string location = ConvertUnicodeStringToChinese(qcount["location"].ToString());
-                    string locationsina = updateLocation(visitIp, location);
-                    if (actionDetails.Count > 0)
-                    {
-                        string userid = "-1";
-                        string guid = "";
-                        string referurl = "";
-
-                        JavaScriptObject customVariables = null;
-                        try
-                        {
-
-                            if (qcount.Keys.Contains("referrerUrl"))
-                            {
-                                referurl = Converter.ParseString(qcount["referrerUrl"], "");
-
-                                if (referurl.Length > 0)
-                                {
-                                    if (referurl.Length > 2000)
-                                        referurl = referurl.Substring(0, 2000);
-                                }
-                            }
-
-                            customVariables = (JavaScriptObject)qcount["customVariables"];
-                            userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
-                            guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
-                            uids.Add(guid);
-
-                            if (Convert.ToDateTime(lastActionDateTime) < Convert.ToDateTime(dt))
-                            {
-                                Console.WriteLine(lastActionDateTime+",error");
-                                continue;
-                            }
-
-
-                            Console.WriteLine(lastActionDateTime+","+d+","+DateTime.Now+","+uids.Distinct().Count());
-                            continue;
-                        }
-                        catch (Exception ex)
-                        {
-                            userid = "-1";
-                            guid = "";
-                            continue;
-
-                        }
-
-                        if (string.IsNullOrEmpty(guid) || guid.Length < 5)
-                        {
-                            if (guid == "zmo3k1vh5ils4hqy50hghcbq20130218202738939")
-                                referurl = "11";
-                            actionDetails.ForEach(item =>
-                            {
-
-                                JavaScriptObject itemobject = (JavaScriptObject)item;
-                            });
-                        }
-                    }
-                }
-
-                }
-
-
-             
-            }
-
-            Console.WriteLine(stopWatch.Elapsed.TotalMilliseconds);
-            Console.Read();
-        }
         static void Main(string[] args)
         {
-            
+
             string errr = "";
             Console.WriteLine("开始分析数据:");
 
             List<string> uids = new List<string>();
-             for (int d = int.Parse(dfrom); d < 0; d++)
-             {
-                 string writeFile1 = string.Format("{0}\\result{1}.txt", System.Threading.Thread.GetDomain().BaseDirectory, DateTime.Now.ToFileTimeUtc().ToString());
-           
-                 List<UserVisitInfo> userList = new List<UserVisitInfo>();
-         
-                 string dt = DateTime.Now.AddDays(d).ToString("yyyy-MM-dd");
+            for (int d = int.Parse(dfrom); d < 0; d++)
+            {
+                string writeFile1 = string.Format("{0}\\result{1}.txt", System.Threading.Thread.GetDomain().BaseDirectory, DateTime.Now.ToFileTimeUtc().ToString());
 
-                 int pageType1 = 31;
-                 if (!DataFarm.ExistGaData(pageType1,DateTime.Parse(dt),DateTime.Parse(dt)))
-                 {
-                     //数据读取完毕退出
-                     bool exitFlag = false;
-                     Int64 maxVisitID = 0;
+                List<UserVisitInfo> userList = new List<UserVisitInfo>();
 
-                     try
-                     {
-                         for (int hour = 0; hour < 24;hour++ )
-                         {
-                             exitFlag = false;
-                             #region 循环拉取
-                             for (int mi = 0; mi < int.MaxValue; mi++)
-                             {
-                              
-                                 if (exitFlag)
-                                     break;
+                string dt = DateTime.Now.AddDays(d).ToString("yyyy-MM-dd");
 
-                                 #region 循环读取数据
+                int pageType1 = 31;
+                if (!DataFarm.ExistGaData(pageType1, DateTime.Parse(dt), DateTime.Parse(dt)))
+                {
+                    //数据读取完毕退出
+                    bool exitFlag = false;
+                    Int64 maxVisitID = 0;
 
-                                 // string url = "http://click.muyingzhijia.com/index.php?module=API&filter_limit=100&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date=" + dtStr + "&expanded=1&token_auth=453170c79e8f0ad5dcd1f0b2ce1ecf23";
-                                 int filter_limit = intent * (mi + 1);
-                                 int filter_offset = intent * mi;
+                    try
+                    {
+                        #region 循环拉取
+                        for (int mi = 0; mi < int.MaxValue; mi++)
+                        {
 
-                                 string url = string.Format("http://10.0.0.131:920/index.php?module=API&filter_sort_column=idvisit&filter_sort_order=desc&segment=visitLocalHour=={4}&filter_limit={0}&filter_offset={1}&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token, hour);
+                            if (exitFlag)
+                                break;
 
-                                 // string url = string.Format("http://10.0.0.131:922/index.php?module=API&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token);
+                            #region 循环读取数据
 
-                                 //if (maxVisitID > 0)
-                                 //    url = url + "&maxIdVisit=" + maxVisitID;
+                            int filter_limit = intent; // intent * (mi + 1);
+                            int filter_offset = intent * mi;
 
-                                 string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, Encoding.GetEncoding("GB2312"));
-                                 xml = xml.Replace("\\u", "\\\\u");
+                            string url = string.Format("http://10.0.0.131:922/index.php?module=API&filter_limit={0}&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={1}&expanded=1&token_auth={2}", filter_limit, dt, token);
 
-                                 if (xml == null || xml.Length < 10)
+                            if (maxVisitID > 0)
+                                url = url + "&maxIdVisit=" + maxVisitID;
+
+                            string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, Encoding.GetEncoding("GB2312"));
+                            xml = xml.Replace("\\u", "\\\\u");
+
+                            if (xml == null || xml.Length < 10)
+                            {
+                                exitFlag = true;
+                                continue;
+
+                            }
+                            Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
+
+                            int count = 0;
+                            if (jsonObject != null && xml.Length > 5)
+                            {
+                                count = jsonObject.Count();
+                            }
+                            else
+                            {
+                                continue;
+                            }
+
+
+                            for (int i = 0; i < count; i++)
+                            {
+
+                                JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
+
+                                JavaScriptArray actionDetails = (JavaScriptArray)qcount["actionDetails"];
+
+
+                                string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePretty"].ToString();
+                                string visitIp = qcount["visitIp"].ToString();
+                                string location = ConvertUnicodeStringToChinese(qcount["location"].ToString());
+                                string locationsina = updateLocation(visitIp, location);
+
+                                if (Convert.ToDateTime(lastActionDateTime) < Convert.ToDateTime(dt))
+                                {
+                                    exitFlag = true;
+                                    continue;
+                                }
+
+                                //Console.WriteLine(visitIp+",time,"+lastActionDateTime);
+                                if (i == 0)
+                                    maxVisitID = Convert.ToInt64(qcount["idVisit"]);
+                                else
+                                    maxVisitID = Convert.ToInt64(qcount["idVisit"]) > maxVisitID ? maxVisitID : Convert.ToInt64(qcount["idVisit"]);
+
+                                if (actionDetails.Count > 0)
+                                {
+                                    string userid = "-1";
+                                    string guid = "";
+                                    string referurl = "";
+
+                                    JavaScriptObject customVariables = null;
+                                    try
+                                    {
+
+                                        if (qcount.Keys.Contains("referrerUrl"))
+                                        {
+                                            referurl = Converter.ParseString(qcount["referrerUrl"], "");
+
+                                            if (referurl.Length > 0)
+                                            {
+                                                if (referurl.Length > 2000)
+                                                    referurl = referurl.Substring(0, 2000);
+                                            }
+                                        }
+
+                                        customVariables = (JavaScriptObject)qcount["customVariables"];
+                                        userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
+                                        guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
+                                        if (!uids.Any(u => u.ToString() == guid))
+                                            uids.Add(guid);
+
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        userid = "-1";
+                                        guid = "";
+                                        continue;
+                                    }
+
+                                    actionDetails.ForEach(item =>
+                                    {
+                                        JavaScriptObject itemobject = (JavaScriptObject)item;
+
+
+                                        string tmpUrl = "";
+                                        if (itemobject.Keys.Contains("url") && itemobject["url"] != null)
+                                        {
+                                            tmpUrl = itemobject["url"].ToString();
+
+                                        }
+                                        UserVisitInfo vinfo = new UserVisitInfo();
+                                        if (vinfo != null)
+                                        {
+                                            vinfo.Guid = guid;
+                                            vinfo.Userid = userid;
+                                            if (itemobject.Keys.Contains("timeSpent"))
+                                                vinfo.Spent = Converter.ParseString(itemobject["timeSpent"], "");
+
+                                            vinfo.Url = tmpUrl;
+                                            vinfo.LastVisitTime = lastActionDateTime;
+
+                                            if (itemobject.Keys.Contains("pageTitle"))
+                                                vinfo.PageTitle = UnicodeToString(Converter.ParseString(itemobject["pageTitle"], ""));
+                                            else
+                                                vinfo.PageTitle = "";
+
+                                            if (itemobject.Keys.Contains("type"))
+                                                vinfo.Action = Converter.ParseString(itemobject["type"], "");
+                                            else
+                                                vinfo.Action = "";
+
+                                            vinfo.VisitIp = visitIp;
+                                            vinfo.Location = location;
+                                            vinfo.Locationsina = locationsina;
+
+
+
+                                            if (itemobject.Keys.Contains("customVariables"))
+                                            {
+                                                JavaScriptObject customerDetail = (JavaScriptObject)itemobject["customVariables"];
+
+                                                //  var q = customerDetail.Values.First();
+                                                string q1 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(1).Value.ToString();
+                                                string q2 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(0).Value.ToString();
+
+                                                vinfo.Event_action = UnicodeToString(q2);
+
+                                                if (vinfo.Event_action.Length >= 1000)
+                                                {
+                                                    vinfo.Event_action = vinfo.Event_action.Substring(0, 1000);
+                                                }
+                                            }
+
+
+
+                                            vinfo.Referurl = referurl;
+
+                                            userList.Add(vinfo);
+
+                                        }
+                                    });
+                                }
+                            }
+
+                            Console.WriteLine(dt + "," + mi + "," + "finish." + uids.Distinct().Count() + "," + maxVisitID + "," + DateTime.Now);
+                            #endregion
+                        }
+
+
+                        #endregion 结束循环
+                    }
+                    catch (Exception ex)
+                    {
+                        errr += ex.Message;
+                        Console.WriteLine(ex.ToString());
+                    }
+
+                    userList = userList.Distinct().ToList();
+                    if (userList.Count > 0)
+                    {
+                        string msg = "";
+                        Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "update piwik_log DB.");
+                        if (DataFarm.insert_piwiklog(userList, out msg))
+                        {
+                            Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "update piwik_log_reffer DB.");
+                            DataFarm.UpdateGaBaseData(pageType1, DateTime.Parse(dt), DateTime.Parse(dt));
+ 
+                            Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "finish.");
+                        }
+
+                        if (!string.IsNullOrEmpty(msg))
+                            errr += msg;
+                    }
+
+                    writeLog(writeFile1, userList, errr);
+
+                }
+
+                int pageType2 = 32;
+
+
+                if (!DataFarm.ExistGaData(pageType2, DateTime.Parse(dt), DateTime.Parse(dt)))
+                {
+                    List<Piwik_CustomerAction> customerActionList = new List<Piwik_CustomerAction>();
+                    string url = "http://10.0.0.131:920/index.php?module=API&method=CustomVariables.getCustomVariables&format=JSON&idSite=1&period=day&date=" + dt + "&expanded=1&filter_limit=500&token_auth=453170c79e8f0ad5dcd1f0b2ce1ecf23";
+
+                    string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, System.Text.Encoding.UTF8);
+
+                    try
+                    {
+                        xml = xml.Replace("\\u", "\\\\u");
+                        Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
+
+
+                        int count = jsonObject.Count;
+                        for (int i = 0; i < count; i++)
+                        {
+                            JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
+
+
+                            // qcount["actionDetails"];
+
+                            int nb_actions = 0;
+                            if (qcount.Keys.Contains("nb_uniq_visitors"))
+                            {
+                                nb_actions = Converter.ParseInt(qcount["nb_uniq_visitors"], 0);
+                            }
+                            else
+                            {
+                                nb_actions = Converter.ParseInt(qcount["nb_actions"], 0);
+
+                            }
+
+                            customerActionList.Add(
+                                 new Piwik_CustomerAction()
                                  {
-                                     exitFlag = true;
-                                     continue;
 
+                                     dt = DateTime.Parse(dt),
+                                     idsubdatatable = Converter.ParseInt(qcount["idsubdatatable"], 1),
+                                     label = UnicodeToString(qcount["label"].ToString()),
+                                     nb_actions = nb_actions
                                  }
-                                 Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
-
-                                 int count = 0;
-                                 if (jsonObject != null && xml.Length > 5)
-                                 {
-                                     count = jsonObject.Count();
-                                 }
-                                 else
-                                 {
-                                     continue;
-                                 }
+                              );
 
 
-                                 for (int i = 0; i < count; i++)
-                                 {
+                        }
 
-                                     JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
-
-                                     JavaScriptArray actionDetails = (JavaScriptArray)qcount["actionDetails"];
-
-
-                                     string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePrettyFirstAction"].ToString();
-                                     string visitIp = qcount["visitIp"].ToString();
-                                     string location = ConvertUnicodeStringToChinese(qcount["location"].ToString());
-                                     string locationsina = updateLocation(visitIp, location);
-
-                                     if (Convert.ToDateTime(lastActionDateTime) < Convert.ToDateTime(dt))
-                                     {
-                                         exitFlag = true;
-                                         continue;
-                                     }
-
-                                     //Console.WriteLine(visitIp+",time,"+lastActionDateTime);
-                                     if (i == 0)
-                                         maxVisitID = Convert.ToInt64(qcount["idVisit"]);
-                                     else
-                                         maxVisitID = Convert.ToInt64(qcount["idVisit"]) > maxVisitID ? maxVisitID : Convert.ToInt64(qcount["idVisit"]);
-
-                                     if (actionDetails.Count > 0)
-                                     {
-                                         string userid = "-1";
-                                         string guid = "";
-                                         string referurl = "";
-
-                                         JavaScriptObject customVariables = null;
-                                         try
-                                         {
-                                       
-                                             if (qcount.Keys.Contains("referrerUrl"))
-                                             {
-                                                 referurl = Converter.ParseString(qcount["referrerUrl"], "");
-
-                                                 if (referurl.Length > 0)
-                                                 {
-                                                     if (referurl.Length > 2000)
-                                                         referurl = referurl.Substring(0, 2000);
-                                                 }
-                                             }
-
-                                             customVariables = (JavaScriptObject)qcount["customVariables"];
-                                             userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
-                                             guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
-                                            if(!uids.Any(u=>u.ToString()==guid))
-                                             uids.Add(guid);
-                                         }
-                                         catch (Exception ex)
-                                         {
-                                             userid = "-1";
-                                             guid = "";
-                                             continue;
-                                         }
-
-                                         actionDetails.ForEach(item =>
-                                         {
-                                             JavaScriptObject itemobject = (JavaScriptObject)item;
+                        string msg = "";
+                        if (DataFarm.insert_piwikCsAction(customerActionList, out msg))
+                        {
+                            DataFarm.UpdateGaBaseData(pageType2, DateTime.Parse(dt), DateTime.Parse(dt));
+                            Console.WriteLine(DateTime.Now + "," + pageType2 + "," + dt + "," + "finish.");
+                        }
 
 
-                                             string tmpUrl = "";
-                                             if (itemobject.Keys.Contains("url") && itemobject["url"] != null)
-                                             {
-                                                 tmpUrl = itemobject["url"].ToString();
-
-                                             }
-                                             UserVisitInfo vinfo = new UserVisitInfo();
-                                             if (vinfo != null)
-                                             {
-                                                 vinfo.Guid = guid;
-                                                 vinfo.Userid = userid;
-                                                 if (itemobject.Keys.Contains("timeSpent"))
-                                                     vinfo.Spent = Converter.ParseString(itemobject["timeSpent"], "");
-
-                                                 vinfo.Url = tmpUrl;
-                                                 vinfo.LastVisitTime = lastActionDateTime;
-
-                                                 if (itemobject.Keys.Contains("pageTitle"))
-                                                     vinfo.PageTitle = UnicodeToString(Converter.ParseString(itemobject["pageTitle"], ""));
-                                                 else
-                                                     vinfo.PageTitle = "";
-
-                                                 if (itemobject.Keys.Contains("type"))
-                                                     vinfo.Action = Converter.ParseString(itemobject["type"], "");
-                                                 else
-                                                     vinfo.Action = "";
-
-                                                 vinfo.VisitIp = visitIp;
-                                                 vinfo.Location = location;
-                                                 vinfo.Locationsina = locationsina;
-
-
-
-                                                 if (itemobject.Keys.Contains("customVariables"))
-                                                 {
-                                                     JavaScriptObject customerDetail = (JavaScriptObject)itemobject["customVariables"];
-
-                                                     //  var q = customerDetail.Values.First();
-                                                     string q1 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(1).Value.ToString();
-                                                     string q2 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(0).Value.ToString();
-
-                                                     vinfo.Event_action = UnicodeToString(q2);
-
-                                                     if (vinfo.Event_action.Length >= 1000)
-                                                     {
-                                                         vinfo.Event_action = vinfo.Event_action.Substring(0, 1000);
-                                                     }
-                                                 }
-
-
-
-                                                 vinfo.Referurl = referurl;
-
-                                                 userList.Add(vinfo);
-
-                                             }
-                                         });
-                                     }
-                                 }
-
-                                 Console.WriteLine(dt + ",Hour:" +hour+","+ mi + "," + "finish."+uids.Distinct().Count());
-                                 #endregion
-                             }
-
-
-                             #endregion 结束循环
-
-                         }
-
-                     }
-                     catch (Exception ex)
-                     {
-                             errr += ex.Message;
-                             Console.WriteLine(ex.ToString());
-                     }
-
-                     userList = userList.Distinct().ToList();
-                     if (userList.Count > 0)
-                     {
-                         string msg = "";
-                         Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "update piwik_log DB.");
-                         if (DataFarm.insert_piwiklog(userList,out msg))
-                         {
-                             Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "update piwik_log_reffer DB.");
-                             DataFarm.UpdateGaBaseData(pageType1, DateTime.Parse(dt), DateTime.Parse(dt));
-
-                             //var reffers = userList.Where(u => u.Referurl != null).Select(u => u.Referurl).ToList();
-
-                             //if (!DataFarm.insert_piwik_log_reffer(reffers))
-                             //{
-                             //    errr += ("insert_piwik_log_reffer fail " + DateTime.Parse(dt));
-                             //}
-
-                             Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "finish.");
-                         }
-
-                         if (!string.IsNullOrEmpty(msg))
-                             errr += msg;
-                     }
-                 
-                     writeLog(writeFile1, userList,errr);
-                 
-                 }
-
-                 int pageType2 = 32;
-
-
-                 if (!DataFarm.ExistGaData(pageType2, DateTime.Parse(dt), DateTime.Parse(dt)))
-                 {
-                     List<Piwik_CustomerAction> customerActionList = new List<Piwik_CustomerAction>();
-                     string url = "http://10.0.0.131:920/index.php?module=API&method=CustomVariables.getCustomVariables&format=JSON&idSite=1&period=day&date=" + dt + "&expanded=1&filter_limit=500&token_auth=453170c79e8f0ad5dcd1f0b2ce1ecf23";
-
-                     string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, System.Text.Encoding.UTF8);
-
-                     try
-                     {
-                         xml = xml.Replace("\\u", "\\\\u");
-                         Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
-
-
-                         int count = jsonObject.Count;
-                         for (int i = 0; i < count; i++)
-                         {
-                             JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
-
-
-                             // qcount["actionDetails"];
-
-                             int nb_actions = 0;
-                             if (qcount.Keys.Contains("nb_uniq_visitors"))
-                             {
-                                 nb_actions = Converter.ParseInt(qcount["nb_uniq_visitors"], 0);
-                             }
-                             else
-                             {
-                                 nb_actions = Converter.ParseInt(qcount["nb_actions"], 0);
-
-                             }
-
-                             customerActionList.Add(
-                                  new Piwik_CustomerAction()
-                                  {
-
-                                      dt = DateTime.Parse(dt),
-                                      idsubdatatable = Converter.ParseInt(qcount["idsubdatatable"], 1),
-                                      label = UnicodeToString(qcount["label"].ToString()),
-                                      nb_actions = nb_actions
-                                  }
-                               );
-
-
-                         }
-
-                         string msg = "";
-                         if (DataFarm.insert_piwikCsAction(customerActionList, out msg))
-                         {
-                             DataFarm.UpdateGaBaseData(pageType2, DateTime.Parse(dt), DateTime.Parse(dt));
-                             Console.WriteLine(DateTime.Now + "," + pageType2 + "," + dt + "," + "finish.");
-                         }
-
-
-                     }
-                     catch (Exception ex)
-                     {
-                         string exx = ex.Message;
-                     }
-                 }
-             }
+                    }
+                    catch (Exception ex)
+                    {
+                        string exx = ex.Message;
+                    }
+                }
+            }
 
             Console.WriteLine("数据生成完毕");
-            
-          
+
+
         }
         public static string ConvertUnicodeStringToChinese(string unicodeString) 
         {

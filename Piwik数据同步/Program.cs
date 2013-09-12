@@ -62,17 +62,20 @@ namespace SyncPiwikToMSSQL
         static void test()
         {
 
-           
+            List<string> uids = new List<string>();
             string dt = DateTime.Now.AddDays(-6).ToString("yyyy-MM-dd");
-
-            for (int d = 0; d < 20; d++)
+            var stopWatch = new Stopwatch();
+            stopWatch.Start();
+            for (int d = 0; d < 24; d++)
             {
-                var stopWatch = new Stopwatch();
-                stopWatch.Start();
-                int filter_limit = intent * (d + 1);
-                int filter_offset = intent * d;
+              
 
-                string url = string.Format("http://10.0.0.131:920/index.php?module=API&filter_limit={0}&filter_offset={1}&segment=visitLocalHour==10&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token);
+                for (int run = 0; run < int.MaxValue; run++)
+                 {
+                     int filter_limit = intent * (run + 1);
+                     int filter_offset = intent * run;
+
+                     string url = string.Format("http://10.0.0.131:920/index.php?module=API&filter_sort_column=idvisit&filter_sort_order=desc&filter_limit={0}&filter_offset={1}&segment=visitLocalHour=={4}&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token, d);
 
 
 
@@ -80,18 +83,107 @@ namespace SyncPiwikToMSSQL
                 string xml = Boodoll.PageBL.ProductSearch.ProductSearchBLL.GetHtml(url, Encoding.GetEncoding("GB2312"));
                 stopWatch.Stop();
 
+ 
+                Newtonsoft.Json.JavaScriptArray jsonObject = (Newtonsoft.Json.JavaScriptArray)Newtonsoft.Json.JavaScriptConvert.DeserializeObject(xml);
 
-                Console.WriteLine(stopWatch.Elapsed.TotalMilliseconds);
-                Console.Read();
+                int count = 0;
+                if (jsonObject != null && xml.Length > 5)
+                {
+                    count = jsonObject.Count();
+                }
+                else
+                {
+                    count = 0;
+                    break;
+                }
+                 
+
+
+                for (int i = 0; i < count; i++)
+                {
+
+                    JavaScriptObject qcount = (JavaScriptObject)jsonObject[i];
+
+                    JavaScriptArray actionDetails = (JavaScriptArray)qcount["actionDetails"];
+
+
+                    string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePretty"].ToString();
+                    string visitIp = qcount["visitIp"].ToString();
+                    string location = ConvertUnicodeStringToChinese(qcount["location"].ToString());
+                    string locationsina = updateLocation(visitIp, location);
+                    if (actionDetails.Count > 0)
+                    {
+                        string userid = "-1";
+                        string guid = "";
+                        string referurl = "";
+
+                        JavaScriptObject customVariables = null;
+                        try
+                        {
+
+                            if (qcount.Keys.Contains("referrerUrl"))
+                            {
+                                referurl = Converter.ParseString(qcount["referrerUrl"], "");
+
+                                if (referurl.Length > 0)
+                                {
+                                    if (referurl.Length > 2000)
+                                        referurl = referurl.Substring(0, 2000);
+                                }
+                            }
+
+                            customVariables = (JavaScriptObject)qcount["customVariables"];
+                            userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
+                            guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
+                            uids.Add(guid);
+
+                            if (Convert.ToDateTime(lastActionDateTime) < Convert.ToDateTime(dt))
+                            {
+                                Console.WriteLine(lastActionDateTime+",error");
+                                continue;
+                            }
+
+
+                            Console.WriteLine(lastActionDateTime+","+d+","+DateTime.Now+","+uids.Distinct().Count());
+                            continue;
+                        }
+                        catch (Exception ex)
+                        {
+                            userid = "-1";
+                            guid = "";
+                            continue;
+
+                        }
+
+                        if (string.IsNullOrEmpty(guid) || guid.Length < 5)
+                        {
+                            if (guid == "zmo3k1vh5ils4hqy50hghcbq20130218202738939")
+                                referurl = "11";
+                            actionDetails.ForEach(item =>
+                            {
+
+                                JavaScriptObject itemobject = (JavaScriptObject)item;
+                            });
+                        }
+                    }
+                }
+
+                }
+
+
+             
             }
+
+            Console.WriteLine(stopWatch.Elapsed.TotalMilliseconds);
+            Console.Read();
         }
         static void Main(string[] args)
         {
-         
+            
             string errr = "";
             Console.WriteLine("开始分析数据:");
 
-            
+            List<string> uids = new List<string>();
              for (int d = int.Parse(dfrom); d < 0; d++)
              {
                  string writeFile1 = string.Format("{0}\\result{1}.txt", System.Threading.Thread.GetDomain().BaseDirectory, DateTime.Now.ToFileTimeUtc().ToString());
@@ -125,7 +217,7 @@ namespace SyncPiwikToMSSQL
                                  int filter_limit = intent * (mi + 1);
                                  int filter_offset = intent * mi;
 
-                                 string url = string.Format("http://10.0.0.131:920/index.php?module=API&segment=visitLocalHour=={4}&filter_limit={0}&filter_offset={1}&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token,hour);
+                                 string url = string.Format("http://10.0.0.131:920/index.php?module=API&filter_sort_column=idvisit&filter_sort_order=desc&segment=visitLocalHour=={4}&filter_limit={0}&filter_offset={1}&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token, hour);
 
                                  // string url = string.Format("http://10.0.0.131:922/index.php?module=API&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={2}&expanded=1&token_auth={3}", filter_limit, filter_offset, dt, token);
 
@@ -162,21 +254,18 @@ namespace SyncPiwikToMSSQL
                                      JavaScriptArray actionDetails = (JavaScriptArray)qcount["actionDetails"];
 
 
-                                     string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePretty"].ToString();
+                                     string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePrettyFirstAction"].ToString();
                                      string visitIp = qcount["visitIp"].ToString();
                                      string location = ConvertUnicodeStringToChinese(qcount["location"].ToString());
-
-
                                      string locationsina = updateLocation(visitIp, location);
-
 
                                      if (Convert.ToDateTime(lastActionDateTime) < Convert.ToDateTime(dt))
                                      {
                                          exitFlag = true;
                                          continue;
-
                                      }
 
+                                     //Console.WriteLine(visitIp+",time,"+lastActionDateTime);
                                      if (i == 0)
                                          maxVisitID = Convert.ToInt64(qcount["idVisit"]);
                                      else
@@ -184,17 +273,14 @@ namespace SyncPiwikToMSSQL
 
                                      if (actionDetails.Count > 0)
                                      {
-                                         string userid = "";
+                                         string userid = "-1";
                                          string guid = "";
                                          string referurl = "";
 
                                          JavaScriptObject customVariables = null;
                                          try
                                          {
-                                             customVariables = (JavaScriptObject)qcount["customVariables"];
-                                             userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
-                                             guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
-
+                                       
                                              if (qcount.Keys.Contains("referrerUrl"))
                                              {
                                                  referurl = Converter.ParseString(qcount["referrerUrl"], "");
@@ -205,9 +291,17 @@ namespace SyncPiwikToMSSQL
                                                          referurl = referurl.Substring(0, 2000);
                                                  }
                                              }
+
+                                             customVariables = (JavaScriptObject)qcount["customVariables"];
+                                             userid = ((new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(0).Value)))).ElementAt(1).Value.ToString());
+                                             guid = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customVariables)).ElementAt(1).Value)))).ElementAt(1).Value.ToString();
+                                            if(!uids.Any(u=>u.ToString()==guid))
+                                             uids.Add(guid);
                                          }
                                          catch (Exception ex)
                                          {
+                                             userid = "-1";
+                                             guid = "";
                                              continue;
                                          }
 
@@ -276,7 +370,7 @@ namespace SyncPiwikToMSSQL
                                      }
                                  }
 
-                                 Console.WriteLine(dt + ",Hour:" +hour+","+ mi + "," + "finish.");
+                                 Console.WriteLine(dt + ",Hour:" +hour+","+ mi + "," + "finish."+uids.Distinct().Count());
                                  #endregion
                              }
 

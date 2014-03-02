@@ -13,17 +13,17 @@ using Newtonsoft.Json;
 
 namespace SyncPiwikToMSSQL
 {
- 
-   
+
+
     class Program
     {
- 
-       // public static  Dictionary<int, string> allProductName = getAllProductIDName();
+
+        // public static  Dictionary<int, string> allProductName = getAllProductIDName();
         public static string dfrom = System.Configuration.ConfigurationSettings.AppSettings["updateform"];
         public static string token = System.Configuration.ConfigurationSettings.AppSettings["token"];
         public static int intent = 30;
 
-        static string updateLocation(string visitIp,string location)
+        static string updateLocation(string visitIp, string location)
         {
             string newLocation = location;
             try
@@ -34,23 +34,23 @@ namespace SyncPiwikToMSSQL
                 string[] ipLocation = userInfo.Split('\t');
 
                 if (ipLocation.Length >= 5)
-                { 
-                    newLocation=ipLocation[5] + ", " + ipLocation[4] + ", " + ipLocation[3];
-                }
-                else if(ipLocation.Length >= 4)
                 {
-                      newLocation=  ipLocation[4] + ", " + ipLocation[3];
+                    newLocation = ipLocation[5] + ", " + ipLocation[4] + ", " + ipLocation[3];
                 }
-                else if(ipLocation.Length >= 3)
+                else if (ipLocation.Length >= 4)
                 {
-                      newLocation=   ipLocation[3];
+                    newLocation = ipLocation[4] + ", " + ipLocation[3];
                 }
-                
+                else if (ipLocation.Length >= 3)
+                {
+                    newLocation = ipLocation[3];
+                }
+
 
                 //if (!string.IsNullOrEmpty(ipLocation[5]) && !string.IsNullOrEmpty(ipLocation[4]) && !string.IsNullOrEmpty(ipLocation[3]))
-            
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 Console.ReadLine();
@@ -79,6 +79,7 @@ namespace SyncPiwikToMSSQL
                 if (!DataFarm.ExistGaData(pageType1, DateTime.Parse(dt), DateTime.Parse(dt)))
                 {
                     //数据读取完毕退出
+                    int LogCount = 0;
                     bool exitFlag = false;
                     Int64 maxVisitID = 0;
 
@@ -95,6 +96,8 @@ namespace SyncPiwikToMSSQL
 
                             int filter_limit = intent; // intent * (mi + 1);
                             int filter_offset = intent * mi;
+
+
 
                             string url = string.Format("http://10.0.0.131:922/index.php?module=API&filter_limit={0}&method=Live.getLastVisitsDetails&format=json&idSite=1&period=day&date={1}&expanded=1&token_auth={2}", filter_limit, dt, token);
 
@@ -130,6 +133,7 @@ namespace SyncPiwikToMSSQL
 
                                 JavaScriptArray actionDetails = (JavaScriptArray)qcount["actionDetails"];
 
+                                LogCount += actionDetails.Count;
 
                                 string lastActionDateTime = qcount["serverDate"].ToString() + " " + qcount["serverTimePretty"].ToString();
                                 string visitIp = qcount["visitIp"].ToString();
@@ -180,76 +184,140 @@ namespace SyncPiwikToMSSQL
                                     catch (Exception ex)
                                     {
                                         userid = "-1";
-                                        guid = "";
-                                        continue;
+                                        guid = qcount["visitorId"].ToString(); ;
+                                        //continue;
                                     }
 
-                                    actionDetails.ForEach(item =>
+                                    if (actionDetails.Count > 0)
                                     {
-                                        JavaScriptObject itemobject = (JavaScriptObject)item;
-
-
-                                        string tmpUrl = "";
-                                        if (itemobject.Keys.Contains("url") && itemobject["url"] != null)
+                                        actionDetails.ForEach(item =>
                                         {
-                                            tmpUrl = itemobject["url"].ToString();
-
-                                        }
-                                        UserVisitInfo vinfo = new UserVisitInfo();
-                                        if (vinfo != null)
-                                        {
-                                            vinfo.Guid = guid;
-                                            vinfo.Userid = userid;
-                                            if (itemobject.Keys.Contains("timeSpent"))
-                                                vinfo.Spent = Converter.ParseString(itemobject["timeSpent"], "");
-
-                                            vinfo.Url = tmpUrl;
-                                            vinfo.LastVisitTime = lastActionDateTime;
-
-                                            if (itemobject.Keys.Contains("pageTitle"))
-                                                vinfo.PageTitle = UnicodeToString(Converter.ParseString(itemobject["pageTitle"], ""));
-                                            else
-                                                vinfo.PageTitle = "";
-
-                                            if (itemobject.Keys.Contains("type"))
-                                                vinfo.Action = Converter.ParseString(itemobject["type"], "");
-                                            else
-                                                vinfo.Action = "";
-
-                                            vinfo.VisitIp = visitIp;
-                                            vinfo.Location = location;
-                                            vinfo.Locationsina = locationsina;
+                                            JavaScriptObject itemobject = (JavaScriptObject)item;
 
 
-
-                                            if (itemobject.Keys.Contains("customVariables"))
+                                            string tmpUrl = "";
+                                            if (itemobject.Keys.Contains("url") && itemobject["url"] != null)
                                             {
-                                                JavaScriptObject customerDetail = (JavaScriptObject)itemobject["customVariables"];
+                                                tmpUrl = itemobject["url"].ToString();
 
-                                                //  var q = customerDetail.Values.First();
-                                                string q1 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(1).Value.ToString();
-                                                string q2 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(0).Value.ToString();
+                                            }
+                                            UserVisitInfo vinfo = new UserVisitInfo();
+                                            if (vinfo != null)
+                                            {
+                                                vinfo.Guid = guid;
+                                                vinfo.Userid = userid;
+                                                if (itemobject.Keys.Contains("timeSpent"))
+                                                    vinfo.Spent = Converter.ParseString(itemobject["timeSpent"], "");
 
-                                                vinfo.Event_action = UnicodeToString(q2);
+                                                vinfo.Url = tmpUrl;
+                                                vinfo.LastVisitTime = lastActionDateTime;
 
-                                                if (vinfo.Event_action.Length >= 1000)
+                                                if (itemobject.Keys.Contains("pageTitle"))
+                                                    vinfo.PageTitle = UnicodeToString(Converter.ParseString(itemobject["pageTitle"], ""));
+                                                else
+                                                    vinfo.PageTitle = "";
+
+                                                if (itemobject.Keys.Contains("type"))
+                                                    vinfo.Action = Converter.ParseString(itemobject["type"], "");
+                                                else
+                                                    vinfo.Action = "";
+
+                                                vinfo.VisitIp = visitIp;
+                                                vinfo.Location = location;
+                                                vinfo.Locationsina = locationsina;
+
+
+
+                                                if (itemobject.Keys.Contains("customVariables"))
                                                 {
-                                                    vinfo.Event_action = vinfo.Event_action.Substring(0, 1000);
+                                                    JavaScriptObject customerDetail = (JavaScriptObject)itemobject["customVariables"];
+
+                                                    //  var q = customerDetail.Values.First();
+                                                    string q1 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(1).Value.ToString();
+                                                    string q2 = (new Dictionary<string, object>(((Newtonsoft.Json.JavaScriptObject)((new Dictionary<string, object>(customerDetail)).ElementAt(0).Value)))).ElementAt(0).Value.ToString();
+
+                                                    vinfo.Event_action = UnicodeToString(q2);
+
+                                                    if (vinfo.Event_action.Length >= 1000)
+                                                    {
+                                                        vinfo.Event_action = vinfo.Event_action.Substring(0, 1000);
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    vinfo.Event_action = "";
+                                                }
+
+
+
+                                                vinfo.Referurl = referurl;
+                                              
+                                                userList.Add(vinfo);
+                                                string tmpmsg = "";
+                                                try
+                                                {
+                                                    tmpmsg = "1";
+                                                    if (DataFarm.insert_piwiklog(userList, out tmpmsg))
+                                                    {
+                                                        tmpmsg = "2";
+                                                    }
+                                                    else
+                                                    {
+                                                        tmpmsg = "3";
+                                                    }
+                                                    userList = new List<UserVisitInfo>();
+                                                }
+                                                catch (Exception ex)
+                                                {
+                                                    string sss = ex.Message;
                                                 }
                                             }
+                                        });
+                                    }
+                                    else
+                                    {
+                                        UserVisitInfo vinfo = new UserVisitInfo();
+                                        vinfo.Guid = guid;
+                                        vinfo.Userid = userid;
+                                        
+                                            vinfo.Spent ="0";
 
+                                        vinfo.Url = "";
+                                        vinfo.LastVisitTime = lastActionDateTime;
+ 
+                                        vinfo.PageTitle = "";
 
+                                       
+                                       vinfo.Action = "";
 
-                                            vinfo.Referurl = referurl;
-
-                                            userList.Add(vinfo);
-
+                                        vinfo.VisitIp = visitIp;
+                                        vinfo.Location = location;
+                                        vinfo.Locationsina = locationsina;
+                                     
+                                        userList.Add(vinfo);
+                                        string tmpmsg = "";
+                                        try
+                                        {
+                                            tmpmsg = "1";
+                                            if (DataFarm.insert_piwiklog(userList, out tmpmsg))
+                                            {
+                                                tmpmsg = "2";
+                                            }
+                                            else
+                                            {
+                                                tmpmsg = "3";
+                                            }
+                                            userList = new List<UserVisitInfo>();
                                         }
-                                    });
+                                        catch (Exception ex)
+                                        {
+                                            string sss = ex.Message;
+                                        }
+                                    }
                                 }
                             }
 
-                            Console.WriteLine(dt + "," + mi + "," + "finish." + uids.Distinct().Count() + "," + maxVisitID + "," + DateTime.Now);
+                            Console.WriteLine("count:"+LogCount+" "+dt + "," + mi + "," + "finish." + uids.Distinct().Count() + "," + maxVisitID + "," + DateTime.Now);
                             #endregion
                         }
 
@@ -263,7 +331,7 @@ namespace SyncPiwikToMSSQL
                     }
 
                     userList = userList.Distinct().ToList();
-                    if (userList.Count > 0)
+                    if (userList.Count > 0||true)
                     {
                         string msg = "";
                         Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "update piwik_log DB.");
@@ -271,7 +339,7 @@ namespace SyncPiwikToMSSQL
                         {
                             Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "update piwik_log_reffer DB.");
                             DataFarm.UpdateGaBaseData(pageType1, DateTime.Parse(dt), DateTime.Parse(dt));
- 
+
                             Console.WriteLine(DateTime.Now + "," + pageType1 + "," + dt + "," + "finish.");
                         }
 
@@ -352,17 +420,17 @@ namespace SyncPiwikToMSSQL
 
 
         }
-        public static string ConvertUnicodeStringToChinese(string unicodeString) 
+        public static string ConvertUnicodeStringToChinese(string unicodeString)
         {
             if (string.IsNullOrEmpty(unicodeString))
                 return string.Empty;
 
             string outStr = unicodeString;
 
-          //  Regex re = new Regex("[0123456789abcdef]{4}", RegexOptions.IgnoreCase);
+            //  Regex re = new Regex("[0123456789abcdef]{4}", RegexOptions.IgnoreCase);
 
             MatchCollection mc = Regex.Matches(unicodeString, "(\\\\u([\\w]{4}))");
-       
+
             foreach (Match ma in mc)
             {
                 outStr = outStr.Replace(ma.Value, UnicodeToString(ma.Value).ToString());
@@ -379,7 +447,7 @@ namespace SyncPiwikToMSSQL
         }
         public static string UnicodeToString(string text)
         {
-             MatchCollection mc = Regex.Matches(text, "([\\w]+)|(\\\\u([\\w]{4}))");
+            MatchCollection mc = Regex.Matches(text, "([\\w]+)|(\\\\u([\\w]{4}))");
 
             //MatchCollection mc = Regex.Matches(text, "(\\\\u([\\w]{4}))");
             if (mc != null && mc.Count > 0)
@@ -417,13 +485,13 @@ namespace SyncPiwikToMSSQL
             string outStr = "";
             if (!string.IsNullOrEmpty(str))
             {
-             //   string[] strlist = str.Replace("\\", "").Split('u');
+                //   string[] strlist = str.Replace("\\", "").Split('u');
                 int len = str.Length / 4;
                 try
                 {
                     for (int i = 0; i < len; i++)
                     {
-                        string src = str.Substring(i*4,4);
+                        string src = str.Substring(i * 4, 4);
                         //将unicode字符转为10进制整数，然后转为char中文字符
                         outStr += (char)int.Parse(src, System.Globalization.NumberStyles.HexNumber);
                     }
@@ -440,39 +508,39 @@ namespace SyncPiwikToMSSQL
 
         public static string GetProductID(string url)
         {
-            
+
             url = url.ToLower();
 
-     
-                string Pattern = "pdtid=[0-9]*"; // @"pdtID";
-                MatchCollection Matches = Regex.Matches(url, Pattern, RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
 
-                if (Matches.Count > 0)
+            string Pattern = "pdtid=[0-9]*"; // @"pdtID";
+            MatchCollection Matches = Regex.Matches(url, Pattern, RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
+
+            if (Matches.Count > 0)
+            {
+                int i = 0;
+                string[] sUrlList = new string[Matches.Count];
+
+                // 取得匹配项列表
+                foreach (Match match in Matches)
                 {
-                    int i = 0;
-                    string[] sUrlList = new string[Matches.Count];
+                    sUrlList[i++] = match.Value.Replace("pdtid=", "");
 
-                    // 取得匹配项列表
-                    foreach (Match match in Matches)
-                    {
-                        sUrlList[i++] = match.Value.Replace("pdtid=", "");
-
-                    }
-
-
-                    return string.Join(",", sUrlList);
                 }
 
-                if (url.Length > 2000)
-                    url = url.Substring(0,2000);
-                
-                return url;
+
+                return string.Join(",", sUrlList);
+            }
+
+            if (url.Length > 2000)
+                url = url.Substring(0, 2000);
+
+            return url;
 
         }
 
-   
 
-        public static UserVisitInfo CreateUserInfo(string url,int type,string userid,string guid)
+
+        public static UserVisitInfo CreateUserInfo(string url, int type, string userid, string guid)
         {
             List<string> prds = GetVisitProductByType(type);
 
@@ -484,7 +552,7 @@ namespace SyncPiwikToMSSQL
             //}
 
             string productInfo = "";
-            if(prds.Any(p => url.ToString().Contains(p)))
+            if (prds.Any(p => url.ToString().Contains(p)))
             {
                 string Pattern = "pdtid=[0-9]*"; // @"pdtID";
                 MatchCollection Matches = Regex.Matches(url, Pattern, RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
@@ -501,7 +569,7 @@ namespace SyncPiwikToMSSQL
                 }
 
 
-                productInfo=string.Join(",", sUrlList);
+                productInfo = string.Join(",", sUrlList);
                 Console.WriteLine(productInfo + "," + userid + "," + guid);
 
 
@@ -510,8 +578,8 @@ namespace SyncPiwikToMSSQL
             }
 
             return null;
-             
-           
+
+
         }
 
         public static bool checkUserInfo(UserVisitInfo v)
@@ -520,12 +588,12 @@ namespace SyncPiwikToMSSQL
             try
             {
 
-                if (v.Guid.Length > 50 || v.Url.Length > 2000 || v.Action.Length > 50 || v.PageTitle.Length > 500 || (v.Referurl!=null&&v.Referurl.Length > 2000) || (v.Event_action!=null&&v.Event_action.Length > 1000) || v.VisitIp.Length > 30 || v.Location.Length > 100)
+                if (v.Guid.Length > 50 || v.Url.Length > 2000 || v.Action.Length > 50 || v.PageTitle.Length > 500 || (v.Referurl != null && v.Referurl.Length > 2000) || (v.Event_action != null && v.Event_action.Length > 1000) || v.VisitIp.Length > 30 || v.Location.Length > 100)
                     flag = false;
 
                 return flag;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return false;
             }
@@ -535,7 +603,7 @@ namespace SyncPiwikToMSSQL
         public static int getUserInfo(string guid, string usrid)
         {
             string memssage = "";
-            int uid =Converter.ParseInt(usrid, -1);
+            int uid = Converter.ParseInt(usrid, -1);
 
             if (uid < 0)
             {
@@ -546,19 +614,19 @@ namespace SyncPiwikToMSSQL
                 }
             }
 
-       
-              
+
+
             return uid;
         }
 
 
         public static void CreateReport(List<UserVisitInfo> u)
         {
-            string body="<html><body><H3>4小时内数据报表click.muyingzhijia.com</H3>";
+            string body = "<html><body><H3>4小时内数据报表click.muyingzhijia.com</H3>";
             for (int i = 1; i < 12; i++)
             {
-                string head = " <H3>"+getIDName(i)+"</H3><table border = 1>   <tr>     <th> 会员号 </th> <th>手机号  </th><th> 浏览商品 </th>  <th> 浏览时间</th></tr>";
-                foreach (UserVisitInfo a in u.Where(c=>c.Type==i))
+                string head = " <H3>" + getIDName(i) + "</H3><table border = 1>   <tr>     <th> 会员号 </th> <th>手机号  </th><th> 浏览商品 </th>  <th> 浏览时间</th></tr>";
+                foreach (UserVisitInfo a in u.Where(c => c.Type == i))
                 {
                     head += ("<tr><td>" + a.Userid + "</td><td>" + a.Mobile + "</td><td>" + a.Url + "</td><td>" + a.LastVisitTime + "</td><td></tr>");//开始写入值
 
@@ -567,23 +635,23 @@ namespace SyncPiwikToMSSQL
                 head += "</table>";
                 body += head;
             }
-            body+="</body></html>";
+            body += "</body></html>";
 
 
 
 
-            EmailServiceClient esc = new  EmailServiceClient();
-                       esc.Open();
-                       esc.SendCmail(new WCFService.WcfMail() { Body = body, Subject = "4小时内数据报表click.muyingzhijia.com", MailTo = ("wm1240@muyingzhijia.com; ws632@muyingzhijia.com; sd211@muyingzhijia.com;porsia@muyingzhijia.com;yxd1279@muyingzhijia.com;wh971@muyingzhijia.com;lyq942@muyingzhijia.com; cfzmp@163.com".Split(new char[] { ',', ';' })), IsHtml = true });
+            EmailServiceClient esc = new EmailServiceClient();
+            esc.Open();
+            esc.SendCmail(new WCFService.WcfMail() { Body = body, Subject = "4小时内数据报表click.muyingzhijia.com", MailTo = ("wm1240@muyingzhijia.com; ws632@muyingzhijia.com; sd211@muyingzhijia.com;porsia@muyingzhijia.com;yxd1279@muyingzhijia.com;wh971@muyingzhijia.com;lyq942@muyingzhijia.com; cfzmp@163.com".Split(new char[] { ',', ';' })), IsHtml = true });
             esc.Close();
         }
 
 
 
-        public static void writeLog(string writeFile,List<UserVisitInfo> u,string msg)
+        public static void writeLog(string writeFile, List<UserVisitInfo> u, string msg)
         {
-          
-      
+
+
             try
             {
                 FileStream fs = new FileStream(writeFile, FileMode.OpenOrCreate, FileAccess.Write);
@@ -607,24 +675,24 @@ namespace SyncPiwikToMSSQL
 
         public static Dictionary<int, string> getAllProductIDName()
         {
-               var q=(
-                    from c in new HolycaDataContext().Vi_Web_Pdt_Lists
-                    select new { c.intProductID, c.vchProductName }
-                ).Distinct().ToList();
-               Dictionary<int, string> dics = new Dictionary<int, string>();
+            var q = (
+                 from c in new HolycaDataContext().Vi_Web_Pdt_Lists
+                 select new { c.intProductID, c.vchProductName }
+             ).Distinct().ToList();
+            Dictionary<int, string> dics = new Dictionary<int, string>();
 
-               q.ForEach(c =>
-                   {
-                       dics.Add( c.intProductID,c.vchProductName);
-                   }
-                   );
-               return dics;
-             
+            q.ForEach(c =>
+                {
+                    dics.Add(c.intProductID, c.vchProductName);
+                }
+                );
+            return dics;
+
         }
 
         public static string getIDName(int type)
         {
-    
+
             switch (type)
             {
                 ///童床 10 and cateId2=64
@@ -684,72 +752,72 @@ namespace SyncPiwikToMSSQL
 
         public static List<string> GetVisitProductByType(int type)
         {
-            HolycaDataContext ctx=new HolycaDataContext();
+            HolycaDataContext ctx = new HolycaDataContext();
 
 
             List<string> tmpProducts = new List<string>();
-            
-            switch(type)
+
+            switch (type)
             {
                 ///童床 10 and cateId2=64
                 case 1:
-                 tmpProducts=ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 10 && c.intSecondCategory == 64).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
-                    // 童车
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 10 && c.intSecondCategory == 64).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
+                // 童车
                 case 2:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 10 && c.intSecondCategory == 62).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 10 && c.intSecondCategory == 62).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
 
                 // 汽车座椅
                 case 3:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 10 && c.intSecondCategory == 63).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 10 && c.intSecondCategory == 63).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
 
                 //床品
                 case 4:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 2 && c.intSecondCategory == 25).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
-                
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 2 && c.intSecondCategory == 25).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
+
                 //值300元以上的玩具
                 case 5:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 11 && c.intScore > 300).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 11 && c.intScore > 300).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
                 //吸奶器  cateId1=6 and cateId2=40 and (productName like '%吸奶器%' or productName like '%吸乳器%'
                 case 6:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 6 && c.intSecondCategory == 40 && (c.vchProductName.Contains("吸奶器") || c.vchProductName.Contains("吸乳器"))).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 6 && c.intSecondCategory == 40 && (c.vchProductName.Contains("吸奶器") || c.vchProductName.Contains("吸乳器"))).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
 
                 //消毒锅 cateId1=6 and cateId2=41 and (productName like '%消毒锅%' or productName like '%消毒器%')
                 case 7:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 6 && c.intSecondCategory == 41 && (c.vchProductName.Contains("消毒锅") || c.vchProductName.Contains("消毒器"))).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 6 && c.intSecondCategory == 41 && (c.vchProductName.Contains("消毒锅") || c.vchProductName.Contains("消毒器"))).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
 
                 //LG地垫cateId1=11 and cateId2=70 and brandid=443
                 case 8:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 11 && c.intSecondCategory == 70 && c.intBrandID == 443).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intFirstCategory == 11 && c.intSecondCategory == 70 && c.intBrandID == 443).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
 
                 //法贝儿 brandid=598
                 case 9:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intBrandID == 598).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intBrandID == 598).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
 
                 //施巴 brandid=514 
                 case 10:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intBrandID == 514).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intBrandID == 514).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
 
                 //和光堂 brandid=319 
                 case 11:
-                 tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intBrandID == 319).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
-                 break;
+                    tmpProducts = ctx.Vi_Web_Pdt_Lists.Where(c => c.intBrandID == 319).Select(c => string.Format("pdtid={0}", c.intProductID)).Distinct().ToList();
+                    break;
 
                 default:
 
-                 break;
-           
+                    break;
 
-             }
+
+            }
 
 
             return tmpProducts;
@@ -757,9 +825,9 @@ namespace SyncPiwikToMSSQL
 
         public static string GetProductCode(int productid)
         {
-            
+
             string productCode = "";
-            
+
             HolycaDataContext ctx = new HolycaDataContext();
             if (ctx.Pdt_Base_Infos.Any(p => p.intProductID == productid))
             {

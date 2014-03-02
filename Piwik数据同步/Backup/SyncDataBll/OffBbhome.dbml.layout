@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OffBbhome">
+  <DataContextMoniker Name="/OffBbhomeDataContext" />
+  <nestedChildShapes>
+    <classShape Id="419fbf32-4a1b-45e8-97a7-edb5905facd7" absoluteBounds="0.75, 0.75, 2, 1.5715458170572916">
+      <DataClassMoniker Name="/OffBbhomeDataContext/Piwik_ColumnWord" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7bdb4393-fb05-4c6c-93e1-5a307ef9c4be" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0115458170572915" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9762d3f9-9959-47bc-9a67-d7bd2cad93b0" absoluteBounds="3.75, 0.75, 2, 3.4817427571614576">
+      <DataClassMoniker Name="/OffBbhomeDataContext/Piwik_log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1c0f1b45-7368-4a17-ab1b-49bfc67a84ce" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.921742757161458" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ce9b76d-995a-4236-9dc1-d100aa8f5c77" absoluteBounds="0.75, 5.75, 2, 1.7625655110677077">
+      <DataClassMoniker Name="/OffBbhomeDataContext/Piwik_CustomerAction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4d293c2-db7e-4c12-bcc6-e19521503ad5" absoluteBounds="0.765, 6.21, 1.9700000000000002, 1.2025655110677083" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

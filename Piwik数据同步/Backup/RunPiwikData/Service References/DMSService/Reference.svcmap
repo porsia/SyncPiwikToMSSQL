@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="ef97986b-5f66-47ae-9e22-63bebb491b4b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://10.0.0.77:3009/Holyca.Service.DMSService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Holyca.disco" MetadataType="Disco" ID="cd78f741-c229-491a-8517-3c8d7bb2248b" SourceId="1" SourceUrl="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?disco" />
+    <MetadataFile FileName="Holyca.xsd" MetadataType="Schema" ID="6ee41004-76f0-4a11-b449-c75dabc453d8" SourceId="1" SourceUrl="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd5" />
+    <MetadataFile FileName="DMSService.wsdl" MetadataType="Wsdl" ID="3db8b233-4dc0-4fdb-9c17-7c5bad4f55be" SourceId="1" SourceUrl="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?wsdl" />
+    <MetadataFile FileName="Holyca1.xsd" MetadataType="Schema" ID="2b9d8ad7-6cea-4465-9ddc-a58f2d78cfca" SourceId="1" SourceUrl="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd2" />
+    <MetadataFile FileName="Holyca2.xsd" MetadataType="Schema" ID="1e1cabef-e899-42b7-858a-6f4a40413e55" SourceId="1" SourceUrl="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd0" />
+    <MetadataFile FileName="Holyca3.xsd" MetadataType="Schema" ID="4c2fec0e-ff83-48e8-a147-22ad273b3648" SourceId="1" SourceUrl="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd4" />
+    <MetadataFile FileName="Holyca4.xsd" MetadataType="Schema" ID="270bdc4b-6880-45d4-a679-1bf3bd034c18" SourceId="1" SourceUrl="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd3" />
+    <MetadataFile FileName="Holyca5.xsd" MetadataType="Schema" ID="33f61911-42c7-45e7-8f61-2d516762449a" SourceId="1" SourceUrl="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

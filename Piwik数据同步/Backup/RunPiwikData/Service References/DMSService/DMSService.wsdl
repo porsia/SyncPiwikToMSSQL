@@ -1,0 +1,2504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="DMSService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IDMSService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Holyca.Service.Model" />
+      <xsd:import schemaLocation="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd4" />
+      <xsd:import schemaLocation="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDMSService_GetDmsNoUserOrderMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsNoUserOrderMain" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsNoUserOrderMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsNoUserOrderMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_UpdateRTNOrderZip_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRTNOrderZip" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_UpdateRTNOrderZip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRTNOrderZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetLineAccountInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLineAccountInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetLineAccountInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLineAccountInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRecvAudit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecvAudit" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRecvAudit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecvAuditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSingleRcevAudit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleRcevAudit" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSingleRcevAudit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSingleRcevAuditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRecvList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecvList" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRecvList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecvListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRecvFsMainQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecvFsMainQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRecvFsMainQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecvFsMainQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRecvListTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecvListTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRecvListTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecvListTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishShouldRecv_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishShouldRecv" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishShouldRecv_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishShouldRecvResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSMModifylog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSMModifylog" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSMModifylog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSMModifylogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetZipArea_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipArea" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetZipArea_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_DeleteZip_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteZip" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_DeleteZip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteZipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMainQueryExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainQueryExcel" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMainQueryExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainQueryExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_OrderToExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderToExcel" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_OrderToExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderToExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_RtnOrderToExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:RtnOrderToExcel" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_RtnOrderToExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RtnOrderToExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_DCMoneyPayToExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DCMoneyPayToExcel" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_DCMoneyPayToExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DCMoneyPayToExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetNewDmsSaleOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewDmsSaleOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetNewDmsSaleOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewDmsSaleOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetBigCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBigCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetBigCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBigCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_InsertPresell_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPresell" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_InsertPresell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertPresellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_DeletePresell_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePresell" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_DeletePresell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePresellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_UpdatePresell_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePresell" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_UpdatePresell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePresellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPresell_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPresell" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPresell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPresellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetShouldRecvLogQueryTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShouldRecvLogQueryTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetShouldRecvLogQueryTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShouldRecvLogQueryTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetShouldRecvLogQueryRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShouldRecvLogQueryRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetShouldRecvLogQueryRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShouldRecvLogQueryRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetHistoryOrderQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryOrderQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetHistoryOrderQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryOrderQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_NGetHistoryOrderQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:NGetHistoryOrderQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_NGetHistoryOrderQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NGetHistoryOrderQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_NGetHistoryOrderQueryTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:NGetHistoryOrderQueryTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_NGetHistoryOrderQueryTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NGetHistoryOrderQueryTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetHistoryRtnOrderQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryRtnOrderQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetHistoryRtnOrderQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryRtnOrderQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_NGetHistoryRtnOrderQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:NGetHistoryRtnOrderQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_NGetHistoryRtnOrderQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NGetHistoryRtnOrderQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_NGetHistoryRtnOrderQueryTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:NGetHistoryRtnOrderQueryTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_NGetHistoryRtnOrderQueryTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NGetHistoryRtnOrderQueryTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FSShouldRecvLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:FSShouldRecvLog" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FSShouldRecvLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FSShouldRecvLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRtnDiffLogQuerys_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRtnDiffLogQuerys" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRtnDiffLogQuerys_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRtnDiffLogQuerysResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRtnDiffLogQuerysTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRtnDiffLogQuerysTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRtnDiffLogQuerysTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRtnDiffLogQuerysTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRtnDiffLogQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRtnDiffLogQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRtnDiffLogQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRtnDiffLogQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishRtnDiffLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishRtnDiffLog" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishRtnDiffLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishRtnDiffLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsDetailQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsDetailQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsDetailQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsDetailQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsAsnDetailQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsAsnDetailQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsAsnDetailQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsAsnDetailQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRtnOrderItemQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRtnOrderItemQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetRtnOrderItemQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRtnOrderItemQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMainNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainNew" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMainNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVHistoryRtnOrderFs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVHistoryRtnOrderFs" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVHistoryRtnOrderFs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVHistoryRtnOrderFsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFsRtnOrderNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFsRtnOrderNew" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFsRtnOrderNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFsRtnOrderNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveRtnOrderToDmsTHistoryRtnOrderFS_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveRtnOrderToDmsTHistoryRtnOrderFS" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveRtnOrderToDmsTHistoryRtnOrderFS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveRtnOrderToDmsTHistoryRtnOrderFSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveOutRtnOrderToDmsTHistoryRtnOrderFS_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveOutRtnOrderToDmsTHistoryRtnOrderFS" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveOutRtnOrderToDmsTHistoryRtnOrderFS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveOutRtnOrderToDmsTHistoryRtnOrderFSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishFsMainNew_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishFsMainNew" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishFsMainNew_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishFsMainNewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishRtnOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishRtnOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishRtnOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishRtnOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderEnquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderEnquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderEnquiryTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderEnquiryTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderEnquiryTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderEnquiryTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderEnquiryRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderEnquiryRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsVFinishRtnOrderEnquiryRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsVFinishRtnOrderEnquiryRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_CheckRtnOrderEnquiry_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckRtnOrderEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_CheckRtnOrderEnquiry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckRtnOrderEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsPayMethod_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsPayMethod" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsPayMethod_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsPayMethodResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSaleOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSaleOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSaleOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSaleOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSaleOrderTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSaleOrderTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSaleOrderTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSaleOrderTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSaleOrderRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSaleOrderRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSaleOrderRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSaleOrderRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_CheckPrePayDmsOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPrePayDmsOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_CheckPrePayDmsOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPrePayDmsOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_CheckShopDmsOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckShopDmsOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_CheckShopDmsOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckShopDmsOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_SetLineUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLineUser" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_SetLineUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLineUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetZipPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipPoint" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetZipPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZipPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_SetZipPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetZipPoint" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_SetZipPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetZipPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_SetZipPointN_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetZipPointN" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_SetZipPointN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetZipPointNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveZipPoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveZipPoint" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveZipPoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveZipPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetCcqrMainList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCcqrMainList" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetCcqrMainList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCcqrMainListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetCustomerCCQRRate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCCQRRate" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetCustomerCCQRRate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCCQRRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSendReate_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendReate" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSendReate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendReateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSOrderTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSOrderTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSOrderTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSOrderTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetOrderType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderType" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetOrderType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSRtnOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSRtnOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSRtnOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSRtnOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSRtnOrderToTal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSRtnOrderToTal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSRtnOrderToTal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSRtnOrderToTalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSDCMoneyPay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSDCMoneyPay" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSDCMoneyPay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSDCMoneyPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSDCMoneyPayTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSDCMoneyPayTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSDCMoneyPayTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSDCMoneyPayTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDCMoneyPay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDCMoneyPay" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDCMoneyPay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDCMoneyPayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_InsertDmsPointFee_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDmsPointFee" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_InsertDmsPointFee_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertDmsPointFeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSDCMoneyPayQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSDCMoneyPayQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSDCMoneyPayQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSDCMoneyPayQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSDCMoneyPayQueryTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSDCMoneyPayQueryTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSDCMoneyPayQueryTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSDCMoneyPayQueryTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ChangeIntoHistoryOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeIntoHistoryOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ChangeIntoHistoryOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeIntoHistoryOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ChangeOutHistoryOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeOutHistoryOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ChangeOutHistoryOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeOutHistoryOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMain" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsFsMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsFsMain" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsFsMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsFsMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsFsDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsFsDetail" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsFsDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsFsDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetHistoryOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetHistoryOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsFsMainByLineId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsFsMainByLineId" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsFsMainByLineId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsFsMainByLineIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetCurrentRtnOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentRtnOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetCurrentRtnOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCurrentRtnOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsRtnOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsRtnOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsRtnOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsRtnOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetHistoryRtnOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryRtnOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetHistoryRtnOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHistoryRtnOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ChangeIntoHistoryRtnOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeIntoHistoryRtnOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ChangeIntoHistoryRtnOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeIntoHistoryRtnOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ChangeOutHistoryRtnOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeOutHistoryRtnOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ChangeOutHistoryRtnOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeOutHistoryRtnOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishFsMain_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishFsMain" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_FinishFsMain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishFsMainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetLineAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLineAccount" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetLineAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLineAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMainQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMainQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMainQueryTotal_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainQueryTotal" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsMainQueryTotal_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsMainQueryTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetShouldRecvLogQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetShouldRecvLogQuery" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetShouldRecvLogQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetShouldRecvLogQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPointID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointID" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPointID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserName" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getUserDataSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDataSet" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getUserDataSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSVPointUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSVPointUser" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSVPointUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSVPointUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSVPointLineUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSVPointLineUser" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDMSVPointLineUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDMSVPointLineUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_SeperateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:SeperateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_SeperateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SeperateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ExeAutoFD_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExeAutoFD" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_ExeAutoFD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExeAutoFDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetOrderRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderRecord" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetOrderRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrderRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSendLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSendLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSendLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSendLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetWBOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWBOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetWBOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWBOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getBatchNo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBatchNo" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getBatchNo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBatchNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getSeparateOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSeparateOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getSeparateOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSeparateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveOrderSendLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveOrderSendLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveOrderSendLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveOrderSendLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_AddBaseAddressLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBaseAddressLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_AddBaseAddressLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBaseAddressLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_CancelBaseAddressLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelBaseAddressLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_CancelBaseAddressLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelBaseAddressLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_AddDmsOrderMemo_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddDmsOrderMemo" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_AddDmsOrderMemo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddDmsOrderMemoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPointLineOrders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointLineOrders" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPointLineOrders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointLineOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetTransferOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransferOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetTransferOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTransferOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getSingleTOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleTOrder" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getSingleTOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleTOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getSingleDms_t_fsDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleDms_t_fsDetail" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getSingleDms_t_fsDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSingleDms_t_fsDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_DMoveOrderSendLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:DMoveOrderSendLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_DMoveOrderSendLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DMoveOrderSendLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsIdByLineId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsIdByLineId" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetFsIdByLineId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFsIdByLineIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSendLineN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSendLineN" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDmsSendLineN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDmsSendLineNResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveAddressLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:MoveAddressLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_MoveAddressLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MoveAddressLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSendLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSendLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetAddressLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetAddressLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPointById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointById" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPointById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetLogisticsPointByCondition_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogisticsPointByCondition" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetLogisticsPointByCondition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLogisticsPointByConditionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getPointByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPointByType" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getPointByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPointByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPointLineUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointLineUser" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPointLineUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPointLineUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getUserLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_getUserLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_AddLine_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddLine" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_AddLine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPLineUserByP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPLineUserByP" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetPLineUserByP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPLineUserByPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSendLineByUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendLineByUser" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetSendLineByUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSendLineByUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDeliverUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliverUser" />
+  </wsdl:message>
+  <wsdl:message name="IDMSService_GetDeliverUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeliverUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDMSService">
+    <wsdl:operation name="GetDmsNoUserOrderMain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsNoUserOrderMain" message="tns:IDMSService_GetDmsNoUserOrderMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsNoUserOrderMainResponse" message="tns:IDMSService_GetDmsNoUserOrderMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRTNOrderZip">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/UpdateRTNOrderZip" message="tns:IDMSService_UpdateRTNOrderZip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/UpdateRTNOrderZipResponse" message="tns:IDMSService_UpdateRTNOrderZip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLineAccountInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetLineAccountInfo" message="tns:IDMSService_GetLineAccountInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetLineAccountInfoResponse" message="tns:IDMSService_GetLineAccountInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecvAudit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetRecvAudit" message="tns:IDMSService_GetRecvAudit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetRecvAuditResponse" message="tns:IDMSService_GetRecvAudit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleRcevAudit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetSingleRcevAudit" message="tns:IDMSService_GetSingleRcevAudit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetSingleRcevAuditResponse" message="tns:IDMSService_GetSingleRcevAudit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecvList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetRecvList" message="tns:IDMSService_GetRecvList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetRecvListResponse" message="tns:IDMSService_GetRecvList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecvFsMainQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetRecvFsMainQuery" message="tns:IDMSService_GetRecvFsMainQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetRecvFsMainQueryResponse" message="tns:IDMSService_GetRecvFsMainQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecvListTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetRecvListTotal" message="tns:IDMSService_GetRecvListTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetRecvListTotalResponse" message="tns:IDMSService_GetRecvListTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishShouldRecv">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/FinishShouldRecv" message="tns:IDMSService_FinishShouldRecv_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/FinishShouldRecvResponse" message="tns:IDMSService_FinishShouldRecv_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSMModifylog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetSMModifylog" message="tns:IDMSService_GetSMModifylog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetSMModifylogResponse" message="tns:IDMSService_GetSMModifylog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipArea">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetZipArea" message="tns:IDMSService_GetZipArea_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetZipAreaResponse" message="tns:IDMSService_GetZipArea_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteZip">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/DeleteZip" message="tns:IDMSService_DeleteZip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/DeleteZipResponse" message="tns:IDMSService_DeleteZip_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMainQueryExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetFsMainQueryExcel" message="tns:IDMSService_GetFsMainQueryExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetFsMainQueryExcelResponse" message="tns:IDMSService_GetFsMainQueryExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderToExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/OrderToExcel" message="tns:IDMSService_OrderToExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/OrderToExcelResponse" message="tns:IDMSService_OrderToExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RtnOrderToExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/RtnOrderToExcel" message="tns:IDMSService_RtnOrderToExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/RtnOrderToExcelResponse" message="tns:IDMSService_RtnOrderToExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DCMoneyPayToExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/DCMoneyPayToExcel" message="tns:IDMSService_DCMoneyPayToExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/DCMoneyPayToExcelResponse" message="tns:IDMSService_DCMoneyPayToExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewDmsSaleOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetNewDmsSaleOrder" message="tns:IDMSService_GetNewDmsSaleOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetNewDmsSaleOrderResponse" message="tns:IDMSService_GetNewDmsSaleOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBigCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetBigCategory" message="tns:IDMSService_GetBigCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetBigCategoryResponse" message="tns:IDMSService_GetBigCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPresell">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/InsertPresell" message="tns:IDMSService_InsertPresell_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/InsertPresellResponse" message="tns:IDMSService_InsertPresell_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePresell">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/DeletePresell" message="tns:IDMSService_DeletePresell_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/DeletePresellResponse" message="tns:IDMSService_DeletePresell_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePresell">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/UpdatePresell" message="tns:IDMSService_UpdatePresell_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/UpdatePresellResponse" message="tns:IDMSService_UpdatePresell_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPresell">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetPresell" message="tns:IDMSService_GetPresell_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetPresellResponse" message="tns:IDMSService_GetPresell_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShouldRecvLogQueryTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetShouldRecvLogQueryTotal" message="tns:IDMSService_GetShouldRecvLogQueryTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetShouldRecvLogQueryTotalResponse" message="tns:IDMSService_GetShouldRecvLogQueryTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShouldRecvLogQueryRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetShouldRecvLogQueryRecord" message="tns:IDMSService_GetShouldRecvLogQueryRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetShouldRecvLogQueryRecordResponse" message="tns:IDMSService_GetShouldRecvLogQueryRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryOrderQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetHistoryOrderQuery" message="tns:IDMSService_GetHistoryOrderQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetHistoryOrderQueryResponse" message="tns:IDMSService_GetHistoryOrderQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NGetHistoryOrderQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/NGetHistoryOrderQuery" message="tns:IDMSService_NGetHistoryOrderQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/NGetHistoryOrderQueryResponse" message="tns:IDMSService_NGetHistoryOrderQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NGetHistoryOrderQueryTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/NGetHistoryOrderQueryTotal" message="tns:IDMSService_NGetHistoryOrderQueryTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/NGetHistoryOrderQueryTotalResponse" message="tns:IDMSService_NGetHistoryOrderQueryTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryRtnOrderQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetHistoryRtnOrderQuery" message="tns:IDMSService_GetHistoryRtnOrderQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetHistoryRtnOrderQueryResponse" message="tns:IDMSService_GetHistoryRtnOrderQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NGetHistoryRtnOrderQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/NGetHistoryRtnOrderQuery" message="tns:IDMSService_NGetHistoryRtnOrderQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/NGetHistoryRtnOrderQueryResponse" message="tns:IDMSService_NGetHistoryRtnOrderQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NGetHistoryRtnOrderQueryTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/NGetHistoryRtnOrderQueryTotal" message="tns:IDMSService_NGetHistoryRtnOrderQueryTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/NGetHistoryRtnOrderQueryTotalResponse" message="tns:IDMSService_NGetHistoryRtnOrderQueryTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FSShouldRecvLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/FSShouldRecvLog" message="tns:IDMSService_FSShouldRecvLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/FSShouldRecvLogResponse" message="tns:IDMSService_FSShouldRecvLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRtnDiffLogQuerys">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetRtnDiffLogQuerys" message="tns:IDMSService_GetRtnDiffLogQuerys_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetRtnDiffLogQuerysResponse" message="tns:IDMSService_GetRtnDiffLogQuerys_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRtnDiffLogQuerysTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetRtnDiffLogQuerysTotal" message="tns:IDMSService_GetRtnDiffLogQuerysTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetRtnDiffLogQuerysTotalResponse" message="tns:IDMSService_GetRtnDiffLogQuerysTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRtnDiffLogQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetRtnDiffLogQuery" message="tns:IDMSService_GetRtnDiffLogQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetRtnDiffLogQueryResponse" message="tns:IDMSService_GetRtnDiffLogQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishRtnDiffLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/FinishRtnDiffLog" message="tns:IDMSService_FinishRtnDiffLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/FinishRtnDiffLogResponse" message="tns:IDMSService_FinishRtnDiffLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFsDetailQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetFsDetailQuery" message="tns:IDMSService_GetFsDetailQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetFsDetailQueryResponse" message="tns:IDMSService_GetFsDetailQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsAsnDetailQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsAsnDetailQuery" message="tns:IDMSService_GetDmsAsnDetailQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsAsnDetailQueryResponse" message="tns:IDMSService_GetDmsAsnDetailQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRtnOrderItemQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetRtnOrderItemQuery" message="tns:IDMSService_GetRtnOrderItemQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetRtnOrderItemQueryResponse" message="tns:IDMSService_GetRtnOrderItemQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMainNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetFsMainNew" message="tns:IDMSService_GetFsMainNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetFsMainNewResponse" message="tns:IDMSService_GetFsMainNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVHistoryRtnOrderFs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsVHistoryRtnOrderFs" message="tns:IDMSService_GetDmsVHistoryRtnOrderFs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsVHistoryRtnOrderFsResponse" message="tns:IDMSService_GetDmsVHistoryRtnOrderFs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFsRtnOrderNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFsRtnOrderNew" message="tns:IDMSService_GetDmsVFsRtnOrderNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFsRtnOrderNewResponse" message="tns:IDMSService_GetDmsVFsRtnOrderNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveRtnOrderToDmsTHistoryRtnOrderFS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/MoveRtnOrderToDmsTHistoryRtnOrderFS" message="tns:IDMSService_MoveRtnOrderToDmsTHistoryRtnOrderFS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/MoveRtnOrderToDmsTHistoryRtnOrderFSResponse" message="tns:IDMSService_MoveRtnOrderToDmsTHistoryRtnOrderFS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveOutRtnOrderToDmsTHistoryRtnOrderFS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/MoveOutRtnOrderToDmsTHistoryRtnOrderFS" message="tns:IDMSService_MoveOutRtnOrderToDmsTHistoryRtnOrderFS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/MoveOutRtnOrderToDmsTHistoryRtnOrderFSResponse" message="tns:IDMSService_MoveOutRtnOrderToDmsTHistoryRtnOrderFS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishFsMainNew">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/FinishFsMainNew" message="tns:IDMSService_FinishFsMainNew_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/FinishFsMainNewResponse" message="tns:IDMSService_FinishFsMainNew_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrder" message="tns:IDMSService_GetDmsVFinishRtnOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderResponse" message="tns:IDMSService_GetDmsVFinishRtnOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderTotal" message="tns:IDMSService_GetDmsVFinishRtnOrderTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderTotalResponse" message="tns:IDMSService_GetDmsVFinishRtnOrderTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishRtnOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/FinishRtnOrder" message="tns:IDMSService_FinishRtnOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/FinishRtnOrderResponse" message="tns:IDMSService_FinishRtnOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderRecord" message="tns:IDMSService_GetDmsVFinishRtnOrderRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderRecordResponse" message="tns:IDMSService_GetDmsVFinishRtnOrderRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderEnquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiry" message="tns:IDMSService_GetDmsVFinishRtnOrderEnquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiryResponse" message="tns:IDMSService_GetDmsVFinishRtnOrderEnquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderEnquiryTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiryTotal" message="tns:IDMSService_GetDmsVFinishRtnOrderEnquiryTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiryTotalResponse" message="tns:IDMSService_GetDmsVFinishRtnOrderEnquiryTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderEnquiryRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiryRecord" message="tns:IDMSService_GetDmsVFinishRtnOrderEnquiryRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiryRecordResponse" message="tns:IDMSService_GetDmsVFinishRtnOrderEnquiryRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckRtnOrderEnquiry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/CheckRtnOrderEnquiry" message="tns:IDMSService_CheckRtnOrderEnquiry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/CheckRtnOrderEnquiryResponse" message="tns:IDMSService_CheckRtnOrderEnquiry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsPayMethod">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsPayMethod" message="tns:IDMSService_GetDmsPayMethod_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsPayMethodResponse" message="tns:IDMSService_GetDmsPayMethod_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSaleOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsSaleOrder" message="tns:IDMSService_GetDmsSaleOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsSaleOrderResponse" message="tns:IDMSService_GetDmsSaleOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSaleOrderTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsSaleOrderTotal" message="tns:IDMSService_GetDmsSaleOrderTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsSaleOrderTotalResponse" message="tns:IDMSService_GetDmsSaleOrderTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSaleOrderRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsSaleOrderRecord" message="tns:IDMSService_GetDmsSaleOrderRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsSaleOrderRecordResponse" message="tns:IDMSService_GetDmsSaleOrderRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPrePayDmsOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/CheckPrePayDmsOrder" message="tns:IDMSService_CheckPrePayDmsOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/CheckPrePayDmsOrderResponse" message="tns:IDMSService_CheckPrePayDmsOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckShopDmsOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/CheckShopDmsOrder" message="tns:IDMSService_CheckShopDmsOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/CheckShopDmsOrderResponse" message="tns:IDMSService_CheckShopDmsOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLineUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/SetLineUser" message="tns:IDMSService_SetLineUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/SetLineUserResponse" message="tns:IDMSService_SetLineUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZipPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetZipPoint" message="tns:IDMSService_GetZipPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetZipPointResponse" message="tns:IDMSService_GetZipPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetZipPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/SetZipPoint" message="tns:IDMSService_SetZipPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/SetZipPointResponse" message="tns:IDMSService_SetZipPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetZipPointN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/SetZipPointN" message="tns:IDMSService_SetZipPointN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/SetZipPointNResponse" message="tns:IDMSService_SetZipPointN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveZipPoint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/MoveZipPoint" message="tns:IDMSService_MoveZipPoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/MoveZipPointResponse" message="tns:IDMSService_MoveZipPoint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCcqrMainList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetCcqrMainList" message="tns:IDMSService_GetCcqrMainList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetCcqrMainListResponse" message="tns:IDMSService_GetCcqrMainList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCCQRRate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetCustomerCCQRRate" message="tns:IDMSService_GetCustomerCCQRRate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetCustomerCCQRRateResponse" message="tns:IDMSService_GetCustomerCCQRRate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendReate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetSendReate" message="tns:IDMSService_GetSendReate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetSendReateResponse" message="tns:IDMSService_GetSendReate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSOrder" message="tns:IDMSService_GetDMSOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSOrderResponse" message="tns:IDMSService_GetDMSOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSOrderTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSOrderTotal" message="tns:IDMSService_GetDMSOrderTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSOrderTotalResponse" message="tns:IDMSService_GetDMSOrderTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetOrderType" message="tns:IDMSService_GetOrderType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetOrderTypeResponse" message="tns:IDMSService_GetOrderType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSRtnOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSRtnOrder" message="tns:IDMSService_GetDMSRtnOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSRtnOrderResponse" message="tns:IDMSService_GetDMSRtnOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSRtnOrderToTal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSRtnOrderToTal" message="tns:IDMSService_GetDMSRtnOrderToTal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSRtnOrderToTalResponse" message="tns:IDMSService_GetDMSRtnOrderToTal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSDCMoneyPay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSDCMoneyPay" message="tns:IDMSService_GetDMSDCMoneyPay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSDCMoneyPayResponse" message="tns:IDMSService_GetDMSDCMoneyPay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSDCMoneyPayTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSDCMoneyPayTotal" message="tns:IDMSService_GetDMSDCMoneyPayTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSDCMoneyPayTotalResponse" message="tns:IDMSService_GetDMSDCMoneyPayTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDCMoneyPay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDCMoneyPay" message="tns:IDMSService_GetDCMoneyPay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDCMoneyPayResponse" message="tns:IDMSService_GetDCMoneyPay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertDmsPointFee">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/InsertDmsPointFee" message="tns:IDMSService_InsertDmsPointFee_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/InsertDmsPointFeeResponse" message="tns:IDMSService_InsertDmsPointFee_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSDCMoneyPayQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSDCMoneyPayQuery" message="tns:IDMSService_GetDMSDCMoneyPayQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSDCMoneyPayQueryResponse" message="tns:IDMSService_GetDMSDCMoneyPayQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSDCMoneyPayQueryTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSDCMoneyPayQueryTotal" message="tns:IDMSService_GetDMSDCMoneyPayQueryTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSDCMoneyPayQueryTotalResponse" message="tns:IDMSService_GetDMSDCMoneyPayQueryTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeIntoHistoryOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/ChangeIntoHistoryOrder" message="tns:IDMSService_ChangeIntoHistoryOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/ChangeIntoHistoryOrderResponse" message="tns:IDMSService_ChangeIntoHistoryOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOutHistoryOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/ChangeOutHistoryOrder" message="tns:IDMSService_ChangeOutHistoryOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/ChangeOutHistoryOrderResponse" message="tns:IDMSService_ChangeOutHistoryOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetFsMain" message="tns:IDMSService_GetFsMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetFsMainResponse" message="tns:IDMSService_GetFsMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsFsMain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsFsMain" message="tns:IDMSService_GetDmsFsMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsFsMainResponse" message="tns:IDMSService_GetDmsFsMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsFsDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsFsDetail" message="tns:IDMSService_GetDmsFsDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsFsDetailResponse" message="tns:IDMSService_GetDmsFsDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetHistoryOrder" message="tns:IDMSService_GetHistoryOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetHistoryOrderResponse" message="tns:IDMSService_GetHistoryOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsFsMainByLineId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsFsMainByLineId" message="tns:IDMSService_GetDmsFsMainByLineId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsFsMainByLineIdResponse" message="tns:IDMSService_GetDmsFsMainByLineId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRtnOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetCurrentRtnOrder" message="tns:IDMSService_GetCurrentRtnOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetCurrentRtnOrderResponse" message="tns:IDMSService_GetCurrentRtnOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFsRtnOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetFsRtnOrder" message="tns:IDMSService_GetFsRtnOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetFsRtnOrderResponse" message="tns:IDMSService_GetFsRtnOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryRtnOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetHistoryRtnOrder" message="tns:IDMSService_GetHistoryRtnOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetHistoryRtnOrderResponse" message="tns:IDMSService_GetHistoryRtnOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeIntoHistoryRtnOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/ChangeIntoHistoryRtnOrder" message="tns:IDMSService_ChangeIntoHistoryRtnOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/ChangeIntoHistoryRtnOrderResponse" message="tns:IDMSService_ChangeIntoHistoryRtnOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOutHistoryRtnOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/ChangeOutHistoryRtnOrder" message="tns:IDMSService_ChangeOutHistoryRtnOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/ChangeOutHistoryRtnOrderResponse" message="tns:IDMSService_ChangeOutHistoryRtnOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishFsMain">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/FinishFsMain" message="tns:IDMSService_FinishFsMain_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/FinishFsMainResponse" message="tns:IDMSService_FinishFsMain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLineAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetLineAccount" message="tns:IDMSService_GetLineAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetLineAccountResponse" message="tns:IDMSService_GetLineAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMainQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetFsMainQuery" message="tns:IDMSService_GetFsMainQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetFsMainQueryResponse" message="tns:IDMSService_GetFsMainQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMainQueryTotal">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetFsMainQueryTotal" message="tns:IDMSService_GetFsMainQueryTotal_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetFsMainQueryTotalResponse" message="tns:IDMSService_GetFsMainQueryTotal_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShouldRecvLogQuery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetShouldRecvLogQuery" message="tns:IDMSService_GetShouldRecvLogQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetShouldRecvLogQueryResponse" message="tns:IDMSService_GetShouldRecvLogQuery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetPointID" message="tns:IDMSService_GetPointID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetPointIDResponse" message="tns:IDMSService_GetPointID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/getUserName" message="tns:IDMSService_getUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/getUserNameResponse" message="tns:IDMSService_getUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserDataSet">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/getUserDataSet" message="tns:IDMSService_getUserDataSet_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/getUserDataSetResponse" message="tns:IDMSService_getUserDataSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSVPointUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSVPointUser" message="tns:IDMSService_GetDMSVPointUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSVPointUserResponse" message="tns:IDMSService_GetDMSVPointUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSVPointLineUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDMSVPointLineUser" message="tns:IDMSService_GetDMSVPointLineUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDMSVPointLineUserResponse" message="tns:IDMSService_GetDMSVPointLineUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SeperateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/SeperateOrder" message="tns:IDMSService_SeperateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/SeperateOrderResponse" message="tns:IDMSService_SeperateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExeAutoFD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/ExeAutoFD" message="tns:IDMSService_ExeAutoFD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/ExeAutoFDResponse" message="tns:IDMSService_ExeAutoFD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetOrder" message="tns:IDMSService_GetOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetOrderResponse" message="tns:IDMSService_GetOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetOrderRecord" message="tns:IDMSService_GetOrderRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetOrderRecordResponse" message="tns:IDMSService_GetOrderRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSendLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsSendLine" message="tns:IDMSService_GetDmsSendLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsSendLineResponse" message="tns:IDMSService_GetDmsSendLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWBOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetWBOrder" message="tns:IDMSService_GetWBOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetWBOrderResponse" message="tns:IDMSService_GetWBOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBatchNo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/getBatchNo" message="tns:IDMSService_getBatchNo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/getBatchNoResponse" message="tns:IDMSService_getBatchNo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSeparateOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/getSeparateOrder" message="tns:IDMSService_getSeparateOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/getSeparateOrderResponse" message="tns:IDMSService_getSeparateOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveOrderSendLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/MoveOrderSendLine" message="tns:IDMSService_MoveOrderSendLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/MoveOrderSendLineResponse" message="tns:IDMSService_MoveOrderSendLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBaseAddressLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/AddBaseAddressLine" message="tns:IDMSService_AddBaseAddressLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/AddBaseAddressLineResponse" message="tns:IDMSService_AddBaseAddressLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelBaseAddressLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/CancelBaseAddressLine" message="tns:IDMSService_CancelBaseAddressLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/CancelBaseAddressLineResponse" message="tns:IDMSService_CancelBaseAddressLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDmsOrderMemo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/AddDmsOrderMemo" message="tns:IDMSService_AddDmsOrderMemo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/AddDmsOrderMemoResponse" message="tns:IDMSService_AddDmsOrderMemo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointLineOrders">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetPointLineOrders" message="tns:IDMSService_GetPointLineOrders_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetPointLineOrdersResponse" message="tns:IDMSService_GetPointLineOrders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetTransferOrder" message="tns:IDMSService_GetTransferOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetTransferOrderResponse" message="tns:IDMSService_GetTransferOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSingleTOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/getSingleTOrder" message="tns:IDMSService_getSingleTOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/getSingleTOrderResponse" message="tns:IDMSService_getSingleTOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSingleDms_t_fsDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/getSingleDms_t_fsDetail" message="tns:IDMSService_getSingleDms_t_fsDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/getSingleDms_t_fsDetailResponse" message="tns:IDMSService_getSingleDms_t_fsDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DMoveOrderSendLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/DMoveOrderSendLine" message="tns:IDMSService_DMoveOrderSendLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/DMoveOrderSendLineResponse" message="tns:IDMSService_DMoveOrderSendLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFsIdByLineId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetFsIdByLineId" message="tns:IDMSService_GetFsIdByLineId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetFsIdByLineIdResponse" message="tns:IDMSService_GetFsIdByLineId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSendLineN">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDmsSendLineN" message="tns:IDMSService_GetDmsSendLineN_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDmsSendLineNResponse" message="tns:IDMSService_GetDmsSendLineN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveAddressLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/MoveAddressLine" message="tns:IDMSService_MoveAddressLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/MoveAddressLineResponse" message="tns:IDMSService_MoveAddressLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetSendLine" message="tns:IDMSService_GetSendLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetSendLineResponse" message="tns:IDMSService_GetSendLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetAddressLine" message="tns:IDMSService_GetAddressLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetAddressLineResponse" message="tns:IDMSService_GetAddressLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetPointById" message="tns:IDMSService_GetPointById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetPointByIdResponse" message="tns:IDMSService_GetPointById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsPointByCondition">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetLogisticsPointByCondition" message="tns:IDMSService_GetLogisticsPointByCondition_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetLogisticsPointByConditionResponse" message="tns:IDMSService_GetLogisticsPointByCondition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPointByType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/getPointByType" message="tns:IDMSService_getPointByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/getPointByTypeResponse" message="tns:IDMSService_getPointByType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointLineUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetPointLineUser" message="tns:IDMSService_GetPointLineUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetPointLineUserResponse" message="tns:IDMSService_GetPointLineUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/getUserLine" message="tns:IDMSService_getUserLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/getUserLineResponse" message="tns:IDMSService_getUserLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddLine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/AddLine" message="tns:IDMSService_AddLine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/AddLineResponse" message="tns:IDMSService_AddLine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPLineUserByP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetPLineUserByP" message="tns:IDMSService_GetPLineUserByP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetPLineUserByPResponse" message="tns:IDMSService_GetPLineUserByP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSendLineByUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetSendLineByUser" message="tns:IDMSService_GetSendLineByUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetSendLineByUserResponse" message="tns:IDMSService_GetSendLineByUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliverUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDMSService/GetDeliverUser" message="tns:IDMSService_GetDeliverUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDMSService/GetDeliverUserResponse" message="tns:IDMSService_GetDeliverUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSHttpBinding_IDMSService" type="tns:IDMSService">
+    <wsp:PolicyReference URI="#WSHttpBinding_IDMSService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDmsNoUserOrderMain">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsNoUserOrderMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRTNOrderZip">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/UpdateRTNOrderZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLineAccountInfo">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetLineAccountInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecvAudit">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetRecvAudit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSingleRcevAudit">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetSingleRcevAudit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecvList">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetRecvList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecvFsMainQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetRecvFsMainQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecvListTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetRecvListTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishShouldRecv">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/FinishShouldRecv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSMModifylog">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetSMModifylog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipArea">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetZipArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteZip">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/DeleteZip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMainQueryExcel">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetFsMainQueryExcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderToExcel">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/OrderToExcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RtnOrderToExcel">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/RtnOrderToExcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DCMoneyPayToExcel">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/DCMoneyPayToExcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewDmsSaleOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetNewDmsSaleOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBigCategory">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetBigCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPresell">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/InsertPresell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePresell">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/DeletePresell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePresell">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/UpdatePresell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPresell">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetPresell" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShouldRecvLogQueryTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetShouldRecvLogQueryTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShouldRecvLogQueryRecord">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetShouldRecvLogQueryRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryOrderQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetHistoryOrderQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NGetHistoryOrderQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/NGetHistoryOrderQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NGetHistoryOrderQueryTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/NGetHistoryOrderQueryTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryRtnOrderQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetHistoryRtnOrderQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NGetHistoryRtnOrderQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/NGetHistoryRtnOrderQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NGetHistoryRtnOrderQueryTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/NGetHistoryRtnOrderQueryTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FSShouldRecvLog">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/FSShouldRecvLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRtnDiffLogQuerys">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetRtnDiffLogQuerys" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRtnDiffLogQuerysTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetRtnDiffLogQuerysTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRtnDiffLogQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetRtnDiffLogQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishRtnDiffLog">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/FinishRtnDiffLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFsDetailQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetFsDetailQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsAsnDetailQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsAsnDetailQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRtnOrderItemQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetRtnOrderItemQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMainNew">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetFsMainNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVHistoryRtnOrderFs">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsVHistoryRtnOrderFs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFsRtnOrderNew">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsVFsRtnOrderNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveRtnOrderToDmsTHistoryRtnOrderFS">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/MoveRtnOrderToDmsTHistoryRtnOrderFS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveOutRtnOrderToDmsTHistoryRtnOrderFS">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/MoveOutRtnOrderToDmsTHistoryRtnOrderFS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishFsMainNew">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/FinishFsMainNew" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishRtnOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/FinishRtnOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderRecord">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderEnquiry">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderEnquiryTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiryTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsVFinishRtnOrderEnquiryRecord">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsVFinishRtnOrderEnquiryRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckRtnOrderEnquiry">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/CheckRtnOrderEnquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsPayMethod">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsPayMethod" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSaleOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsSaleOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSaleOrderTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsSaleOrderTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSaleOrderRecord">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsSaleOrderRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPrePayDmsOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/CheckPrePayDmsOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckShopDmsOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/CheckShopDmsOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLineUser">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/SetLineUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetZipPoint">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetZipPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetZipPoint">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/SetZipPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetZipPointN">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/SetZipPointN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveZipPoint">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/MoveZipPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCcqrMainList">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetCcqrMainList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCCQRRate">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetCustomerCCQRRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendReate">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetSendReate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSOrderTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSOrderTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderType">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetOrderType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSRtnOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSRtnOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSRtnOrderToTal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSRtnOrderToTal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSDCMoneyPay">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSDCMoneyPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSDCMoneyPayTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSDCMoneyPayTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDCMoneyPay">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDCMoneyPay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertDmsPointFee">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/InsertDmsPointFee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSDCMoneyPayQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSDCMoneyPayQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSDCMoneyPayQueryTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSDCMoneyPayQueryTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeIntoHistoryOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/ChangeIntoHistoryOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOutHistoryOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/ChangeOutHistoryOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMain">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetFsMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsFsMain">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsFsMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsFsDetail">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsFsDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetHistoryOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsFsMainByLineId">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsFsMainByLineId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentRtnOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetCurrentRtnOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFsRtnOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetFsRtnOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoryRtnOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetHistoryRtnOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeIntoHistoryRtnOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/ChangeIntoHistoryRtnOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeOutHistoryRtnOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/ChangeOutHistoryRtnOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishFsMain">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/FinishFsMain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLineAccount">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetLineAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMainQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetFsMainQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFsMainQueryTotal">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetFsMainQueryTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShouldRecvLogQuery">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetShouldRecvLogQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointID">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetPointID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserName">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/getUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserDataSet">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/getUserDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSVPointUser">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSVPointUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDMSVPointLineUser">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDMSVPointLineUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SeperateOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/SeperateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExeAutoFD">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/ExeAutoFD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderRecord">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetOrderRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSendLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsSendLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWBOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetWBOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBatchNo">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/getBatchNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSeparateOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/getSeparateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveOrderSendLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/MoveOrderSendLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBaseAddressLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/AddBaseAddressLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CancelBaseAddressLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/CancelBaseAddressLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDmsOrderMemo">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/AddDmsOrderMemo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointLineOrders">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetPointLineOrders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransferOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetTransferOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSingleTOrder">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/getSingleTOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSingleDms_t_fsDetail">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/getSingleDms_t_fsDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DMoveOrderSendLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/DMoveOrderSendLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFsIdByLineId">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetFsIdByLineId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDmsSendLineN">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDmsSendLineN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveAddressLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/MoveAddressLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetSendLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetAddressLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointById">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetPointById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLogisticsPointByCondition">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetLogisticsPointByCondition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPointByType">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/getPointByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointLineUser">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetPointLineUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/getUserLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddLine">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/AddLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPLineUserByP">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetPLineUserByP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSendLineByUser">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetSendLineByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeliverUser">
+      <soap12:operation soapAction="http://tempuri.org/IDMSService/GetDeliverUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DMSService">
+    <wsdl:port name="WSHttpBinding_IDMSService" binding="tns:WSHttpBinding_IDMSService">
+      <soap12:address location="http://idc-wcf-2:3009/Holyca.Service.DMSService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://idc-wcf-2:3009/Holyca.Service.DMSService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

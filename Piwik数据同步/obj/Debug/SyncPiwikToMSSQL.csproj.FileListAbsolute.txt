@@ -4,3 +4,9 @@ E:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Debug\SyncPiwikToMSSQL.pdb
 E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\ResolveAssemblyReference.cache
 E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\SyncPiwikToMSSQL.exe
 E:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\SyncPiwikToMSSQL.pdb
+D:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Debug\SyncPiwikToMSSQL.exe.config
+D:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\SyncPiwikToMSSQL.exe
+D:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\SyncPiwikToMSSQL.pdb
+D:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Debug\SyncPiwikToMSSQL.exe
+D:\github\SyncPiwikToMSSQL\Piwik数据同步\bin\Debug\SyncPiwikToMSSQL.pdb
+D:\github\SyncPiwikToMSSQL\Piwik数据同步\obj\Debug\SyncPiwikToMSSQL.csprojResolveAssemblyReference.cache

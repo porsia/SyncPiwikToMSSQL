@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Holyca.Service.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Holyca.Service.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfDms_v_NoUserOrderMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_NoUserOrderMain" nillable="true" type="tns:Dms_v_NoUserOrderMain" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_NoUserOrderMain" nillable="true" type="tns:ArrayOfDms_v_NoUserOrderMain" />
+  <xs:complexType name="Dms_v_NoUserOrderMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="actuallyCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="actuallyPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="batchNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="beZip" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="beZipName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="orderType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="owncity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ownstorage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payMent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payMethod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="refercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="typeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_NoUserOrderMain" nillable="true" type="tns:Dms_v_NoUserOrderMain" />
+  <xs:complexType name="ArrayOfDms_v_lineAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_lineAccount" nillable="true" type="tns:Dms_v_lineAccount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_lineAccount" nillable="true" type="tns:ArrayOfDms_v_lineAccount" />
+  <xs:complexType name="Dms_v_lineAccount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senderName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_lineAccount" nillable="true" type="tns:Dms_v_lineAccount" />
+  <xs:complexType name="ArrayOfDms_v_shouldRecvCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_shouldRecvCheck" nillable="true" type="tns:Dms_v_shouldRecvCheck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_shouldRecvCheck" nillable="true" type="tns:ArrayOfDms_v_shouldRecvCheck" />
+  <xs:complexType name="Dms_v_shouldRecvCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="currentRtnrecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="depositMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fsRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="otherMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="posMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="shoulrecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="xjMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="yhMoney" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_shouldRecvCheck" nillable="true" type="tns:Dms_v_shouldRecvCheck" />
+  <xs:complexType name="ArrayOfDms_t_shouldRecvCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_t_shouldRecvCheck" nillable="true" type="tns:Dms_t_shouldRecvCheck" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_t_shouldRecvCheck" nillable="true" type="tns:ArrayOfDms_t_shouldRecvCheck" />
+  <xs:complexType name="Dms_t_shouldRecvCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardMoneyD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cardMoneyF" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="createby" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="depositMoneyD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="depositMoneyF" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffcardMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffdepositMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffotherMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffposMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffxjMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="otherMoneyD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="otherMoneyF" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="posMoneyD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="posMoneyF" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="shouldRevcTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="xjMoneyD" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="xjMoneyF" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="yhMoney" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_t_shouldRecvCheck" nillable="true" type="tns:Dms_t_shouldRecvCheck" />
+  <xs:complexType name="ArrayOfDms_v_fsMainQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_fsMainQuery" nillable="true" type="tns:Dms_v_fsMainQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_fsMainQuery" nillable="true" type="tns:ArrayOfDms_v_fsMainQuery" />
+  <xs:complexType name="Dms_v_fsMainQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="account" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="auditDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="cardMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="currentRtnRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cwAudit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="depositMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffRecvMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fsRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fsUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fscreatedate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="maniName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="manifestId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="otherMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="posMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="preAccount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shoulRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="xjMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="yhMoney" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_fsMainQuery" nillable="true" type="tns:Dms_v_fsMainQuery" />
+  <xs:complexType name="ArrayOfDMS_V_Modifylog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DMS_V_Modifylog" nillable="true" type="tns:DMS_V_Modifylog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDMS_V_Modifylog" nillable="true" type="tns:ArrayOfDMS_V_Modifylog" />
+  <xs:complexType name="DMS_V_Modifylog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createby" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="preLineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="presender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMS_V_Modifylog" nillable="true" type="tns:DMS_V_Modifylog" />
+  <xs:complexType name="ArrayOfDic_t_area">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dic_t_area" nillable="true" type="tns:Dic_t_area" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDic_t_area" nillable="true" type="tns:ArrayOfDic_t_area" />
+  <xs:complexType name="Dic_t_area">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="areaID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="areaName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dic_t_area" nillable="true" type="tns:Dic_t_area" />
+  <xs:complexType name="ArrayOfSale_v_order">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sale_v_order" nillable="true" type="tns:Sale_v_order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSale_v_order" nillable="true" type="tns:ArrayOfSale_v_order" />
+  <xs:complexType name="Sale_v_order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="actorNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="actorTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="actuallyPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addressNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="areaNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="batchNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="carriage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="change" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="channelid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="createBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createByName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="deliverName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="deliveryType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="flowStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="flowStatusName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="hasInv" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="innerMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="invoiceNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lockStatus" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="memberNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="opDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="orderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="orderType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ownCity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ownStorage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="packageWeight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="payMethod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="recordingNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="scores" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="sendActor" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="sendActorTypeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sendDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sendTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sendTo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="updateBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="updateByName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="updateDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="userCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sale_v_order" nillable="true" type="tns:Sale_v_order" />
+  <xs:complexType name="ArrayOfCg_t_category">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cg_t_category" nillable="true" type="tns:Cg_t_category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCg_t_category" nillable="true" type="tns:ArrayOfCg_t_category" />
+  <xs:complexType name="Cg_t_category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="categoryFather" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="categoryID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="categoryLevel" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="categoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="effectId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="sortOrder" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="visible" nillable="true" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cg_t_category" nillable="true" type="tns:Cg_t_category" />
+  <xs:complexType name="Cg_t_presell">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LeaveStoreDays" type="xs:int" />
+      <xs:element minOccurs="0" name="PresellCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductId" type="xs:int" />
+      <xs:element minOccurs="0" name="ProductName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StockCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cg_t_presell" nillable="true" type="tns:Cg_t_presell" />
+  <xs:complexType name="ArrayOfCg_t_presell">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Cg_t_presell" nillable="true" type="tns:Cg_t_presell" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCg_t_presell" nillable="true" type="tns:ArrayOfCg_t_presell" />
+  <xs:complexType name="Dms_v_ShouldRecvLogQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="account" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="auditDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="auditMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cardMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="createBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="currentRtnRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="cwAudit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="depositMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffRecvMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fsRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="otherMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="posMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="preAccount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shoulRecv" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="xjMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="yhMoney" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_ShouldRecvLogQuery" nillable="true" type="tns:Dms_v_ShouldRecvLogQuery" />
+  <xs:complexType name="ArrayOfDms_V_HistoryOrderQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_V_HistoryOrderQuery" nillable="true" type="tns:Dms_V_HistoryOrderQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_V_HistoryOrderQuery" nillable="true" type="tns:ArrayOfDms_V_HistoryOrderQuery" />
+  <xs:complexType name="Dms_V_HistoryOrderQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="actuallyPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_V_HistoryOrderQuery" nillable="true" type="tns:Dms_V_HistoryOrderQuery" />
+  <xs:complexType name="ArrayOfDms_V_HistoryRtnOrderQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_V_HistoryRtnOrderQuery" nillable="true" type="tns:Dms_V_HistoryRtnOrderQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_V_HistoryRtnOrderQuery" nillable="true" type="tns:ArrayOfDms_V_HistoryRtnOrderQuery" />
+  <xs:complexType name="Dms_V_HistoryRtnOrderQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="actuallyCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createby" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="stockIndate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_V_HistoryRtnOrderQuery" nillable="true" type="tns:Dms_V_HistoryRtnOrderQuery" />
+  <xs:complexType name="ArrayOfDms_v_ShouldRecvLogQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_ShouldRecvLogQuery" nillable="true" type="tns:Dms_v_ShouldRecvLogQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_ShouldRecvLogQuery" nillable="true" type="tns:ArrayOfDms_v_ShouldRecvLogQuery" />
+  <xs:complexType name="ArrayOfDms_v_RtnDiffLogQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_RtnDiffLogQuery" nillable="true" type="tns:Dms_v_RtnDiffLogQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_RtnDiffLogQuery" nillable="true" type="tns:ArrayOfDms_v_RtnDiffLogQuery" />
+  <xs:complexType name="Dms_v_RtnDiffLogQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="actuallycash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="auditMemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="auditdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createby" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="cwaudit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="diffcash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffrecvCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtncode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="stockInDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="yjqty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_RtnDiffLogQuery" nillable="true" type="tns:Dms_v_RtnDiffLogQuery" />
+  <xs:complexType name="ArrayOfDms_v_FsDetailQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_FsDetailQuery" nillable="true" type="tns:Dms_v_FsDetailQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_FsDetailQuery" nillable="true" type="tns:ArrayOfDms_v_FsDetailQuery" />
+  <xs:complexType name="Dms_v_FsDetailQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actuallyPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cartonqty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_FsDetailQuery" nillable="true" type="tns:Dms_v_FsDetailQuery" />
+  <xs:complexType name="ArrayOfDms_v_asnDetailQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_asnDetailQuery" nillable="true" type="tns:Dms_v_asnDetailQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_asnDetailQuery" nillable="true" type="tns:ArrayOfDms_v_asnDetailQuery" />
+  <xs:complexType name="Dms_v_asnDetailQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actualQuantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="asnClosedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="refermenuId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stockInDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="stockInId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="stockInName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="yjQty" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_asnDetailQuery" nillable="true" type="tns:Dms_v_asnDetailQuery" />
+  <xs:complexType name="ArrayOfDms_v_rtnOrderItemQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_rtnOrderItemQuery" nillable="true" type="tns:Dms_v_rtnOrderItemQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_rtnOrderItemQuery" nillable="true" type="tns:ArrayOfDms_v_rtnOrderItemQuery" />
+  <xs:complexType name="Dms_v_rtnOrderItemQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_rtnOrderItemQuery" nillable="true" type="tns:Dms_v_rtnOrderItemQuery" />
+  <xs:complexType name="ArrayOfDms_v_GetFsMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_GetFsMain" nillable="true" type="tns:Dms_v_GetFsMain" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_GetFsMain" nillable="true" type="tns:ArrayOfDms_v_GetFsMain" />
+  <xs:complexType name="Dms_v_GetFsMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalcurrtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalrtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="totalshouldPay" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_GetFsMain" nillable="true" type="tns:Dms_v_GetFsMain" />
+  <xs:complexType name="ArrayOfDms_v_historyRtnOrderFs">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_historyRtnOrderFs" nillable="true" type="tns:Dms_v_historyRtnOrderFs" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_historyRtnOrderFs" nillable="true" type="tns:ArrayOfDms_v_historyRtnOrderFs" />
+  <xs:complexType name="Dms_v_historyRtnOrderFs">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_historyRtnOrderFs" nillable="true" type="tns:Dms_v_historyRtnOrderFs" />
+  <xs:complexType name="ArrayOfDms_v_fsRtnOrderNew">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_fsRtnOrderNew" nillable="true" type="tns:Dms_v_fsRtnOrderNew" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_fsRtnOrderNew" nillable="true" type="tns:ArrayOfDms_v_fsRtnOrderNew" />
+  <xs:complexType name="Dms_v_fsRtnOrderNew">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_fsRtnOrderNew" nillable="true" type="tns:Dms_v_fsRtnOrderNew" />
+  <xs:complexType name="ArrayOfDms_v_finishRtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_finishRtnOrder" nillable="true" type="tns:Dms_v_finishRtnOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_finishRtnOrder" nillable="true" type="tns:ArrayOfDms_v_finishRtnOrder" />
+  <xs:complexType name="Dms_v_finishRtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeWholeRtn" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="actualQuantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="actuallyCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="diffcash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="membNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payMethod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payMethodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reallyCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="stockInDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="usercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="yjqty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_finishRtnOrder" nillable="true" type="tns:Dms_v_finishRtnOrder" />
+  <xs:complexType name="ArrayOfDms_v_finishRtnOrder_Enquiry">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_finishRtnOrder_Enquiry" nillable="true" type="tns:Dms_v_finishRtnOrder_Enquiry" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_finishRtnOrder_Enquiry" nillable="true" type="tns:ArrayOfDms_v_finishRtnOrder_Enquiry" />
+  <xs:complexType name="Dms_v_finishRtnOrder_Enquiry">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeWholeRtn" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="actualQuantity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="actuallyCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="checkBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="checkTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="finishBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="finishTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="finishstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="membNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payMethod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payMethodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="stockInDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="usercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="yjqty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_finishRtnOrder_Enquiry" nillable="true" type="tns:Dms_v_finishRtnOrder_Enquiry" />
+  <xs:complexType name="ArrayOfWeb_t_pay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Web_t_pay" nillable="true" type="tns:Web_t_pay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWeb_t_pay" nillable="true" type="tns:ArrayOfWeb_t_pay" />
+  <xs:complexType name="Web_t_pay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="describe" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="enable" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isPrePay" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sort" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Web_t_pay" nillable="true" type="tns:Web_t_pay" />
+  <xs:complexType name="Wl_lineUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wl_lineUser" nillable="true" type="tns:Wl_lineUser" />
+  <xs:complexType name="ArrayOfDMS_V_ZipPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DMS_V_ZipPoint" nillable="true" type="tns:DMS_V_ZipPoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDMS_V_ZipPoint" nillable="true" type="tns:ArrayOfDMS_V_ZipPoint" />
+  <xs:complexType name="DMS_V_ZipPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pointID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zipPointID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMS_V_ZipPoint" nillable="true" type="tns:DMS_V_ZipPoint" />
+  <xs:complexType name="Base_t_zipPoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="pointID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zipPointID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Base_t_zipPoint" nillable="true" type="tns:Base_t_zipPoint" />
+  <xs:complexType name="ArrayOfDms_V_Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_V_Order" nillable="true" type="tns:Dms_V_Order" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_V_Order" nillable="true" type="tns:ArrayOfDms_V_Order" />
+  <xs:complexType name="Dms_V_Order">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="actuallyPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="carriage" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="createby" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="intparentid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="orderType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="outTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="owncity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ownstorage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payMent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="paymethod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="paystatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sendto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_V_Order" nillable="true" type="tns:Dms_V_Order" />
+  <xs:complexType name="ArrayOfDms_V_RtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_V_RtnOrder" nillable="true" type="tns:Dms_V_RtnOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_V_RtnOrder" nillable="true" type="tns:ArrayOfDms_V_RtnOrder" />
+  <xs:complexType name="Dms_V_RtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actuallycash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="auditdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="befs" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="befsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="channelId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="cwAudit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="diffRecvcash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffcash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="finishactuallycash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="finishcash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="finishmemo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ordertype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="owncity" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ownstorage" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtncode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="stockIndate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_V_RtnOrder" nillable="true" type="tns:Dms_V_RtnOrder" />
+  <xs:complexType name="ArrayOfDms_v_DCMoneyPay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_DCMoneyPay" nillable="true" type="tns:Dms_v_DCMoneyPay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_DCMoneyPay" nillable="true" type="tns:ArrayOfDms_v_DCMoneyPay" />
+  <xs:complexType name="Dms_v_DCMoneyPay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Bonus" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OrderCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OutsourcingCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="actuallPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="actuallcash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="beRtn" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cartonqty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ccqrcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="commissionChange" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="diffcash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="region" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rsflowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtncode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sendto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="typeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_DCMoneyPay" nillable="true" type="tns:Dms_v_DCMoneyPay" />
+  <xs:complexType name="ArrayOfDms_v_DCMoneyPayQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_DCMoneyPayQuery" nillable="true" type="tns:Dms_v_DCMoneyPayQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_DCMoneyPayQuery" nillable="true" type="tns:ArrayOfDms_v_DCMoneyPayQuery" />
+  <xs:complexType name="Dms_v_DCMoneyPayQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PayMethodName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="actuallPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="actuallcash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="beRtn" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="befs" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cartonqty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="commissionChange" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="createby" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="kind" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="kindName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="outsourcingCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="payMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointFeeId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="realOrderCommission" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="region" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="regionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtncash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="weights" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_DCMoneyPayQuery" nillable="true" type="tns:Dms_v_DCMoneyPayQuery" />
+  <xs:complexType name="ArrayOfDms_t_fsMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_t_fsMain" nillable="true" type="tns:Dms_t_fsMain" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_t_fsMain" nillable="true" type="tns:ArrayOfDms_t_fsMain" />
+  <xs:complexType name="Dms_t_fsMain">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="maniName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="manifestId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="sendDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_t_fsMain" nillable="true" type="tns:Dms_t_fsMain" />
+  <xs:complexType name="ArrayOfDms_v_FsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_FsDetail" nillable="true" type="tns:Dms_v_FsDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_FsDetail" nillable="true" type="tns:ArrayOfDms_v_FsDetail" />
+  <xs:complexType name="Dms_v_FsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="actuallyPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cartonqty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payMent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_FsDetail" nillable="true" type="tns:Dms_v_FsDetail" />
+  <xs:complexType name="ArrayOfDms_V_HistoryOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_V_HistoryOrder" nillable="true" type="tns:Dms_V_HistoryOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_V_HistoryOrder" nillable="true" type="tns:ArrayOfDms_V_HistoryOrder" />
+  <xs:complexType name="Dms_V_HistoryOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actorName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="actuallyPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payMent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payMethod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_V_HistoryOrder" nillable="true" type="tns:Dms_V_HistoryOrder" />
+  <xs:complexType name="ArrayOfDms_v_currentRtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_currentRtnOrder" nillable="true" type="tns:Dms_v_currentRtnOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_currentRtnOrder" nillable="true" type="tns:ArrayOfDms_v_currentRtnOrder" />
+  <xs:complexType name="Dms_v_currentRtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_currentRtnOrder" nillable="true" type="tns:Dms_v_currentRtnOrder" />
+  <xs:complexType name="ArrayOfDms_v_fsRtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_fsRtnOrder" nillable="true" type="tns:Dms_v_fsRtnOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_fsRtnOrder" nillable="true" type="tns:ArrayOfDms_v_fsRtnOrder" />
+  <xs:complexType name="Dms_v_fsRtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_fsRtnOrder" nillable="true" type="tns:Dms_v_fsRtnOrder" />
+  <xs:complexType name="ArrayOfDms_v_historyRtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_v_historyRtnOrder" nillable="true" type="tns:Dms_v_historyRtnOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_v_historyRtnOrder" nillable="true" type="tns:ArrayOfDms_v_historyRtnOrder" />
+  <xs:complexType name="Dms_v_historyRtnOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fetchTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="memo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderMoney" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="rtnCash" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="rtnCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rtnNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_v_historyRtnOrder" nillable="true" type="tns:Dms_v_historyRtnOrder" />
+  <xs:complexType name="DMS_V_PointUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMS_V_PointUser" nillable="true" type="tns:DMS_V_PointUser" />
+  <xs:complexType name="DMS_V_PointLineUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cellPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pointType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMS_V_PointLineUser" nillable="true" type="tns:DMS_V_PointLineUser" />
+  <xs:complexType name="ArrayOfDMS_V_SeparateOrderQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DMS_V_SeparateOrderQuery" nillable="true" type="tns:DMS_V_SeparateOrderQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDMS_V_SeparateOrderQuery" nillable="true" type="tns:ArrayOfDMS_V_SeparateOrderQuery" />
+  <xs:complexType name="DMS_V_SeparateOrderQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BeRember" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="deliverName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="deliveryType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="flowstatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="memberno" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="oldLineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ordercode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payMent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="paymethod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senddate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="senderName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMS_V_SeparateOrderQuery" nillable="true" type="tns:DMS_V_SeparateOrderQuery" />
+  <xs:complexType name="Wl_t_xl_sendline">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="auditTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="auditor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bBatch" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bSpecial" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="createTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="creator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineCode" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="logisticsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shortSpell" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wl_t_xl_sendline" nillable="true" type="tns:Wl_t_xl_sendline" />
+  <xs:complexType name="ArrayOfDms_V_ChangeOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Dms_V_ChangeOrder" nillable="true" type="tns:Dms_V_ChangeOrder" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDms_V_ChangeOrder" nillable="true" type="tns:ArrayOfDms_V_ChangeOrder" />
+  <xs:complexType name="Dms_V_ChangeOrder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="areaId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="batchNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ckId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="flowStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fsName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lineId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="payMent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="payType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sendDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shouldPay" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_V_ChangeOrder" nillable="true" type="tns:Dms_V_ChangeOrder" />
+  <xs:complexType name="Dms_t_fsDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cartonQty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="freight" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="fsId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="referId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="weight" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Dms_t_fsDetail" nillable="true" type="tns:Dms_t_fsDetail" />
+  <xs:complexType name="ArrayOfWl_t_xl_sendline">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wl_t_xl_sendline" nillable="true" type="tns:Wl_t_xl_sendline" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWl_t_xl_sendline" nillable="true" type="tns:ArrayOfWl_t_xl_sendline" />
+  <xs:complexType name="ArrayOfDMS_v_addressLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DMS_v_addressLine" nillable="true" type="tns:DMS_v_addressLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDMS_v_addressLine" nillable="true" type="tns:ArrayOfDMS_v_addressLine" />
+  <xs:complexType name="DMS_v_addressLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="addressLineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="beZip" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fromRoadNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lineName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="roadname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="toRoadNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="zip" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DMS_v_addressLine" nillable="true" type="tns:DMS_v_addressLine" />
+  <xs:complexType name="Wl_t_xl_logisticspoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="deliverId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="manager" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="members" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pointName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="postCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="shortSpell" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Wl_t_xl_logisticspoint" nillable="true" type="tns:Wl_t_xl_logisticspoint" />
+  <xs:complexType name="ArrayOfWl_t_xl_logisticspoint">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Wl_t_xl_logisticspoint" nillable="true" type="tns:Wl_t_xl_logisticspoint" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWl_t_xl_logisticspoint" nillable="true" type="tns:ArrayOfWl_t_xl_logisticspoint" />
+  <xs:complexType name="ArrayOfDMS_V_PointLineUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DMS_V_PointLineUser" nillable="true" type="tns:DMS_V_PointLineUser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDMS_V_PointLineUser" nillable="true" type="tns:ArrayOfDMS_V_PointLineUser" />
+  <xs:complexType name="ArrayOfPt_t_user">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pt_t_user" nillable="true" type="tns:Pt_t_user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPt_t_user" nillable="true" type="tns:ArrayOfPt_t_user" />
+  <xs:complexType name="Pt_t_user">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cellPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="cwPwd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="deptId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="roleId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Pt_t_user" nillable="true" type="tns:Pt_t_user" />
+</xs:schema>

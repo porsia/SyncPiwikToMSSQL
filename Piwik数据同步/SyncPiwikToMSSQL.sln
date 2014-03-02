@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncPiwikToMSSQL", "SyncPiwikToMSSQL.csproj", "{3F9D6F94-3F75-4325-AC2F-72AC01C1248C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SyncUpdateColumn", "..\SyncUpdateColumn\SyncUpdateColumn.csproj", "{3EF0E065-3B15-42FF-A082-A5FF7EE2CE7F}"
